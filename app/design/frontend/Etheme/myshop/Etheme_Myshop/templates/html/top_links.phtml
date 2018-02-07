@@ -1,0 +1,24 @@
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+?>
+
+<div class="account dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown">
+        <span class="icon icon-person"></span>
+        <span class="dropdown-label hidden-sm hidden-xs"><?php echo __('My Account') ?></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a href="<?php echo $block->getUrl('customer/account'); ?>"><span class="icon icon-person"></span><?php echo __('My Account') ?></a></li>
+        <li><a href="<?php echo $block->getUrl('wishlist'); ?>"><span class="icon icon-favorite_border"></span><?php echo __('My Wishlist') ?></a></li>
+        <li><a href="<?php echo $ys_helper->getCompareListUrl(); ?>"><span class="fa fa-balance-scale"></span><?php echo __('Compare') ?></a></li>
+        <li><a href="<?php echo $block->getUrl('checkout'); ?>"><span class="icon icon-check"></span><?php echo __('Checkout') ?></a></li>
+        <?php
+        if($ys_helper->isLoggedIn()) {
+            ?>
+            <li><a href="<?php echo $block->getUrl('customer/account/logout'); ?>"><span class="icon icon-lock_outline"></span><?php echo __('Log Out') ?></a></li>
+        <?php } else { ?>
+            <li><a href="<?php echo $block->getUrl('customer/account/login'); ?>"><span class="icon icon-lock_outline"></span><?php echo __('Log In') ?></a></li>
+            <li><a href="<?php echo $block->getUrl('customer/account/create'); ?>"><span class="icon icon-person_add"></span><?php echo __('Create an account') ?></a></li>
+        <?php } ?>
+    </ul>
+</div>

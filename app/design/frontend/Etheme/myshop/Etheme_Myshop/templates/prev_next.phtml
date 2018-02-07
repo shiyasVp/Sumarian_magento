@@ -1,0 +1,31 @@
+<?php
+/*asd*/
+$_product = $block->getProduct();
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+$prev = $ys_helper->prev_next($_product,'prev');
+$next = $ys_helper->prev_next($_product,'next');
+$prev_next = $ys_helper->getSystemValue('myshop_settings/product_page/prev_next');
+?>
+<?php if ($prev_next): ?>
+<div class="productPrevNext hidden-xs hidden-sm">
+    <?php if($prev): ?>
+        <?php
+        $image = $_imagehelper->init($prev, 'category_page_grid')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(265);
+        $image_url = $image->getUrl();
+        ?>
+        <a href="<?php echo $prev->getProductUrl(); ?>" title="<?php echo __('Prev'); ?>" class="product-prev"><img src="<?php echo $image_url; ?>" alt="<?php echo $image->getLabel(); ?>"/></a>
+
+    <?php endif; ?>
+
+    <?php if($next): ?>
+        <?php
+        $image = $_imagehelper->init($next, 'category_page_grid')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(265);
+        $image_url = $image->getUrl();
+        ?>
+        <a href="<?php echo $next->getProductUrl(); ?>" title="<?php echo __('Next'); ?>" class="product-next"><img src="<?php echo $image_url; ?>" alt="<?php echo $image->getLabel(); ?>"/></a>
+
+    <?php endif; ?>
+</div>
+<?php endif; ?>

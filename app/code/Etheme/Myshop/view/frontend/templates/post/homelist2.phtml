@@ -1,0 +1,157 @@
+<?php
+/**
+ * Copyright © 2016 Alexander Lukjanenko (alexander.lukjanenko@gmail.com)
+ */
+
+use Magento\Framework\App\Action\Action;
+
+?>
+<?php
+$_postCollection = $block->getPostCollection();
+$styles = array(
+    0 => '',
+    1 => 'double',
+    2 => 'double double-revert'
+);
+?>
+<?php if (!$_postCollection->count()): ?>
+    <!-- No blog posts found -->
+<?php else: ?>
+    <!-- recent-posts-carousel -->
+    <div class="container offset-0">
+        <div class="row">
+            <div class="carousel-products-mobile blog-thumb-listing">
+                <?php foreach ($_postCollection as $_post) : ?>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="blog-thumb">
+                        <a class="img" href="<?php echo $_post->getPostUrl(); ?>">
+                            <?php if ($_post->getFeaturedImage()): ?>
+                                <img src="<?php echo $_post->getFeaturedImage(); ?>" alt="<?php echo $_post->getTitle(); ?>">
+                            <?php else: ?>
+                                <img src="<?php echo $block->getViewFileUrl('images/blog-empty.png'); ?>" alt="<?php echo $_post->getTitle(); ?>">
+                            <?php endif; ?>
+                        </a>
+                        <a class="title" href="<?php echo $_post->getPostUrl(); ?>"><?php echo $_post->getTitle(); ?></a>
+                        <p class="data">
+                            <?php if($_post->getAuthor()!=null):?>
+                            <?php echo __('by') ?> <a href="<?php echo $_post->getAuthor()->getAuthorUrl(); ?>"><?php echo $_post->getAuthor()->getName(); ?></a>
+                            <?php endif;?>
+                            <?php echo __('on') ?> <?php echo date('M', strtotime($_post->getPublishTime())); ?> <b><?php echo date('d', strtotime($_post->getPublishTime())); ?>, <?php echo date('Y', strtotime($_post->getPublishTime())); ?></b>
+                        </p>
+                        <?php echo $block->getShortContent($_post); ?>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- /recent-posts-carousel -->
+    <script>
+        require([
+            "jquery",
+            "bootstrapminify",
+            "slick",
+            "jquery/ui"
+        ], function($) {
+
+            function addResizeCarousels(selector, breakpoint, options) {
+                if (!selector) return false;
+
+                var $carousels = $(selector),
+                    breakpoint = breakpoint || 768,
+                    options = options || null;
+
+                var windW = window.innerWidth || $(window).width();
+
+                if (windW < breakpoint) {
+                    $carousels.each(function() {
+                        $(this).not('.slick-initialized').slick(options);
+                    });
+                } else {
+                    $carousels.each(function() {
+                        if ($(this).hasClass('slick-initialized'))
+                            $(this).slick('unslick');
+                    });
+                }
+            };
+
+            var addResizeCarousels_timeout;
+
+            $(window).resize(function() {
+
+                clearTimeout(addResizeCarousels_timeout);
+
+                addResizeCarousels_timeout = setTimeout(function() {
+                    addResizeCarousels(
+                        '.carousel-products-mobile',
+                        791, {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            responsive: [{
+                                breakpoint: 583,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }]
+                        }
+                    );
+
+                    addResizeCarousels(
+                        '.carousel-products-mobile-md',
+                        1024, {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            responsive: [{
+                                breakpoint: 583,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }]
+                        }
+                    );
+                }, 100);
+            });
+
+            /*
+             blog-thumb arrow carusel
+             */
+            jQuery(function($) {
+                $(window).on('load resize ready', function() {
+                    setTimeout(function() {
+                        var $objParent = $('.blog-thumb'),
+                            $obj = $objParent.find('.img'),
+                            $objParentArrow = $objParent.closest('.carousel-products-mobile').find('.slick-arrow');
+
+                        if($obj.length && $objParentArrow.length){
+
+                            $.fn.findHeight = function (){
+                                var $blocks = $(this),
+                                    maxH    = $blocks.eq(0).height();
+
+                                $blocks.each(function(){
+                                    maxH = ( $(this).height() > maxH ) ? $(this).height() : maxH;
+                                });
+
+                                return maxH/2;
+                            };
+
+                            var $objHeight =  $obj.findHeight(),
+                                $objParentError = parseInt($objParent.css('marginTop'));
+
+
+                            $objParentArrow.css({
+                                'top' : $objHeight + $objParentError + 'px'
+                            });
+                        }
+                    }, 225);
+                });
+            });
+
+
+
+        });
+    </script>
+<?php endif; ?>

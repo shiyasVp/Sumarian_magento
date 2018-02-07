@@ -1,0 +1,24 @@
+<div class="box-aside no-space">
+    <div class="subscribe-box">
+        <div class="title"><?php echo __('Get the latest news delivered daily!') ?></div>
+        <p>
+            <?php echo __('Give us your email and you will be daily updated with the latest events, in detail!') ?>
+        </p>
+        <form class="form form-inline"
+              novalidate
+              action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+              method="post"
+              data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+              id="newsletter-validate-detail">
+            <label class="sr-only" for="email"><?php echo __('Email') ?></label>
+									<span class="addon-icon">
+									<span class="icon icon-email"></span>
+									</span>
+            <input name="email" type="email" id="newsletter" placeholder="<?php echo __('Enter your e-mail') ?>" class="form-control addon-icon" data-validate="{required:true, 'validate-email':true}"/>
+            <button type="submit" title="<?php echo __('Subscribe') ?>" class="action"><span><?php echo __('Subscribe') ?></span></button>
+        </form>
+    </div>
+</div>
+<div class="box-aside visible-lg visible-md no-space">
+    <hr>
+</div>

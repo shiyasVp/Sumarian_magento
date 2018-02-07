@@ -1,0 +1,171 @@
+
+/* custom css */
+
+/* background color */
+
+/* text color */
+
+/* main theme color */
+
+/* link color */
+
+/* link hover color */
+
+/* borders color */
+
+
+/* -------------------------Buttons */
+/* Btn text */
+/* Btn text hover */
+/* Btn Bg */
+
+/* Btn Bg hover */
+
+
+/* Btn Link text */
+
+/* Btn Link text hover */
+
+/* Btn Link Icon */
+
+/* Btn Link Icon hover */
+
+/* ----------- Inputs ---------- */
+/* Input text */
+    input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"],
+    textarea,
+    select
+    { background:none; }
+
+/* ----------- Megamenu ---------- */
+/* Links 1 level */
+
+/* Links 1 line */
+
+/* Links 2 level */
+
+/* Links 2 level */
+
+/* Links 2 line */
+
+/* Links 2 line */
+
+/* Links 3 level */
+
+/* Links 3 level */
+
+/* Links 3 arrow */
+
+/* Label text */
+
+/* Label bg */
+
+/* Dropdown shape background */
+
+/* Simple menu text */
+
+/* Simple menu text hover */
+
+/* Simple menu bg */
+
+/* Simple menu bg hover */
+
+/* Simple menu border */
+
+/* ------------------Mobile menu  */
+/* Bg shape */
+    @media (max-width: 1024px) {
+    .tonyMenu {
+    background:#000000;
+    }
+    }
+/* Border link */
+    @media (max-width: 1024px) {
+    .tonyMenu__nav-list > li {
+    border-bottom: 1px solid #964518 !important;
+    }
+    .tonyMenu__nav-list > li li {
+    border-top: 1px solid #964518 !important;
+    }
+    }
+/* Links color */
+    @media (max-width: 1024px) {
+    .tonyMenu__nav-list li a, .tonyMenu__nav-list li a > span {
+    color:#642EFF !important;
+    }
+    }
+/* Arrow color */
+    @media (max-width: 1024px) {
+    .tonyMenu__item-next-level::after {
+    border-color:#642EFF;
+    }
+    }
+/* Links color active */
+    @media (max-width: 1024px) {
+    .tonyMenu__open > a,
+    .tonyMenu__nav-list li a:hover,
+    .tonyMenu__nav-list li a:hover > span,
+    .tonyMenu__nav-list li.dl-close:hover a,
+    .tonyMenu__nav-list li.dl-close:hover a .icon-close {
+    color:#21FFBB !important;
+    }
+    }
+/* Links background active */
+    @media (max-width: 1024px) {
+    .tonyMenu__open > a,
+    .tonyMenu__nav-list li a:hover,
+    .tonyMenu__nav-list li:not(.tonyMenu__open):hover > a {
+    background:#E0E0E0;
+    }
+    }
+
+
+/* ------------------Captions  */
+/* Title text color */
+
+/* Sidebar captions */
+
+/* --------------------Breadcrumbs  */
+/* Current page */
+
+/* Links */
+
+/* Links:hover */
+
+/* Icon Color */
+
+/* Icon Color */
+
+/* Icon Background */
+
+/* --------------------Footer  */
+/* Back to top color */
+/* Colums Title color */
+/* Colums Links color */
+/* Colums Links hover */
+/* Copyright bg color */
+/* Copyright text color */
+/* Copyright link color */
+/* Socials icon */
+/* Socials block bg hover */
+/* Socials icon hover */
+/* Socials bg hover */
+
+/* --------------------Products listing  */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+/* Colums Title color */
+
+/* -------------------- Header  */
+
+
+
+
+

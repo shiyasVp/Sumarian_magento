@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="root">
+            <block class="Etheme\Myshop\Block\Template" name="myshop_loader" template="html/loader.phtml" before="page_wrapper"/>
+        </referenceContainer>
+
+        <referenceContainer name="head.additional">
+            <block class="Etheme\Myshop\Block\Template" name="myshop_head" template="html/head.phtml" before="-"/>
+        </referenceContainer>
+
+        <referenceContainer name="sidebar.additional">
+            <block class="Etheme\Myshop\Block\Template" name="sidebar_custom" template="html/sidebar_custom.phtml" after="-" />
+        </referenceContainer>
+
+        <referenceContainer name="page.wrapper">
+            <block class="Etheme\Myshop\Block\Template" name="myshop_header" template="html/header.phtml" before="main.content" cacheable="false">
+                <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                    <arguments>
+                        <argument name="css_class" xsi:type="string">header links dropdown-menu dropdown-menu--xs-full</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="top.search.short" template="Magento_Search::form.mini_short.phtml" />
+                <block class="Magento\Store\Block\Switcher" name="store_language_full" as="store_language_full" template="switch/languages_full.phtml"/>
+                <block class="Magento\Directory\Block\Currency" name="currency_full" template="currency_full.phtml"/>
+                <block class="Etheme\Myshop\Block\Template" name="tops_links" template="html/top_links.phtml" />
+                <block class="Magento\Cms\Block\Block" name="header_links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_links</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="header_phone">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_phone</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="header_socials">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_socials</argument>
+                    </arguments>
+                </block>
+            </block>
+			<block class="Etheme\Myshop\Block\Template" name="footer_block" template="html/footer.phtml" after="main.content">
+                <block class="Magento\Store\Block\Switcher" name="footer.store_switcher" template="switch/stores.phtml"/>
+                <block class="Magento\Newsletter\Block\Subscribe" name="footer.newsletter" template="subscribe_footer.phtml"/>
+                <block class="Magento\Cms\Block\Block" name="footer_links_block_1">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_links_block_1</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_links_block_2">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_links_block_2</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_links_block_3">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_links_block_3</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_contacts">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_contacts</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_contacts_list">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_contacts_list</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_socials">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_socials</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_payments">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_payments</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_info_banners">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_info_banners</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_menu">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_menu</argument>
+                    </arguments>
+                </block>
+            </block>
+
+        </referenceContainer>
+        <move element="store.menu" destination="myshop_header"/>
+        <move element="top.search" destination="myshop_header"/>
+        <move element="minicart" destination="myshop_header"/>
+        <move element="store_language" destination="myshop_header"/>
+        <move element="currency" destination="myshop_header"/>
+        <move element="logo" destination="myshop_header"/>
+        <move element="skip_to_content" destination="myshop_header"/>
+        <move element="header" destination="myshop_header"/>
+
+        <move element="page.top" destination="page.wrapper" after="myshop_header"/>
+
+        <referenceContainer name="header.container" remove="1"/>
+        <referenceContainer name="header.panel" remove="1"/>
+        <referenceContainer name="header-wrapper" remove="1"/>
+        <referenceContainer name="footer-container" remove="1"/>
+
+
+    </body>
+</page>

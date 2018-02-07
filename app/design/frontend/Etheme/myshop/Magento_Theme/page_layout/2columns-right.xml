@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="1column"/>
+    <referenceContainer name="columns">
+        <container name="main.columns.grid-row" htmlClass="row two-cols-identify" htmlTag="div">
+            <block class="Etheme\Myshop\Block\Template" name="back_link" template="html/back_link.phtml" before="-"/>
+            <container name="main.columns.grid-main" htmlId="centerColumn" htmlClass="col-md-8 col-lg-9 col-xl-10" htmlTag="div" before="-"/>
+            <container name="main.columns.grid-right" htmlId="rightColumn" htmlClass="col-md-4 col-lg-3 col-xl-2 aside" htmlTag="div"
+                       after="main.columns.grid-main"/>
+        </container>
+    </referenceContainer>
+    <move element="main" destination="main.columns.grid-main"/>
+    <move element="div.sidebar.main" destination="main.columns.grid-right"/>
+    <move element="div.sidebar.additional" destination="main.columns.grid-right"/>
+</layout>

@@ -1,0 +1,1303 @@
+<?php
+$store=$this->_coreRegistry->registry('store_for_css');
+$temp = $this->getColorOption('general/theme',$store);
+?>
+
+/* custom css */
+<?php if($temp=$this->getColorOption('custom_css/css_lines',$store)): ?>
+    <?php echo $temp ?>
+<?php endif; ?>
+
+/* background color */
+<?php if($temp=$this->getColorOption('general/body_bg',$store)): ?>
+    body { background:<?php echo $temp ?> }
+<?php endif; ?>
+
+/* text color */
+<?php if($temp=$this->getColorOption('general/text',$store)): ?>
+    body { color:<?php echo $temp ?> }
+<?php endif; ?>
+
+/* main theme color */
+<?php if($temp=$this->getColorOption('general/theme_main',$store)): ?>
+
+    a,
+    .contact-form .fieldset .field.required > .label::after,
+    .fieldset > .field.required > .label::after,
+    .fieldset > .fields > .field.required > .label::after,
+    .fieldset > .field._required > .label::after,
+    .fieldset > .fields > .field._required > .label::after,
+    ._header-white .header-menu > ul > li > a:hover,
+    ._header-white .header-menu > ul > li.hover > a,
+    ._header-white .header-menu > ul > li.active a,
+    ._header-white .cart .dropdown-toggle:hover .dropdown-label,
+    ._header-white .cart .dropdown-toggle:hover .icon,
+    ._header-white .account:hover .dropdown-toggle .icon,
+    ._header-white .search a.search-open:hover .icon,
+    h1 a:hover,
+    h2 a:hover,
+    h3 a:hover,
+    h4 a:hover,
+    h5 a:hover,
+    h6 a:hover,
+    .block-title span,
+    .block_title span,
+    .btn.btn-border,
+    .btn.btn-underline.color-base,
+    .box-wishlist:hover .icon,
+    .box-compare:hover .icon,
+    .desktop-header .mini-menu ul li a:hover,
+    .desktop-header .mini-menu ul .active a,
+    .mobile-header .mini-menu-dropdown .dropdown-toggle:hover,
+    .mobile-header .mini-menu-dropdown .mini-menu ul li a:hover,
+    ._dropdown-box:hover .dropdown-toggle,
+    .language:hover .dropdown-toggle,
+    .currency:hover .dropdown-toggle,
+    header .account:hover .dropdown-toggle .icon,
+    .dropdown .dropdown-menu > li > a:hover,
+    .dropdown .dropdown-menu > li > a:hover .icon,
+    .dropdown .dropdown-menu > li > a:hover .fa,
+    header .cart .dropdown-toggle:hover .icon,
+    header .cart .cart-close:hover,
+    header .cart ul .item .info .title a:hover,
+    header .cart ul .item .info .price,
+    header .cart ul .item .item-control a:hover,
+    header .cart .cart-bottom .cart-total .price-container .price,
+    .mobile-menu-toggle:hover .menu-text,
+    header .search a.search-open:hover .icon,
+    header .search .search-dropdown .input-outer button:hover,
+    header .search .search-dropdown .search-close:hover,
+    .panel-menu a:hover,
+    .mm-prev-level:hover:before,
+    .mm-next-level:hover:after,
+    .mm-close:hover:before,
+    .header-menu > ul > li > a:hover,
+    .header-menu > ul > li.hover > a,
+    .header-menu > ul > li.active a,
+    .header-menu .multicolumn ul li a:hover,
+    .header-menu .multicolumn ul li.hover > a,
+    .header-menu .title-underline:hover span:not([class]),
+    .header-menu .title-underline.active span,
+    .header-menu .menu-title:hover,
+    .header-menu .megamenu-submenu li a:hover,
+    .header-menu .megamenu-submenu > li ul a:hover,
+    .header-menu .megamenu-submenu li.hover > a,
+    .image-links-layout a:hover .figcaption,
+    .menu-vertical nav > ul > li > a:hover,
+    .menu-vertical nav > ul > li.hover > a,
+    .menu-vertical nav > ul > li.active a,
+    .menu-vertical nav .multicolumn ul li a:hover,
+    .menu-vertical nav .multicolumn ul li.hover > a,
+    .menu-vertical nav .title-underline:hover span:not([class]),
+    .menu-vertical nav .title-underline.active span,
+    .menu-vertical nav .menu-title:hover,
+    .menu-vertical nav .megamenu-submenu li a:hover,
+    .menu-vertical nav .megamenu-submenu > li ul a:hover,
+    .menu-vertical nav .megamenu-submenu li.hover > a,
+    .menu-content ul li a .title,
+    .menu-content ul li a:hover .icon,
+    .menu-content ul li.active a .icon,
+    .menu-aside ul li a:hover,
+    .menu-aside ul li.active a,
+    .tab-aside .nav-tabs--carusel > li a:hover,
+    .tab-aside .nav-tabs--carusel > li.active > a,
+    .tab-aside .nav-tabs--carusel > li > a:hover,
+    .video-link-product > div .icon,
+    .video-link-product:hover .title,
+    .box-product-info ul li a:hover,
+    .box-product-info .btn-link:hover,
+    .filter-isotop .nav-tab-filter button:hover,
+    .filter-isotop .nav-tab-filter button.is-checked,
+    .promo-box:hover .btn-underline.btn-base:hover,
+    .toggle-menu .dropdown-menu ul li a:hover,
+    .subcategory-item .title,
+    .blog-thumb .title:hover,
+    .blog-thumb .data b,
+    .blog-thumb .data a,
+    .services-block:hover .title,
+    .services-block-border .icon,
+    .services-block-border:hover .title,
+    .product_holder .image-box .quick-view .icon,
+    .product_holder .title a:hover,
+    .product_holder .price-box .price,
+    .product_holder .product_inside_info_link li:hover,
+    .product_holder .product_inside_info_link li:hover a,
+    .product_holder .product_inside_info_link li:hover a span.text,
+    .reviews-actions a:hover,
+    .tabs-wrapper .nav-tabs--carusel > li a:hover,
+    .tabs-wrapper .nav-tabs--carusel > li.active > a,
+    .tabs-wrapper .nav-tabs--carusel > li.active > a:hover,
+    .tabs-wrapper .nav-tabs--carusel > li.active > a:focus,
+    .product-listing.row-view .quick-view.btn .icon,
+    .product-listing.row-view .quick-view.btn:hover,
+    .pagination ul li a:hover,
+    .pagination ul li.active a,
+    .filters-row .link-view:hover,
+    .filters-row .link-view.active,
+    .filters-row .link-view-mobile:hover,
+    .filters-row .link-view-mobile.active,
+    .filters-row .link-mode:hover .icon,
+    .filters-row .link-mode.active .icon,
+    .modes .modes-mode:hover:before,
+    .modes .modes-mode.active:before,
+    .sorter .sorter-action:hover,
+    .pages li.item strong.page,
+    .pages li.item a.page:hover,
+    .block.filter .items li.item a:hover,
+    .block.filter .items li.item .count,
+    .block-wishlist .product-items .product-item .product-item-info .price-box .price,
+    .account-nav ul.items li a:hover,
+    .account-nav ul.items li.active a,
+    .aside-featured-product .product-content .title a:hover,
+    .aside-featured-product .product-content .price,
+    .radio:hover,
+    .filter-list .filter-value,
+    .radio-list li.active label,
+    .compare-aside .title:hover,
+    .list-simple li a:hover,
+    .list-simple li.active a,
+    .list-simple-dot li a:hover,
+    .list-simple-dot li.active a,
+    .decimal-list a:hover,
+    .slide-column-close a,
+    .review a,
+    .product-info-main .stock.available span,
+    .product-info-main .price-box .price,
+    .product-info-main .product-reviews-summary .reviews-actions a,
+    .product-info-main .product-social-links .action.mailto:hover,
+    .product-info-main .product-addto-links ul li:hover,
+    .product-info-main .product-addto-links ul li:hover a,
+    .product-info-main dl.items.samples dd a,
+    .bundle-options-container .block-bundle-summary .bundle-info .price-box .price,
+    .product.attribute.description ul li a:hover,
+    .product.attribute.description ul li.active a,
+    .product.attribute.description ol a:hover,
+    .review-list .block-title,
+    .review-add .block-title,
+    .review-add .fieldset .legend span,
+    .product-info .price,
+    .product-info .product_inside_info_link li:hover,
+    .product-info .product_inside_info_link li:hover a,
+    .nav-tabs-ms > li a:hover,
+    .nav-tabs-ms > li.active > a,
+    .nav-tabs-ms > li.active > a:hover,
+    .nav-tabs-ms > li.active > a:focus,
+    .link-icon:hover,
+    .modal .modal-header .close:hover,
+    #modalLoginForm .modal-login .link-functional li a:hover,
+    .form-group.active .input-group-addon .icon,
+    .checkbox-group:hover label,
+    #modalAddToCartProduct .modal-add-cart-product .total span,
+    #modalAddToCartProduct .modal-add-cart-product .cart-item-total .icon,
+    .modal-compare .button-close:hover,
+    .modal-compare .title-top:hover,
+    .modal-compare .row-content .item .title:hover,
+    .modal-compare .row-content .item .price,
+    .modal-wishlist .button-close:hover,
+    .modal-wishlist .title-top:hover,
+    .modal-wishlist .row-content .item .title:hover,
+    .modal-wishlist .row-content .item .price,
+    .modal-wishlist .row-content .item .icon-check,
+    .list-info ul li a,
+    .list-info-center li a,
+    .box-copyright a:hover,
+    .box-copyright span,
+    footer a,
+    footer.dark_theme .services-block:hover .title,
+    .v-links-list ul li a:hover,
+    .post .title-block .post-title h2 a:hover,
+    .post .post-meta b,
+    .post .post-meta a,
+    .post .post-social-icon .social-icon li a:hover,
+    .post .post-social-icon .social-icon li.active a,
+    .blog-single-post .container-fluid .title-block .post-tag a:hover,
+    .blog-single-post .container-fluid .title-block .post-title a:hover,
+    .blog-single-post .post-meta b,
+    .blog-single-post .post-meta a,
+    .blog-single-post .post-social-icon .social-icon li a:hover,
+    .blog-single-post .post-social-icon .social-icon li.active a,
+    .blog-single-post .nav-single-post .next:hover,
+    .blog-single-post .nav-single-post .prev:hover,
+    .blog-single-post .nav-single-post .next:hover:before,
+    .blog-single-post .nav-single-post .prev:hover:before,
+    .comments .media-body .media-title .link,
+    .featured-post .title:hover,
+    .featured-post .description span,
+    .featured-post .comment,
+    .recent-comments .author span,
+    .recent-comments .recent-title:hover,
+    p.first-letter:first-letter,
+    .slider-revolution .video-play a:hover,
+    .shopping-cart-table .product-title a:hover,
+    .shopping-cart-table .product-delete:hover,
+    .shopping-cart-table .product-edit:hover,
+    .shopping-cart-table .product-wish:hover,
+    .shopping-cart-table .subtotal,
+    .table.table-totals td strong,
+    .block.items-in-cart .minicart-items .subtotal .price,
+    .opc-progress-bar li._complete:before,
+    .table-checkout-shipping-method td .price,
+    .checkout-agreement label button.action,
+    .nav-tabs.checkout-tab li .numeral-box .icon,
+    .checkout-tab-content .form-group label span,
+    .checkout-box-03 .item .description .title:hover,
+    .checkout-box-03 .item .description .price,
+    .shopping-cart-box-aside .totals-block-wrapper .data.totals .grand.totals td,
+    .shopping-cart-box-aside .totals-block-wrapper .checkout-methods-items li a,
+    .table-total tfoot td,
+    .wishlist-table .product-title a:hover,
+    .wishlist-table .product-delete:hover,
+    .wishlist-table .product-check,
+    .wishlist-table .subtotal,
+    .filter-nav div:hover,
+    .filter-nav div.current,
+    .form-icon,
+    .collection h2,
+    .lookbook .hint-price,
+    .box-faq .title,
+    .login-form-box .additional-links li a:hover,
+    .login-form-box .additional-links-01 a:hover,
+    .link-functional:hover,
+    .link-functional .icon,
+    .block.block-dashboard-orders .block-title,
+    .block.block-dashboard-info .block-title,
+    .block.block-dashboard-addresses .block-title,
+    .block-addresses-default .block-title,
+    .block-addresses-list .block-title,
+    .block-reviews-dashboard .block-title,
+    .products-grid.wishlist .product-item-name a:hover,
+    .products-grid.wishlist .product-item .price-box .price,
+    .personal-block .title span,
+    .personal-block .title:hover,
+    .link-promo .title,
+    .link-promo .description,
+    .blog-fluid .icon,
+    .blog-fluid a:hover .title,
+    .box-about .list li a,
+    .list-information li .icon,
+    .list-information li a,
+    .list-information-center li a,
+    .table-comparison .cell.remove .action.delete:hover:before,
+    .table-wrapper.comparison .price-box .price,
+    .table-wrapper.comparison .actions-secondary a:hover,
+    .addtocart_compare,
+    .compare-table table .link-close:hover,
+    .link-print:hover,
+    .link-print:hover .icon,
+    .breadcrumb ul li,
+    .breadcrumb ul li a:hover,
+    .link,
+    .mobile-header .search .btn-search:hover:after,
+    .header-08 .header-menu > ul > li > a:hover,
+    .header-08 .header-menu > ul > li.hover > a,
+    .header-08 .header-menu > ul > li.active a,
+    .header-08 .cart .dropdown-toggle:hover .dropdown-label,
+    .header-08 .cart .dropdown-toggle:hover .icon,
+    .header-08 .account:hover .dropdown-toggle .icon,
+    .header-08 .search a.search-open:hover .icon,
+    .privacy-policy-content ul li a:hover,
+    .privacy-policy-content ul li.active a
+
+    { color:<?php echo $temp ?>; }
+
+    @media (max-width: 1299px) {
+    .product-listing.row-view .btn-product_addtocart.btn:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+    @media only screen and (max-width: 1024px) {
+    .tt-tabs .tt-tabs__body > div:hover > span,
+    .tt-tabs .tt-tabs__body > div.active > span {
+    color:<?php echo $temp ?>;
+    }
+    }
+    @media only screen and (min-width: 1025px) {
+    .tt-tabs .tt-tabs__head > ul > li > span:hover,
+    .tt-tabs .tt-tabs__head > ul > li.active > span {
+    color:<?php echo $temp ?>;
+    }
+    }
+    @media (min-width: 790px) {
+    .services-block .icon {
+    color:<?php echo $temp ?>;
+    }
+    }
+    @media (max-width: 789px) {
+    .services-block:hover,
+    footer.dark_theme .services-block:hover,
+    footer .mobile-collapse_title:hover,
+    footer .mobile-collapse_title:hover:before {
+    color:<?php echo $temp ?>;
+    }
+    }
+    @media (max-width: 750px) {
+    .nav-tabs-ms > li.active > a,
+    .nav-tabs-ms > li.active > a:hover,
+    .nav-tabs-ms > li.active > a:focus {
+    color:<?php echo $temp ?>;
+    }
+    }
+
+    .mfp-iframe-holder .mfp-close,
+    .mfp-image-holder .mfp-close
+    .has-success label,
+    .has-success .form-control-feedback,
+    .has-success .form-control-hint,
+    .aside .link-close:hover,
+    .footer-menu ul li a:hover,
+    .lookbook .hint a:hover .hint-title,
+    .lookbook .hint a:hover .hint-title.color-defaulttext2,
+    .color-base
+    { color:<?php echo $temp ?> !important; }
+
+    ._header-white .toggle-menu .dropdown-toggle:hover .icon-bar,
+    .btn,
+    .action.primary,
+    button.action,
+    .modal-footer button,
+    header .cart .badge,
+    header .cart .badge-cart .loading-mask,
+    .mobile-menu-toggle:hover .icon-bar,
+    .testimonialsAsid,
+    .toggle-menu .dropdown-toggle:hover .icon-bar,
+    .product_holder .btn-product_addtocart,
+    .price-slider .noUi-connect,
+    .slide-column-close a:hover,
+    .widget.block-tagclaud a,
+    .post .title-block .post-tag a,
+    .post .title-block .link-text,
+    .post .audio-link:hover,
+    .blog-single-post .container-fluid .title-block .post-tag a,
+    .quote-left:after,
+    .tp-bullets.simplebullets.round .bullet:hover,
+    .tp-bullets .tp-bullet:hover,
+    .header-08 .toggle-menu .dropdown-toggle:hover .icon-bar
+    { background:<?php echo $temp ?>; }
+
+    .btn.invert:hover,
+    .btn.disable:hover,
+    .btn.btn-inversion:hover,
+    button.action.btn-inversion:hover,
+    .btn-ajax .btn-ajax-finish,
+    .fotorama__arr:hover .fotorama__arr__arr,
+    .fill-bg-base
+    { background:<?php echo $temp ?> !important; }
+
+
+    ._instafeed-default a:after,
+    .instafeed a:after,
+    .instafeed-fluid a:after,
+    .product_holder .image-box .quick-view:hover > span,
+    .radio input:focus + .outer .inner,
+    .radio .inner
+    { background-color:<?php echo $temp ?>; }
+
+    @media (min-width: 790px) {
+    .subscribe-box-01 {
+    background: <?php echo $temp ?>;
+    }
+    }
+    @media (max-width: 789px) {
+    .back-to-top {
+    background-color: <?php echo $temp ?>;
+    }
+    }
+
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="url"]:focus,
+    input[type="tel"]:focus,
+    input[type="search"]:focus,
+    input[type="number"]:focus,
+    input[type="datetime"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus,
+    .btn.btn-border,
+    .btn.btn-underline.color-base,
+    ._dropdown-box:hover .caret,
+    .language:hover .caret,
+    .currency:hover .caret,
+    .header-menu .title-underline:hover span:not([class]),
+    .menu-vertical nav .title-underline:hover span:not([class]),
+    .promo-border:hover,
+    .form-control:focus,
+    .services-block-border:hover,
+    .opc-progress-bar li._complete:before,
+    .opc-wrapper .shipping-address-item.selected-item,
+    .nav-tabs.checkout-tab li:first-child .numeral-box
+    {
+    border-color:<?php echo $temp ?>;
+    }
+
+    .btn.btn-inversion:hover,
+    button.action.btn-inversion:hover,
+    .has-success .form-control,
+    .fotorama__thumb-border
+    {
+    border-color: <?php echo $temp ?> !important;
+    }
+
+
+<?php endif; ?>
+
+/* link color */
+<?php if($temp=$this->getColorOption('general/links',$store)): ?>
+    a { color:<?php echo $temp ?>}
+<?php endif; ?>
+
+/* link hover color */
+<?php if($temp=$this->getColorOption('general/links_hover',$store)): ?>
+    a:hover{ color:<?php echo $temp ?>}
+<?php endif; ?>
+
+/* borders color */
+<?php if($temp=$this->getColorOption('general/borders_color',$store)): ?>
+
+    hr,
+    .top-line,
+    .language,
+    .currency,
+    .dropdown .dropdown-menu > li > a,
+    .collapse-block, .filter-options-item,
+    .breadcrumb ul li:not(:last-child),
+    .mobile-header .mini-menu-dropdown .mini-menu ul li a,
+    header .cart ul .item,
+    .panel-menu li,
+    .video-link-product > div,
+    .video-link-product:hover,
+    .promo-border,
+    .toggle-menu .dropdown-menu ul li,
+    .services-block-border,
+    .product_holder .options-swatch-color .swatch-label.color-white:before,
+    .pagination ul li a,
+    .pagination ul li a:hover,
+    .filters-row .link-view-mobile,
+    .filters-row .link-mode,
+    .toolbar-bottom,
+    .modes .modes-mode,
+    .pages li.item a.page,
+    .pages li.item strong.page,
+    .pages li.item a.page:hover,
+    .collapse-block,
+    .options-swatch-color li .swatch-label.color-white:before,
+    .bundle-options-container .product-options-wrapper .field.option,
+    .review-list .review-items,
+    .review-list .review-items .review-item,
+    .tt-tabs .tt-tabs__body > div:not(:first-child) > span,
+    .nav-tabs-ms,
+    .table-1 > thead > tr > th,
+    .table-1 > tbody > tr > th,
+    .table-1 > tfoot > tr > th,
+    .table-1 > thead > tr > td,
+    .table-1 > tbody > tr > td,
+    .table-1 > tfoot > tr > td,
+    .table-2 > thead > tr > th,
+    .table-2 > tbody > tr > th,
+    .table-2 > tfoot > tr > th,
+    .table-2 > thead > tr > td,
+    .table-2 > tbody > tr > td,
+    .table-2 > tfoot > tr > td,
+    .table-parameters tbody tr td,
+    .table-params td,
+    .table-params tr:last-child td,
+    .table-order-history tr,
+    .table-order-history td,
+    .table-order-history th,
+    .table-order-history th,
+    .reviews-comments,
+    .table-product tr,
+    .post:not(.no-line),
+    .block-aside,
+    .shopping-cart-table tr:first-child,
+    .shopping-cart-table tr,
+    .opc-block-summary,
+    .checkout_totals_wrapper,
+    .ship-to,
+    .ship-via,
+    div.checkout-shipping-method,
+    .checkout-payment-method .discount-code,
+    .opc-wrapper .shipping-address-item,
+    .checkout-box-aside .checkout-box,
+    .nav-tabs.checkout-tab li .numeral-box,
+    .shopping-cart-box,
+    .aside-checkout-block,
+    .login-form-box,
+    .login-form-box .additional-links li:not(:last-child),
+    .forgot-password,
+    .create-account-block,
+    .on-duty-box .btn_continue_shopping a,
+    .compare-table table,
+    .compare-table table tr,
+    .compare-table table tr td,
+    header .mobile-header .top-line,
+    .header-02 .account,
+    .header-03 .account
+    {
+    border-color:<?php echo $temp ?>;
+    }
+
+    .collapse-block.account-nav:not(.filters_row):last-child,
+    .table.additional-attributes tr th,
+    .table.additional-attributes tr td,
+    .table-product th,
+    .checkout-payment-method .payment-method-title,
+    .table-wrapper.comparison th,
+    .table-wrapper.comparison td,
+    .table-wrapper.comparison .table-comparison .cell.product.info,
+    .table-wrapper.comparison .table-comparison .cell.product.label,
+    .table-wrapper.comparison th,
+    .table-wrapper.comparison td:not(:last-child)
+
+    {
+    border-color:<?php echo $temp ?> !important;
+    }
+
+
+    @media (min-width: 1024px) {
+    .leftColumn:after,
+    .rightColumn:after {
+    background:<?php echo $temp ?>;
+    }
+    }
+
+    .list-info-center li:after,
+    .opc-progress-bar li:after {
+    background:<?php echo $temp ?>;
+    }
+
+    @media (max-width: 1024px) {
+    .tt-tabs .tt-tabs__body > div > div,
+    .tt-tabs .tt-tabs__body {
+    border-color:<?php echo $temp ?>;
+    }
+    }
+
+    @media (min-width: 790px) {
+    .footer-content-col .container:not(:first-child):before {
+    background:<?php echo $temp ?>;
+    }
+    }
+    @media (max-width: 789px) {
+    .block-aside:first-child,
+    #pageContent .mobile-collapse,
+    #maincontent .mobile-collapse,
+    footer .mobile-collapse {
+    border-color:<?php echo $temp ?>;
+    }
+    }
+
+    .image-links-layout.border li a .figure {
+    outline: 1px solid <?php echo $temp ?>;
+    }
+
+    @media (max-width: 750px) {
+    .nav-tabs-ms > li {
+    display: block;
+    border-color:<?php echo $temp ?>;
+    }
+    }
+
+    @media (min-width: 1023px) {
+    .box-aside:not(:last-child) {
+    border-color:<?php echo $temp ?>;
+    }
+    }
+    @media (max-width: 1023px) {
+    .checkout-box-aside .checkout-box:first-child {
+    border-color:<?php echo $temp ?>;
+    }
+    }
+
+
+<?php endif; ?>
+
+
+/* -------------------------Buttons */
+/* Btn text */
+<?php if($temp=$this->getColorOption('buttons_colors/text',$store)): ?>
+    .btn, .action.primary, button.action
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+/* Btn text hover */
+<?php if($temp=$this->getColorOption('buttons_colors/text_hover',$store)): ?>
+    .btn:hover, .action.primary:hover, button.action:hover
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+/* Btn Bg */
+<?php if($temp=$this->getColorOption('buttons_colors/background',$store)): ?>
+    .btn, .action.primary, button.action, .btn:active, .btn:visited, .btn:focus, .action.primary:active, .action.primary:visited, .action.primary:focus, button.action:active, button.action:visited, button.action:focus
+    { background:<?php echo $temp ?>}
+<?php endif; ?>
+
+/* Btn Bg hover */
+<?php if($temp=$this->getColorOption('buttons_colors/background_hover',$store)): ?>
+    .btn:hover, .action.primary:hover, button.action:hover
+    { background:<?php echo $temp ?>}
+<?php endif; ?>
+
+
+/* Btn Link text */
+<?php if($temp=$this->getColorOption('buttons_colors/text_link',$store)): ?>
+    .btn-link, button.action.btn-link
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+
+/* Btn Link text hover */
+<?php if($temp=$this->getColorOption('buttons_colors/text_link_hover',$store)): ?>
+    .btn-link:hover, button.action.btn-link:hover
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+
+/* Btn Link Icon */
+<?php if($temp=$this->getColorOption('buttons_colors/text_link_icon',$store)): ?>
+    .btn-link .icon, button.action.btn-link .icon
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+
+/* Btn Link Icon hover */
+<?php if($temp=$this->getColorOption('buttons_colors/text_link_icon_hover',$store)): ?>
+    .btn-link:hover .icon, button.action.btn-link:hover .icon
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+
+/* ----------- Inputs ---------- */
+/* Input text */
+<?php if($temp=$this->getColorOption('inputs/input_text',$store)): ?>
+    input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"],
+    textarea,
+    select
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('inputs/input_bg',$store)) { ?>
+    input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"],
+    textarea,
+    select
+    { background-color:<?php echo $temp ?>}
+<?php } else { ?>
+    input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"],
+    textarea,
+    select
+    { background:none; }
+<?php } ?>
+<?php if($temp=$this->getColorOption('inputs/input_border',$store)): ?>
+    input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"],
+    textarea,
+    select
+    { border-color:<?php echo $temp ?>; }
+<?php endif; ?>
+
+/* ----------- Megamenu ---------- */
+/* Links 1 level */
+<?php if($temp=$this->getColorOption('megamenu/links_1_level',$store)): ?>
+    @media (min-width: 1025px) {
+    [data-tm-style='horizontal'] .tonyMenu__navbar > ul > li > a {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+/* Links 1 line */
+<?php if($temp=$this->getColorOption('megamenu/links_1_level_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    [data-tm-style='horizontal'] .tonyMenu__nav-list > li > a:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+/* Links 2 level */
+<?php if($temp=$this->getColorOption('megamenu/links_2_level',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__head-title,
+    .tonyMenu h2.title-submenu {
+    color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Links 2 level */
+<?php if($temp=$this->getColorOption('megamenu/links_2_level_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__head-title:hover {
+    color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Links 2 line */
+<?php if($temp=$this->getColorOption('megamenu/links_2_level_line',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__head-title {
+    border-color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Links 2 line */
+<?php if($temp=$this->getColorOption('megamenu/links_2_level_line_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__head-title:hover {
+    border-color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Links 3 level */
+<?php if($temp=$this->getColorOption('megamenu/links_3_level',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__inner-list-items li:not(.tonyMenu__inner-list-image) a {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+/* Links 3 level */
+<?php if($temp=$this->getColorOption('megamenu/links_3_level_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__inner-list-items li:not(.tonyMenu__inner-list-image):hover a {
+    color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Links 3 arrow */
+<?php if($temp=$this->getColorOption('megamenu/links_3_level_arrow',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__item-next-level::after {
+    border-left-color: <?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+/* Label text */
+<?php if($temp=$this->getColorOption('megamenu/label_color',$store)): ?>
+    .badge-menu {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Label bg */
+<?php if($temp=$this->getColorOption('megamenu/label_bg',$store)): ?>
+    .badge-menu {
+    background:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Dropdown shape background */
+<?php if($temp=$this->getColorOption('megamenu/dropdown_bg',$store)): ?>
+    .tonyMenu__megamenu {
+    background:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Sticky menu shape background */
+<?php if($temp=$this->getColorOption('megamenu/sticky_bg',$store)): ?>
+    .stuck-nav {
+    background:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Sticky menu link color */
+<?php if($temp=$this->getColorOption('megamenu/sticky_link',$store)): ?>
+    @media (min-width: 1025px) {
+    .stuck-nav [data-tm-style='horizontal'] .tonyMenu__navbar > ul > li > a {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+/* Sticky menu link hover */
+<?php if($temp=$this->getColorOption('megamenu/sticky_link_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .stuck-nav [data-tm-style='horizontal'] .tonyMenu__navbar > ul > li > a:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+/* Simple menu text */
+<?php if($temp=$this->getColorOption('megamenu/links_simple_text',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__head-title,
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__inner-list-items li:not(.tonyMenu__inner-list-image) a {
+    color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Simple menu text hover */
+<?php if($temp=$this->getColorOption('megamenu/links_simple_text_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__head-title:hover,
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__inner-list-items li:not(.tonyMenu__inner-list-image) a:hover {
+    color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Simple menu bg */
+<?php if($temp=$this->getColorOption('megamenu/links_simple_background',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__megamenu.tonyMenu__simple,
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__inner-list-items > li ul {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+/* Simple menu bg hover */
+<?php if($temp=$this->getColorOption('megamenu/links_simple_background_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__megamenu.tonyMenu__simple ul li a:hover {
+    background:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* Simple menu border */
+<?php if($temp=$this->getColorOption('megamenu/links_simple_border',$store)): ?>
+    @media (min-width: 1025px) {
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__head-title,
+    .tonyMenu__megamenu.tonyMenu__simple  .tonyMenu__inner-list-items li:not(.tonyMenu__inner-list-image):not(:last-child),
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__head-title:not(:last-child),
+    .tonyMenu__megamenu.tonyMenu__simple .tonyMenu__head-title:hover {
+    border-color: <?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+
+/* ------------------Mobile menu  */
+/* Bg shape */
+<?php if($temp=$this->getColorOption('mobile_menu/shape_bg',$store)): ?>
+    @media (max-width: 1024px) {
+    .tonyMenu {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+/* Border link */
+<?php if($temp=$this->getColorOption('mobile_menu/links_border',$store)): ?>
+    @media (max-width: 1024px) {
+    .tonyMenu__nav-list > li {
+    border-bottom: 1px solid <?php echo $temp ?> !important;
+    }
+    .tonyMenu__nav-list > li li {
+    border-top: 1px solid <?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+/* Links color */
+<?php if($temp=$this->getColorOption('mobile_menu/links_color',$store)): ?>
+    @media (max-width: 1024px) {
+    .tonyMenu__nav-list li a, .tonyMenu__nav-list li a > span {
+    color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+/* Arrow color */
+<?php if($temp=$this->getColorOption('mobile_menu/arrow_color',$store)): ?>
+    @media (max-width: 1024px) {
+    .tonyMenu__item-next-level::after {
+    border-color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+/* Links color active */
+<?php if($temp=$this->getColorOption('mobile_menu/links_color_active',$store)): ?>
+    @media (max-width: 1024px) {
+    .tonyMenu__open > a,
+    .tonyMenu__nav-list li a:hover,
+    .tonyMenu__nav-list li a:hover > span,
+    .tonyMenu__nav-list li.dl-close:hover a,
+    .tonyMenu__nav-list li.dl-close:hover a .icon-close {
+    color:<?php echo $temp ?> !important;
+    }
+    }
+<?php endif; ?>
+/* Links background active */
+<?php if($temp=$this->getColorOption('mobile_menu/bg_links_active',$store)): ?>
+    @media (max-width: 1024px) {
+    .tonyMenu__open > a,
+    .tonyMenu__nav-list li a:hover,
+    .tonyMenu__nav-list li:not(.tonyMenu__open):hover > a {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+
+
+/* ------------------Captions  */
+/* Title text color */
+<?php if($temp=$this->getColorOption('captions_colors/text',$store)): ?>
+    .page-title-wrapper h1, .page-title-wrapper h2, .block-title {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Sidebar captions */
+<?php if($temp=$this->getColorOption('captions_colors/sidebar_caption',$store)): ?>
+    .collapse-block_title {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* --------------------Breadcrumbs  */
+/* Current page */
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/active_page',$store)): ?>
+    .breadcrumb ul li {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Links */
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/links',$store)): ?>
+    .breadcrumb ul li a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Links:hover */
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/links_hover',$store)): ?>
+    .breadcrumb ul li a:hover {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Icon Color */
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/separator',$store)): ?>
+    .breadcrumb ul li:not(:last-child) {
+    border-color: <?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Icon Color */
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/icon_color',$store)): ?>
+    .breadcrumbs_block .breadcrumb_list.breadcrumb--ys > li.home a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* Icon Background */
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/icon_background',$store)): ?>
+    .breadcrumbs_block .breadcrumb_list.breadcrumb--ys > li.home a {
+    background:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* --------------------Footer  */
+/* Footer BG */
+<?php if($temp=$this->getColorOption('footer/footer_bg',$store)): ?>
+    footer {
+    background:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Back to top color */
+<?php if($temp=$this->getColorOption('footer/back_to_bg',$store)): ?>
+    .back-to-top {
+    background:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('footer/cols_text',$store)): ?>
+    footer .mobile-collapse_title {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Links color */
+<?php if($temp=$this->getColorOption('footer/cols_link',$store)): ?>
+    footer .v-links-list ul li a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Links hover */
+<?php if($temp=$this->getColorOption('footer/cols_link_hover',$store)): ?>
+    footer .v-links-list ul li a:hover {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Copyright bg color */
+<?php if($temp=$this->getColorOption('footer/copyright_bg',$store)): ?>
+    footer .copyright {
+    background:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Copyright text color */
+<?php if($temp=$this->getColorOption('footer/copyright_color',$store)): ?>
+    .box-copyright {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Copyright link color */
+<?php if($temp=$this->getColorOption('footer/copyright_link',$store)): ?>
+    .box-copyright a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Socials icon */
+<?php if($temp=$this->getColorOption('footer/socials_icon_color',$store)): ?>
+    .social-icon-round li a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Socials block bg hover */
+<?php if($temp=$this->getColorOption('footer/socials_icon_color_hover',$store)): ?>
+    .social-icon-round li:hover a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Socials icon hover */
+<?php if($temp=$this->getColorOption('footer/socials_icon_border',$store)): ?>
+    .social-icon-round li {
+    border-color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Socials bg hover */
+<?php if($temp=$this->getColorOption('footer/socials_bg_hover',$store)): ?>
+    .social-icon-round li:hover {
+    border-color:<?php echo $temp ?>;
+    }
+    .social-icon-round li:hover a {
+    border-color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* --------------------Products listing  */
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/block_bg',$store)): ?>
+    .product_holder .product_inside,
+    .product_holder {
+    background:<?php echo $temp ?>;
+    }
+    @media (min-width: 1299px) {
+    .product_inside_hover {
+    background: <?php echo $temp ?>;
+    }
+    }
+    @media (min-width: 1300px) {
+    .product_holder.hovered .product_inside, .product_holder:hover .product_inside {
+    background: <?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/name',$store)): ?>
+    .product_holder .title a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/name_hover',$store)): ?>
+    .product_holder .title a:hover {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/wishlist_compare_links',$store)): ?>
+    .product_holder .product_inside_info_link li a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/wishlist_compare_links_hover',$store)): ?>
+    .product_holder .product_inside_info_link li:hover a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/sale_lable_bg',$store)): ?>
+    .product_holder .image-box .label-sale {
+    background:<?php echo $temp ?>;
+    }
+    .product_holder .image-box .label-sale::after {
+    border-color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/sale_lable_color',$store)): ?>
+    .product_holder .image-box .label-sale {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/new_lable_bg',$store)): ?>
+    .product_holder .image-box .label-new {
+    background:<?php echo $temp ?>;
+    }
+    .product_holder .image-box .label-new::after {
+    border-color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/new_lable_color',$store)): ?>
+    .product_holder .image-box .label-new {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/regular_price',$store)): ?>
+    .product_holder .price-box .price {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/special_price',$store)): ?>
+    .product_holder .price-box .special-price .price {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+/* Colums Title color */
+<?php if($temp=$this->getColorOption('products_listing/old_price',$store)): ?>
+    .product_holder .price-box .old-price .price {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+/* -------------------- Header  */
+<?php if($temp=$this->getColorOption('header_colors/welcome',$store)): ?>
+    .slogan {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/drop_label',$store)): ?>
+    .dropdown .dropdown-label,
+    .language .dropdown-label,
+    .currency .dropdown-label
+    {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/drop_link',$store)): ?>
+    .currency .dropdown-toggle,
+    .language .dropdown-toggle {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/drop_link_hover',$store)): ?>
+    .currency:hover .dropdown-toggle,
+    .language:hover .dropdown-toggle {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/cart_link',$store)): ?>
+    header .cart .dropdown-toggle .dropdown-label {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/cart_link_hover',$store)): ?>
+    header .cart .dropdown-toggle:hover .dropdown-label {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/cart_link_icon',$store)): ?>
+    header .cart .dropdown-toggle .icon {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/cart_link_icon_hover',$store)): ?>
+    header .cart .dropdown-toggle:hover .icon {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/badge_color',$store)): ?>
+    header .cart .badge {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/badge_bg',$store)): ?>
+    header .cart .badge {
+    background-color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/search_link',$store)): ?>
+    header .search a.search-open .icon,
+    header .search .search-dropdown .search-close {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/search_link_hover',$store)): ?>
+    header .search a.search-open:hover .icon,
+    header .search .search-dropdown .search-close:hover {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/acc_link',$store)): ?>
+    header .account .dropdown-toggle .icon {
+    color:<?php echo $temp ?>;
+    }
+    header .account .dropdown-label {
+    color:<?php echo $temp ?> !important;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/acc_link_hover',$store)): ?>
+    header .account:hover .dropdown-toggle .icon {
+    color:<?php echo $temp ?>;
+    }
+    header .account:hover .dropdown-toggle .dropdown-label {
+    color:<?php echo $temp ?> !important;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/top_links_color',$store)): ?>
+    .desktop-header .mini-menu ul li a {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/top_links_color_hover',$store)): ?>
+    .desktop-header .mini-menu ul li a:hover {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+<?php if($temp=$this->getColorOption('header_colors/mobile_drop_link',$store)): ?>
+    header .mobile-header .currency .dropdown-toggle,
+    header .mobile-header .language .dropdown-toggle,
+    header .mobile-header .currency .caret,
+    header .mobile-header .language .caret {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/mobile_drop_link_hover',$store)): ?>
+    header .mobile-header .currency:hover .dropdown-toggle,
+    header .mobile-header .language:hover .dropdown-toggle,
+    header .mobile-header .currency:hover .caret,
+    header .mobile-header .language:hover .caret {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/mobile_search_link',$store)): ?>
+    header .mobile-header .search a.search-open .icon {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/mobile_search_link_hover',$store)): ?>
+    header .mobile-header .search a.search-open:hover .icon {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/mobile_acc_link',$store)): ?>
+    header .mobile-header .account .dropdown-toggle .icon {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/mobile_acc_link_hover',$store)): ?>
+    header .mobile-header .account .dropdown-toggle:hover .icon {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+
+<?php
+$_helper = $this->helper('Etheme\Myshop\Helper\Data');
+?>
+<?php if($_helper->getSystemValue('myshop_settings/fonts/own')):?>
+    h1,h2,h3,h4,h5,h6 {
+    <?php if($_helper->getSystemValue('myshop_settings/fonts/font')=='google'):?>
+        font-family:<?php echo $_helper->getSystemValue('myshop_settings/fonts/font_google')?>
+    <?php elseif($_helper->getSystemValue('myshop_settings/fonts/font')=='custom'):?>
+        font-family:<?php echo $_helper->getSystemValue('myshop_settings/fonts/font_custom')?>
+    <?php else:?>
+        font-family:<?php echo $_helper->getSystemValue('myshop_settings/fonts/font')?>
+    <?php endif; ?>
+    }
+<?php endif;?>
+
+
+

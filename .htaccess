@@ -1,9 +1,8 @@
-#For performance and security reasons, this file will have no effect, it's just meant for use in development environments
 ############################################
 ## overrides deployment configuration mode value
 ## use command bin/magento deploy:mode:set to switch modes
 
-#   SetEnv MAGE_MODE developer
+   SetEnv MAGE_MODE developer
 
 ############################################
 ## uncomment these lines for CGI mode
@@ -143,7 +142,7 @@
 ## you can put here your magento root folder
 ## path relative to web root
 
-    ##RewriteBase /magento/
+    #RewriteBase /magento/
 
 ############################################
 ## workaround for HTTP authorization
@@ -419,5 +418,3 @@ ErrorDocument 403 /pub/errors/404.php
     </FilesMatch>
 
 </IfModule>
-
-#RewriteBase /magento/

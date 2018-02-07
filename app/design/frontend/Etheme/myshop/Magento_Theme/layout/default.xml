@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <referenceContainer name="page.top">
+            <referenceContainer name="navigation.sections" remove="true"/>
+        </referenceContainer>
+        <!-- Logo -->
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">210</argument>
+                <argument name="logo_img_height" xsi:type="number">66</argument>
+            </arguments>
+        </referenceBlock>
+        <!-- Logo END -->
+        <move element="page.main.title" before="-" destination="main.columns.grid-main"/>
+        <referenceContainer name="footer" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+
+        <!-- Page messages -->
+        <referenceContainer name="page.messages" htmlClass="page-messages messages">
+            <container name="page.messages.grid-container" htmlClass="container" htmlTag="div" before="-"/>
+        </referenceContainer>
+        <move element="ajax.message.placeholder" destination="page.messages.grid-container"/>
+        <move element="messages" destination="page.messages.grid-container"/>
+        <!-- Page messages END -->
+    </body>
+</page>

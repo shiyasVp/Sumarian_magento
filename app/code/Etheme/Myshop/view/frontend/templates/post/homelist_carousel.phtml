@@ -1,0 +1,64 @@
+<?php
+/**
+ * Copyright © 2016 Alexander Lukjanenko (alexander.lukjanenko@gmail.com)
+ */
+
+use Magento\Framework\App\Action\Action;
+
+?>
+<?php
+$_postCollection = $block->getPostCollection();
+$styles = array(
+    0 => '',
+    1 => 'double',
+    2 => 'double double-revert'
+);
+?>
+<?php if (!$_postCollection->count()): ?>
+    <!-- No blog posts found -->
+<?php else: ?>
+    <!-- recent-posts-carousel -->
+    <div class="container">
+        <h1 class="block-title"><?php echo __($this->getTitle()); ?></h1>
+        <div class="row">
+            <div class="carousel-products-1 carouselTab slick-arrow-top blog-thumb-listing">
+                <?php foreach ($_postCollection as $_post) : ?>
+                    <div class="col-xs-6 col-sm-4">
+                        <div class="blog-thumb">
+                            <a class="img" href="<?php echo $_post->getPostUrl(); ?>">
+                                <?php if ($_post->getFeaturedImage()): ?>
+                                    <img src="<?php echo $_post->getFeaturedImage(); ?>" alt="<?php echo $_post->getTitle(); ?>">
+                                <?php else: ?>
+                                    <img src="<?php echo $block->getViewFileUrl('images/blog-empty.png'); ?>" alt="<?php echo $_post->getTitle(); ?>">
+                                <?php endif; ?>
+                            </a>
+                            <a class="title" href="<?php echo $_post->getPostUrl(); ?>"><?php echo $_post->getTitle(); ?></a>
+                            <p class="data">
+                                <?php if($_post->getAuthor()!=null):?>
+                                    <?php echo __('by') ?> <a href="<?php echo $_post->getAuthor()->getAuthorUrl(); ?>"><?php echo $_post->getAuthor()->getName(); ?></a>
+                                <?php endif;?>
+                                <?php echo __('on') ?> <?php echo date('M', strtotime($_post->getPublishTime())); ?> <b><?php echo date('d', strtotime($_post->getPublishTime())); ?>, <?php echo date('Y', strtotime($_post->getPublishTime())); ?></b>
+                            </p>
+                            <?php echo $block->getShortContent($_post); ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <!-- /recent-posts-carousel -->
+    <script>
+        require([
+            "jquery",
+            "bootstrapminify",
+            "slick",
+            "sliders"
+        ], function($) {
+
+            $(document).ready(function() {
+                setSlickGallery($('.carousel-products-1'), 3, 3, 2, 2, 1, 'carousel');
+            });
+
+        });
+    </script>
+<?php endif; ?>

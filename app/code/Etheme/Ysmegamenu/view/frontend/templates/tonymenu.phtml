@@ -1,0 +1,16 @@
+<?php $_menu = $block->getHtml('', '', 0) ?>
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$menu_type = $ys_helper->getSystemValue('myshop_settings/header_settings/header');
+?>
+<div class="tonyMenu">
+    <nav class="tonyMenu__navbar">
+        <ul class="tonyMenu__nav-list">
+            <li class="tonyMenu__bth-close dl-close"><a href="#"><span class="icon icon-close"></span><?php echo __('close') ?></a></li>
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ms_megamenu_left')->toHtml();?>
+            <?php  echo $_menu;  ?>
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ms_megamenu_right')->toHtml();?>
+        </ul>
+    </nav>
+</div>
+

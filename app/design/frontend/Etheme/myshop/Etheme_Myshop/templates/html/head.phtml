@@ -1,0 +1,27 @@
+<?php
+    $_helper = $this->helper('Etheme\Myshop\Helper\Data');
+    $css_enable = $_helper->getSystemValue('myshop_colors/general/colors_enable');
+    $rtl_mode = $_helper->getSystemValue('myshop_settings/general/rtl_mode');
+?>
+<?php if($css_enable): ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo $_helper->getCssFile()?>">
+<?php endif ?>
+
+<?php
+$font_latin=$_helper->getSystemValue('yourstore_settings/fonts/font_latin');
+$font_charset=$_helper->getSystemValue('yourstore_settings/fonts/font_character_subset');
+$font_google=$_helper->getSystemValue('yourstore_settings/fonts/font_google');
+$font_own=$_helper->getSystemValue('yourstore_settings/fonts/own');
+$font_type=$_helper->getSystemValue('yourstore_settings/fonts/font');
+$charSubset = '';
+if (isset($font_latin) && $font_latin==1) $charSubset .= ',latin-ext';
+if (isset($font_charset) && $font_charset) $charSubset .= ','.$font_charset;
+$font_params=':400,300,300italic,400italic,600,600italic,700,700italic,800,800italic';
+?>
+<?php if ($font_own && $font_type == 'google'): ?>
+    <link rel="stylesheet" href='//fonts.googleapis.com/css?family=<?php echo str_replace(' ', '+', $font_google).$font_params; echo $charSubset; ?>' type='text/css' />
+<?php endif;?>
+
+<?php if($rtl_mode): ?>
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $_helper->getMediaUrl(); ?>style-rtl.css">
+<?php endif ?>

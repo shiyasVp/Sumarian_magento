@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Etheme_Myshop::modules" module="Etheme_Myshop" title="Myshop" sortOrder="0"
+             resource="Etheme_Myshop::modules"/>
+        <add id="Etheme_Myshop::module_settings" module="Etheme_Myshop" title="Myshop 1.0.0" sortOrder="10"
+             resource="Etheme_Myshop::myshop" parent="Etheme_Myshop::modules"/>
+        <add id="Etheme_Myshop::settings" module="Etheme_Myshop" title="Theme Settings" sortOrder="10"
+             resource="Etheme_Myshop::settings" parent="Etheme_Myshop::module_settings"
+             action="adminhtml/system_config/edit/section/myshop_settings"/>
+        <add id="Etheme_Myshop::colors" module="Etheme_Myshop" title="Colors" sortOrder="20"
+             resource="Etheme_Myshop::colors" parent="Etheme_Myshop::module_settings"
+             action="adminhtml/system_config/edit/section/myshop_colors"/>
+        <add id="Etheme_Myshop::lic" module="Etheme_Myshop" title="License" sortOrder="30"
+             resource="Etheme_Myshop::lic" parent="Etheme_Myshop::module_settings"
+             action="adminhtml/system_config/edit/section/myshop_lic"/>
+        <add id="Etheme_Myshop::module_installation" module="Etheme_Myshop" title="Install" sortOrder="20"
+             resource="Etheme_Myshop::module_installation" parent="Etheme_Myshop::modules"/>
+        <add id="Etheme_Myshop::install" module="Etheme_Myshop" title="Install Theme" sortOrder="10"
+             resource="Etheme_Myshop::install" parent="Etheme_Myshop::module_installation"
+             action="adminhtml/system_config/edit/section/myshop_install"/>
+        <add id="Etheme_Myshop::reset" module="Etheme_Myshop" title="Install/Reset blocks/pages" sortOrder="20"
+             resource="Etheme_Myshop::reset" parent="Etheme_Myshop::module_installation"
+             action="adminhtml/system_config/edit/section/myshop_install"/>
+    </menu>
+</config>

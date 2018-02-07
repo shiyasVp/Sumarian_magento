@@ -1,0 +1,222 @@
+/*
+Mixin
+*/
+.animation(@speed:0.3s) {
+  transition:all @speed linear;
+  -ms-transition:all @speed linear;
+  -webkit-transition:all @speed linear;
+  -o-transition: all @speed linear;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+}
+.text-shadow(@size) {
+  -webkit-text-shadow: 0px @size 0px rgba(0, 0, 0, 1);
+  -moz-text-shadow: 0px @size 0px rgba(0, 0, 0, 1);
+  text-shadow: 0px @size 0px rgba(0, 0, 0, 1);
+}
+.user-select(@none:none) {
+  -webkit-touch-callout: @none;
+  -webkit-user-select: @none;
+  -khtml-user-select: @none;
+  -moz-user-select: @none;
+  -ms-user-select: @none;
+  user-select: @none;
+}
+.opacity (@opacity) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+.color (@value:100%) {
+  -webkit-filter: grayscale(@value);
+  -moz-filter: grayscale(@value);
+  -ms-filter: grayscale(@value);
+  -o-filter: grayscale(@value);
+  filter: grayscale(@value);
+  filter: gray;
+}
+.scale(@value:1) {
+  -webkit-transform: scale(@value);
+  -moz-transform: scale(@value);
+  -ms-transform: scale(@value);
+  -o-transform: scale(@value);
+  transform: scale(@value);
+}
+.rotate(@value:90) {
+  -webkit-transform: rotate(@value);
+  -moz-transform: rotate(@value);
+  -ms-transform: rotate(@value);
+  -o-transform: rotate(@value);
+  transform: rotate(@value);
+}
+.background-size(@value:cover) {
+  -webkit-background-size: @value;
+  -moz-background-size: @value;
+  -o-background-size: @value;
+  background-size: @value;
+}
+
+/*
+Extend
+*/
+._reset-ul-style {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+._reset-ul-style-2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+._account-border{
+  border-left:1px solid @border;
+  border-right:1px solid @border;
+  padding: 0;
+  .dropdown-toggle{
+    display: inline-block;
+    padding: 5px 24px 9px 25px;
+    .icon{
+      margin-right: 6px;
+    }
+  }
+}
+._short-box{
+  border: none;
+  padding: 13px 0px 12px 0px;
+  .dropdown-toggle{
+    padding: 0;
+  }
+  .dropdown-label{
+    display: none;
+  }
+  .caret{
+    margin-left: 9px;
+  }
+}
+._short-account{
+  .dropdown-label{
+    display: none;
+  }
+  .dropdown-toggle{
+    .icon{
+      top: -2px;
+    }
+    .icon-person:before{
+      content: "\e8a6";
+    }
+  }
+}
+._short-cart{
+  .dropdown-label{
+    display: none;
+  }
+  .dropdown-toggle{
+    .icon{
+      margin-right: 9px;
+    }
+  }
+}
+
+._header-white{
+  @toggle_menu_icon_open: @color_white;
+  @toggle_menu_icon_open_hover:@default_color;
+  .toggle-menu{
+    .dropdown-toggle{
+      .icon-bar{
+        background: @toggle_menu_icon_open;
+      }
+    }
+    .dropdown-toggle:hover{
+      .icon-bar{
+        background:@toggle_menu_icon_open_hover;
+      }
+    }
+  }
+  @header_menu_color_link: @color_white;
+  @header_menu_color_link_hover:@default_color;
+  .header-menu{
+    > ul > li > a{
+      color: @header_menu_color_link;
+    }
+    > ul > li > a:hover,
+    > ul > li.hover > a{
+      color: @header_menu_color_link_hover;
+    }
+    > ul > li.active a{
+      color: @header_menu_color_link_hover;
+    }
+  }
+  @cart_dropdown_toggle_icon: @color_white;
+  @cart_dropdown_toggle_label:@color_white;
+  @cart_dropdown_toggle_icon_hover:@default_color;
+  @cart_dropdown_toggle_label_hover:@default_color;
+  .cart{
+    .dropdown-toggle{
+      .icon{
+        color: @cart_dropdown_toggle_icon;
+      }
+      .dropdown-label{
+        color: @cart_dropdown_toggle_label;
+      }
+    }
+    .dropdown-toggle:hover{
+      .dropdown-label{
+        color: @cart_dropdown_toggle_label_hover;
+      }
+      .icon{
+        color: @cart_dropdown_toggle_icon_hover;
+      }
+    }
+  }
+  @account_icon: @color_white;
+  @account_icon_hover: @default_color;
+  .account{
+    .dropdown-toggle{
+      .icon{
+        color: @account_icon;
+      }
+    }
+  }
+  .account:hover{
+    .dropdown-toggle{
+      .icon{
+        color: @account_icon_hover;
+      }
+    }
+  }
+  @dropdown_box_color_text:@color_white;
+  @dropdown_box_caret:@color_white;
+  @dropdown_box_label_text:@color_white;
+  .dropdown-toggle{
+    color: @dropdown_box_color_text;
+  }
+  .caret{
+    border-top: 5px solid @dropdown_box_caret;
+  }
+  .dropdown-label{
+    color: @dropdown_box_label_text;
+  }
+
+  @search_open_icon: @color_white;
+  @search_open_icon_hover: @default_color;
+  .search{
+    a.search-open{
+      .icon{
+        color: @search_open_icon;
+      }
+    }
+    a.search-open:hover{
+      .icon{
+        color: @search_open_icon_hover;
+      }
+    }
+  }
+}

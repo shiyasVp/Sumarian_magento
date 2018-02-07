@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Language switcher template
+ */
+?>
+<?php if (count($block->getStores())>1): ?>
+<?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
+    <div class="language dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            <span class="dropdown-label hidden-sm hidden-xs"><?php /* @escapeNotVerified */ echo __('Language') ?>:</span>
+            <?php echo substr($block->escapeHtml($block->getStoreName()), 0, 2); ?><span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <?php foreach ($block->getStores() as $_lang): ?>
+                <?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
+                    <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+                        <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_lang); ?>'>
+                            <?php echo $block->escapeHtml($_lang->getName()) ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <li class="dropdown-menu__close"><a href="#"><span class="icon icon-close"></span><?php echo __('close') ?></a></li>
+        </ul>
+    </div>
+<?php endif; ?>

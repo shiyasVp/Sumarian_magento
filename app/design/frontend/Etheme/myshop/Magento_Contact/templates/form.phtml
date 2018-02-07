@@ -1,0 +1,130 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$_theme_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$media_url = $_theme_helper->getMediaUrl();
+
+$contact_title = $_theme_helper->getSystemValue('myshop_settings/contacts/contact_title');
+$contact_slogan = $_theme_helper->getSystemValue('myshop_settings/contacts/contact_slogan');
+$contact_static = $_theme_helper->getSystemValue('myshop_settings/contacts/contact_static');
+$static_id = $_theme_helper->getSystemValue('myshop_settings/contacts/static_id');
+$google_map = $_theme_helper->getSystemValue('myshop_settings/contacts/google_map');
+$gm_coordinates = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_coordinates');
+$gm_zoom = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_zoom');
+$gm_scrollwheel = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_scrollwheel');
+$gm_draggable = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_draggable');
+$gm_ui = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_ui');
+$gm_styles = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_styles');
+$gm_marker_title = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_marker_title');
+$gm_marker_coordinates = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_marker_coordinates');
+$gm_marker_img = $_theme_helper->getSystemValue('myshop_settings/contacts/gm_marker_img');
+
+$html=$this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($static_id)->toHtml();
+?>
+<div class="container offset-18">
+    <h1 class="block-title large"><?php echo $contact_title; ?></h1>
+    <div class="information-block">
+        <?php echo $contact_slogan; ?>
+    </div>
+    <div class="row">
+        <?php if ($contact_static): ?>
+        <div class="col-sm-5 offset-98">
+            <?php
+            if($html!=''):
+                echo $html;
+            endif;
+            ?>
+        </div>
+        <?php endif; ?>
+        <div class="<?php if ($contact_static): ?>col-sm-7<?php else: ?>col-sm-12<?php endif; ?> offset-98">
+            <h2 class="block-title big text-left text-capitalize"><?php /* @escapeNotVerified */ echo __('Contact Form') ?></h2>
+            <form class="form contact-form"
+                  action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+                  id="contact-form"
+                  method="post"
+                  data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+                  data-mage-init='{"validation":{}}'>
+                <div class="form-group">
+                    <label for="name"><?php /* @escapeNotVerified */ echo __('Name') ?></label>
+                    <input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('name') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text form-control" type="text" data-validate="{required:true}"/>
+                </div>
+                <div class="form-group">
+                    <label for="email"><?php /* @escapeNotVerified */ echo __('Email') ?></label>
+                    <input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text form-control" type="email" data-validate="{required:true, 'validate-email':true}"/>
+                </div>
+                <div class="form-group">
+                    <label for="comment"><?php /* @escapeNotVerified */ echo __('Message') ?></label>
+                    <textarea name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" class="input-text form-control" rows="8" data-validate="{required:true}"><?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
+                </div>
+                <?php echo $block->getChildHtml('form.additional.info'); ?>
+                <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                    <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php if ($google_map): ?>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<div class="container-fluid">
+    <div class="row contact-map">
+        <div id="map"></div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery'
+
+    ], function ($) {
+
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: <?php echo $gm_zoom; ?>,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(<?php echo $gm_coordinates; ?>), // New York
+
+                scrollwheel:  <?php echo $gm_scrollwheel; ?>,
+                draggable:  <?php echo $gm_draggable; ?>,
+                disableDefaultUI:  <?php echo $gm_ui; ?>,
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: <?php echo $gm_styles; ?>
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            var image = '<?php echo $media_url; ?>marker/<?php echo $gm_marker_img; ?>';
+
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(<?php echo $gm_marker_coordinates; ?>),
+                map: map,
+                icon : image,
+                title: '<?php echo $gm_marker_title; ?>'
+            });
+        }
+
+    });
+</script>
+<?php endif; ?>

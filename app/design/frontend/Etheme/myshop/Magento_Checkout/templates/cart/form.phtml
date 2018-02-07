@@ -1,0 +1,64 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**  @var $block \Magento\Checkout\Block\Cart */
+?>
+<?php $mergedCells = ($this->helper('Magento\Tax\Helper\Data')->displayCartBothPrices() ? 2 : 1); ?>
+<?php echo $block->getChildHtml('form_before') ?>
+<form action="<?php /* @escapeNotVerified */ echo $block->getUrl('checkout/cart/updatePost') ?>"
+          method="post"
+          id="form-validate"
+          data-mage-init='{"validation":{}}'
+          class="form form-cart col-lg-8">
+    <?php echo $block->getBlockHtml('formkey'); ?>
+    <div class="shopping-cart-col cart table-wrapper<?php echo $mergedCells == 2 ? ' detailed' : ''; ?>">
+        <table id="shopping-cart-table"
+               class="cart items data shopping-cart-table"
+               data-mage-init='{"shoppingCart":{"emptyCartButton": "action.clear",
+               "updateCartActionContainer": "#update_cart_action_container"}}'>
+            <caption role="heading" aria-level="2" class="table-caption"><?php /* @escapeNotVerified */ echo __('Shopping Cart Items') ?></caption>
+            <?php foreach ($block->getItems() as $_item): ?>
+                <?php echo $block->getItemHtml($_item) ?>
+            <?php endforeach ?>
+        </table>
+    </div>
+    <div class="cart main actions shopping-cart-btns">
+        <div class="pull-right">
+            <button type="submit"
+                    name="update_cart_action"
+                    data-cart-item-update=""
+                    value="update_qty"
+                    title="<?php echo $block->escapeHtml(__('Update Shopping Cart')); ?>"
+                    class="action update btn-link">
+                <i class="icon icon-cached color-base"></i><span><?php /* @escapeNotVerified */ echo __('Update Cart'); ?></span>
+            </button>
+            <div class="clearfix visible-xs visible-sm"></div>
+            <button type="submit"
+                    name="update_cart_action"
+                    data-cart-empty=""
+                    value="empty_cart"
+                    title="<?php echo $block->escapeHtml(__('Clear Shopping Cart')); ?>"
+                    class="action clear btn-link" id="empty_cart_button">
+                <i class="icon icon-delete"></i><span><?php /* @escapeNotVerified */ echo __('Clear Shopping Cart'); ?></span>
+            </button>
+        </div>
+        <?php if ($block->getContinueShoppingUrl()): ?>
+        <div class="pull-left">
+            <a class="action continue btn-link"
+               href="<?php echo $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
+               title="<?php echo $block->escapeHtml(__('Continue Shopping')); ?>">
+                <i class="icon icon-keyboard_arrow_left"></i><span><?php /* @escapeNotVerified */ echo __('Continue Shopping') ?></span>
+            </a>
+        </div>
+        <?php endif; ?>
+        <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update=""/>
+    </div>
+</form>
+<?php echo $block->getChildHtml('checkout.cart.order.actions') ?>
+<?php echo $block->getChildHtml('shopping.cart.table.after'); ?>
+

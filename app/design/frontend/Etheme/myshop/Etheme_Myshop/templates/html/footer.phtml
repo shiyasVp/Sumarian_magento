@@ -1,0 +1,277 @@
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$footer = $this->getSystemValue('myshop_settings/footer_settings/footer');
+$back_to_top = $ys_helper->getSystemValue('myshop_settings/general/show_back_to_top');
+
+$dark_theme = $ys_helper->getSystemValue('myshop_settings/footer_settings/dark_theme');
+$top_line = $ys_helper->getSystemValue('myshop_settings/footer_settings/top_line');
+$spacer = $ys_helper->getSystemValue('myshop_settings/footer_settings/spacer');
+$footer_newsletter = $ys_helper->getSystemValue('myshop_settings/footer_settings/footer_newsletter');
+$footer_banners = $ys_helper->getSystemValue('myshop_settings/footer_settings/footer_banners');
+
+$class = '';
+if($dark_theme) $class .= 'dark_theme ';
+if($top_line) $class .= 'top-line ';
+if($spacer != 'none') $class .= $spacer;
+if(strlen($class)) $class = 'class="'.$class.'"';
+
+?>
+<?php if($footer == 1): ?>
+    <footer <?php echo $class; ?>>
+        <?php if($footer_newsletter): ?>
+        <?php echo $this->getChildHtml('footer.newsletter'); ?>
+        <?php endif;?>
+        <div class="footer-content-col<?php if(!$footer_banners): ?> no_banners<?php endif;?>">
+            <?php if($footer_banners): ?>
+                <?php echo $block->getChildHtml('footer_info_banners') ?>
+            <?php endif;?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 hidden-xs">
+                        <div class="row">
+                            <?php if($this->getConfigOption('general/logo_footer')):?>
+                                <div class="col-sm-4 col-md-12">
+                                    <div class="footer-logo">
+                                        <a href="<?php echo $this->getBaseUrl() ?>" title="<?php echo $this->getSystemValue('design/head/default_title') ?>">
+                                            <img  data-retina="true"  src="<?php echo $this->getMediaUrl()?>logo/<?php echo $this->getConfigOption('general/logo_footer');?>" alt="<?php echo $this->getSystemValue('design/head/default_title') ?>" />
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php endif;?>
+                            <div class="col-sm-8 col-md-12">
+                                <div class="social-icon-round">
+                                    <ul>
+                                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_facebook')): ?>
+                                            <li><a class="icon fa fa-facebook" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_facebook'); ?>"></a></li>
+                                        <?php endif ?>
+                                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_twitter')): ?>
+                                            <li><a class="icon fa fa-twitter" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_twitter'); ?>"></a></li>
+                                        <?php endif ?>
+                                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_google')): ?>
+                                            <li><a class="icon fa fa-google-plus" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_google'); ?>"></a></li>
+                                        <?php endif ?>
+                                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_instagram')): ?>
+                                            <li><a class="icon fa fa-instagram" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_instagram'); ?>"></a></li>
+                                        <?php endif ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-2">
+                        <?php echo $block->getChildHtml('footer_links_block_1') ?>
+                    </div>
+                    <div class="col-sm-6 col-md-2">
+                        <?php echo $block->getChildHtml('footer_links_block_2') ?>
+                    </div>
+                    <div class="clearfix divider visible-sm"></div>
+                    <div class="col-sm-6 col-md-2">
+                        <?php echo $block->getChildHtml('footer_links_block_3') ?>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <?php echo $block->getChildHtml('footer_contacts') ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="pull-right">
+                    <div class="payment-list">
+                        <?php echo $block->getChildHtml('footer_payments') ?>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <div class="box-copyright">
+                        <?php echo $this->getSystemValue('myshop_settings/footer_settings/footer_copyright'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php if($back_to_top):?>
+        <a href="#" class="back-to-top">
+            <span class="icon icon-keyboard_arrow_up"></span>
+            <span class="text"><?php echo __('Back to top') ?></span>
+        </a>
+        <?php endif;?>
+    </footer>
+<?php endif ?>
+
+<?php if($footer == 2): ?>
+    <footer <?php echo $class; ?>>
+        <div class="footer-content-center">
+            <?php if($this->getConfigOption('general/logo_footer')):?>
+                <div class="container hidden-xs">
+                    <div class="footer-logo">
+                        <a href="<?php echo $this->getBaseUrl() ?>" title="<?php echo $this->getSystemValue('design/head/default_title') ?>">
+                            <img  data-retina="true"  src="<?php echo $this->getMediaUrl()?>logo/<?php echo $this->getConfigOption('general/logo_footer');?>" alt="<?php echo $this->getSystemValue('design/head/default_title') ?>" />
+                        </a>
+                    </div>
+                </div>
+            <?php endif;?>
+            <div class="container hidden-xs">
+                <div class="footer-menu">
+                    <?php echo $block->getChildHtml('footer_menu') ?>
+                </div>
+            </div>
+            <div class="container">
+                <?php echo $block->getChildHtml('footer_contacts_list') ?>
+            </div>
+            <div class="container">
+                <div class="social-icon-round">
+                    <ul>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_facebook')): ?>
+                            <li><a class="icon fa fa-facebook" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_facebook'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_twitter')): ?>
+                            <li><a class="icon fa fa-twitter" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_twitter'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_google')): ?>
+                            <li><a class="icon fa fa-google-plus" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_google'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_instagram')): ?>
+                            <li><a class="icon fa fa-instagram" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_instagram'); ?>"></a></li>
+                        <?php endif ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="container hidden-xs">
+                <div class="payment-list">
+                    <?php echo $block->getChildHtml('footer_payments') ?>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="box-copyright">
+                        <?php echo $this->getSystemValue('myshop_settings/footer_settings/footer_copyright'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php if($back_to_top):?>
+            <a href="#" class="back-to-top">
+                <span class="icon icon-keyboard_arrow_up"></span>
+                <span class="text"><?php echo __('Back to top') ?></span>
+            </a>
+        <?php endif;?>
+    </footer>
+<?php endif ?>
+
+<?php if($footer == 3): ?>
+    <footer <?php echo $class; ?>>
+        <div class="footer-content-center1">
+            <div class="container hidden-xs">
+                <div class="social-icon-round">
+                    <ul>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_facebook')): ?>
+                            <li><a class="icon fa fa-facebook" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_facebook'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_twitter')): ?>
+                            <li><a class="icon fa fa-twitter" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_twitter'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_google')): ?>
+                            <li><a class="icon fa fa-google-plus" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_google'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_instagram')): ?>
+                            <li><a class="icon fa fa-instagram" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_instagram'); ?>"></a></li>
+                        <?php endif ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <?php echo $block->getChildHtml('footer_contacts_list') ?>
+            </div>
+            <div class="container visible-xs">
+                <div class="social-icon-round">
+                    <ul>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_facebook')): ?>
+                            <li><a class="icon fa fa-facebook" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_facebook'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_twitter')): ?>
+                            <li><a class="icon fa fa-twitter" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_twitter'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_google')): ?>
+                            <li><a class="icon fa fa-google-plus" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_google'); ?>"></a></li>
+                        <?php endif ?>
+                        <?php if($this->getSystemValue('myshop_settings/footer_socials/social_instagram')): ?>
+                            <li><a class="icon fa fa-instagram" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_instagram'); ?>"></a></li>
+                        <?php endif ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="box-copyright">
+                        <?php echo $this->getSystemValue('myshop_settings/footer_settings/footer_copyright'); ?>
+                    </div>
+                </div>
+            </div>
+            <?php if($back_to_top):?>
+                <a href="#" class="back-to-top">
+                    <span class="icon icon-keyboard_arrow_up"></span>
+                    <span class="text"><?php echo __('Back to top') ?></span>
+                </a>
+            <?php endif;?>
+        </div>
+
+    </footer>
+<?php endif ?>
+
+<?php if($footer == 4): ?>
+    <footer <?php echo $class; ?>>
+        <div class="footer-content-02">
+            <div class="container">
+                <div class="row">
+                    <div class="pull-left col-xs-12 col-sm-4 col-md-4">
+                        <?php if($this->getConfigOption('general/logo_footer')):?>
+                            <div class="footer-logo hidden-xs">
+                                <a href="<?php echo $this->getBaseUrl() ?>" title="<?php echo $this->getSystemValue('design/head/default_title') ?>">
+                                    <img  data-retina="true"  src="<?php echo $this->getMediaUrl()?>logo/<?php echo $this->getConfigOption('general/logo_footer');?>" alt="<?php echo $this->getSystemValue('design/head/default_title') ?>" />
+                                </a>
+                            </div>
+                        <?php endif;?>
+                        <div class="payment-list hidden-xs">
+                            <?php echo $block->getChildHtml('footer_payments') ?>
+                        </div>
+                    </div>
+                    <div class="pull-right  col-xs-12 col-sm-8 col-md-8">
+                        <?php echo $block->getChildHtml('footer_contacts_list') ?>
+                        <div class="social-icon-round">
+                            <ul>
+                                <?php if($this->getSystemValue('myshop_settings/footer_socials/social_facebook')): ?>
+                                    <li><a class="icon fa fa-facebook" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_facebook'); ?>"></a></li>
+                                <?php endif ?>
+                                <?php if($this->getSystemValue('myshop_settings/footer_socials/social_twitter')): ?>
+                                    <li><a class="icon fa fa-twitter" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_twitter'); ?>"></a></li>
+                                <?php endif ?>
+                                <?php if($this->getSystemValue('myshop_settings/footer_socials/social_google')): ?>
+                                    <li><a class="icon fa fa-google-plus" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_google'); ?>"></a></li>
+                                <?php endif ?>
+                                <?php if($this->getSystemValue('myshop_settings/footer_socials/social_instagram')): ?>
+                                    <li><a class="icon fa fa-instagram" href="<?php echo $this->getSystemValue('myshop_settings/footer_socials/social_instagram'); ?>"></a></li>
+                                <?php endif ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="box-copyright">
+                        <?php echo $this->getSystemValue('myshop_settings/footer_settings/footer_copyright'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php if($back_to_top):?>
+            <a href="#" class="back-to-top">
+                <span class="icon icon-keyboard_arrow_up"></span>
+                <span class="text"><?php echo __('Back to top') ?></span>
+            </a>
+        <?php endif;?>
+    </footer>
+<?php endif ?>

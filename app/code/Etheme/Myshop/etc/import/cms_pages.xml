@@ -1,0 +1,1309 @@
+<?xml version="1.0"?>
+<default>
+    <pages>
+
+        <page>
+            <title>MyShop Home Page - Default</title>
+            <identifier>myshop_home_page_default</identifier>
+            <content><![CDATA[
+{{revslider alias="homepage1"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_collections"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/featured.phtml" limit="8" category_id="71" block_name="Featured Products"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_brands"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_wide_banner"}}
+{{block class="Etheme\Myshop\Block\Post\PostHomeList" template="Etheme_Myshop::post/homelist.phtml"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 2</title>
+            <identifier>myshop_home_page_2</identifier>
+            <content><![CDATA[
+{{revslider alias="homepage2"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page2"}}
+<div class="content hidden-mobile">
+ <hr class="hr-offset-1">
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_categories_tabs"}}
+<div class="content hidden-mobile">
+ <hr class="hr-offset-1">
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_categories_tabs2"}}
+            ]]></content>
+            <page_layout>2columns-left-custom</page_layout>
+            <layout_update_xml>
+                <![CDATA[
+<referenceContainer name="catalog.compare.sidebar" remove="1"/>
+<referenceContainer name="wishlist_sidebar" remove="1"/>
+<referenceContainer name="sidebar_custom" remove="1"/>
+<referenceContainer name="div.sidebar.additional">
+    <block class="Magento\Cms\Block\Block" name="sidebar_banner">
+        <arguments>
+            <argument name="block_id" xsi:type="string">sidebar_banner</argument>
+        </arguments>
+    </block>
+    <block class="Magento\Cms\Block\Block" name="sidebar_testimonials">
+        <arguments>
+            <argument name="block_id" xsi:type="string">sidebar_testimonials</argument>
+        </arguments>
+    </block>
+    <block class="Magento\Newsletter\Block\Subscribe" name="sidebar.subscribe" template="subscribe_sidebar.phtml"/>
+    <block class="Magento\Cms\Block\Block" name="sidebar_facebook">
+        <arguments>
+            <argument name="block_id" xsi:type="string">sidebar_facebook</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+<referenceContainer name="columns">
+    <block class="Magento\Cms\Block\Block" name="ms_index_banners2_page2" after="main.columns.grid-row">
+        <arguments>
+            <argument name="block_id" xsi:type="string">ms_index_banners2_page2</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+            ]]>
+            </layout_update_xml>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 3</title>
+            <identifier>myshop_home_page_3</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page3"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_brands"}}
+<div class="container hidden-mobile">
+ <hr class="hr-offset-13">
+</div>
+<div class="container">
+ <div class="row">
+  <div class="filter-isotop">
+   <div class="button-group nav-tab-filter">
+    <button class="button is-checked" data-filter=".filter1">FEATURED</button>
+    <button class="button" data-filter=".filter2">NEW</button>
+    <button class="button" data-filter=".filter3">SPECIALS</button>
+   </div>
+   <div class="products-grid grid_custom">
+   	{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/featured_custom.phtml" limit="10" category_id="71" html_class="filter1" block_name="Featured"}}
+    {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/featured_custom.phtml" limit="10" category_id="22" html_class="filter2" block_name="New"}}
+    {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/featured_custom.phtml" limit="10" category_id="13" html_class="filter3" block_name="Specials"}}
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="container hidden-mobile-indent">
+ <hr class="hr-offset-4">
+</div>
+{{block class="Etheme\Myshop\Block\Post\PostHomeList" template="Etheme_Myshop::post/homelist2.phtml"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 4</title>
+            <identifier>myshop_home_page_4</identifier>
+            <content><![CDATA[
+{{revslider alias="homepage4"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page4"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/featured.phtml" limit="8" category_id="71" block_name="Featured Products"}}
+{{block class="Magento\Newsletter\Block\Subscribe" name="subscribe_index" template="subscribe_index.phtml"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_instagram"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 5</title>
+            <identifier>myshop_home_page_5</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page5"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/featured_big.phtml" limit="4" category_id="71" block_name="Featured Products"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Etheme\Myshop\Block\Post\PostHomeList" template="Etheme_Myshop::post/homelist.phtml"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Newsletter\Block\Subscribe" name="subscribe_index" template="subscribe_index2.phtml"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 6</title>
+            <identifier>myshop_home_page_6</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page6"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_category.phtml" html_id="carouselFeatured" limit="8" category_id="22" block_name="Featured Products"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_category.phtml" html_id="carouselSale" limit="8" category_id="13" block_name="Special Products"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_brands"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners2_page6"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 7</title>
+            <identifier>myshop_home_page_7</identifier>
+            <content><![CDATA[
+{{revslider alias="homepage7"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page7"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_category.phtml" html_id="carouselNew" limit="8" category_id="22" block_name="New Products"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners2_page7"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_category.phtml" html_id="carouselSale" limit="8" category_id="13" block_name="Special Products"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_brands"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners3_page7"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_instagram_fluid"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 8</title>
+            <identifier>myshop_home_page_8</identifier>
+            <content><![CDATA[
+{{revslider alias="homepage8"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page8"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_categories_tabs3"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners2_page8"}}
+{{block class="Etheme\Myshop\Block\Post\PostHomeList" template="Etheme_Myshop::post/homelist_carousel.phtml"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners3_page8"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_brands"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 9</title>
+            <identifier>myshop_home_page_9</identifier>
+            <content><![CDATA[
+{{revslider alias="homepage9"}}
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page9"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_categories_tabs4"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_brands"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners2_page9"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 10</title>
+            <identifier>myshop_home_page_10</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_banners_page10"}}
+<div class="container offset-0 hidden-mobile">
+ <hr class="offset-95">
+</div>
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_category.phtml" html_id="carouselNew" limit="8" category_id="22" block_name="New"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_category.phtml" html_id="carouselSale" limit="8" category_id="13" block_name="Specials"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_category.phtml" html_id="carouselFeatured" limit="8" category_id="21" block_name="Featured"}}
+<div class="container hidden-mobile">
+ <hr>
+</div>
+{{block class="Magento\Cms\Block\Block" block_id="ms_index_brands"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 11</title>
+            <identifier>myshop_home_page_11</identifier>
+            <content><![CDATA[
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/featured_custom2.phtml" limit="10" category_id="71" html_class="filter1" block_name="Featured"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>MyShop Home Page - 12</title>
+            <identifier>myshop_home_page_12</identifier>
+            <content><![CDATA[
+{{revslider alias="homepage12"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>404 Not Found</title>
+            <content_heading>Page Not Found!</content_heading>
+            <identifier>no_route_custom</identifier>
+            <content><![CDATA[
+<div class="on-duty-box">
+ <img src="{{media url=wysiwyg/myshop/custom/empty-404-icon.png}}" alt="">
+ <div class="description">
+  Please try one of the following pages:
+ </div>
+ <a class="btn btn-border color-default" href="{{store url=""}}">HOME PAGE</a>
+</div>
+            ]]></content>
+            <page_layout>1column</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>About us</title>
+            <identifier>about</identifier>
+            <content><![CDATA[
+<h1 class="block-title large">About Us</h1>
+<div class="content-parallax parallax-description" data-image="{{media url=wysiwyg/myshop/custom/parallax-img-01.jpg}}">
+ <div class="description">
+  <div class="block-table">
+   <div class="block-table-cell text-center">
+    <h1 class="title">About Store</h1>
+    <p>
+     12 + pre-made layouts. My Shop is more than a theme,<br >It’s a powerful design tool.
+    </p>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container">
+ <h2 class="block-title big text-capitalize">Interesting Facts</h2>
+ <div class="row">
+  <div class="offset-18">
+   <div class="col-md-8 col-md-offset-2 text-center">
+    Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fug
+   </div>
+  </div>
+ </div>
+ <div class="row">
+  <div class="col-sm-4">
+   <a class="link-promo" href="#">
+    <div class="title">5000</div>
+    <div class="description">Items in Store</div>
+   </a>
+  </div>
+  <div class="col-sm-4">
+   <a class="link-promo" href="#">
+    <div class="title">80%</div>
+    <div class="description">Our Customers Come Back</div>
+   </a>
+  </div>
+  <div class="col-sm-4">
+   <a class="link-promo" href="#">
+    <div class="title">1 mln.</div>
+    <div class="description">Users of the Site</div>
+   </a>
+  </div>
+ </div>
+</div>
+<div class="container hidden-mobile">
+ <div class="row">
+  <hr class="hr-offset-3">
+ </div>
+</div>
+<div class="container">
+ <h2 class="block-title text-capitalize big">Our Partners</h2>
+ <div class="row">
+  <div class="offset-30">
+   <div class="carousel-brands">
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-01.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-02.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-03.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-04.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-05.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-06.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-07.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-08.png}}" alt="">
+     </a>
+    </div>
+    <div>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/brand-09.png}}" alt="">
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="indent-col-none">
+ <div class="container-fluid  offset-120">
+  <div class="row">
+   <div class="col-xs-6"><img class="img-responsive2" src="{{media url=wysiwyg/myshop/custom/img_08.jpg}}" alt=""></div>
+   <div class="col-xs-6"><img class="img-responsive2" src="{{media url=wysiwyg/myshop/custom/img_09.jpg}}" alt=""></div>
+  </div>
+ </div>
+</div>
+<div class="container offset-80">
+ <div class="row">
+  <div class="col-md-4">
+   <div class="box-1">
+    <h3 class="title">Easy Selection</h3>
+    <p>
+     Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fug
+    </p>
+   </div>
+  </div>
+  <div class="col-md-4">
+   <div class="box-1">
+    <h3 class="title">Only Certified  Products</h3>
+    <p>
+     Dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in  in voluptate velit esse cillum dolore eu fug
+    </p>
+   </div>
+  </div>
+  <div class="col-md-4">
+   <div class="box-1">
+    <h3 class="title">Info</h3>
+    <ul class="list-simple-dot">
+     <li><a href="#">Lorem ipsum dolor sit amet conse ctetur </a></li>
+     <li><a href="#">Adipisicing elit, sed do eiusmod </a></li>
+     <li><a href="#">Tempor incididunt ut labore et dolore </a></li>
+     <li><a href="#">Magna aliqua. enim ad minim </a></li>
+     <li><a href="#">Veniam, quis nostrud exercitation</a></li>
+     <li><a href="#">Ullamco laboris nisi ut aliquip</a></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="container hidden-mobile">
+ <div class="row">
+  <hr class="hr-offset-3">
+ </div>
+</div>
+<div class="container">
+ <h2 class="block-title big">OUR TEAM</h2>
+ <div class="row">
+  <div class="col-sm-4">
+   <div class="personal-block">
+    <a class="img" href="#"><img src="{{media url=wysiwyg/myshop/custom/img_10.jpg}}" class="img-responsive-block" alt=""></a>
+    <a href="#" class="title">
+    Emma Smith
+    <span>Director</span>
+    </a>
+    <p>
+     Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+    </p>
+    <div class="social-icon">
+     <ul>
+      <li><a class="icon fa fa-facebook" href="http://www.facebook.com/"></a></li>
+      <li><a class="icon fa fa-twitter" href="http://www.twitter.com/"></a></li>
+      <li><a class="icon fa fa-google-plus" href="http://www.google.com/"></a></li>
+      <li><a class="icon fa fa-instagram" href="https://instagram.com/"></a></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div class="col-sm-4">
+   <div class="personal-block">
+    <a class="img" href="#"><img src="{{media url=wysiwyg/myshop/custom/img_11.jpg}}" class="img-responsive-block" alt=""></a>
+    <a href="#" class="title">
+    Mason  Jefferson
+    <span>Mason  Jefferson</span>
+    </a>
+    <p>
+     Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+    </p>
+    <div class="social-icon">
+     <ul>
+      <li><a class="icon fa fa-facebook" href="http://www.facebook.com/"></a></li>
+      <li><a class="icon fa fa-twitter" href="http://www.twitter.com/"></a></li>
+      <li><a class="icon fa fa-google-plus" href="http://www.google.com/"></a></li>
+      <li><a class="icon fa fa-instagram" href="https://instagram.com/"></a></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div class="col-sm-4">
+   <div class="personal-block">
+    <a class="img" href="#"><img src="{{media url=wysiwyg/myshop/custom/img_12.jpg}}" class="img-responsive-block" alt=""></a>
+    <a href="#" class="title">
+    Abigail  Tomson
+    <span>Manager</span>
+    </a>
+    <p>
+     Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+    </p>
+    <div class="social-icon">
+     <ul>
+      <li><a class="icon fa fa-facebook" href="http://www.facebook.com/"></a></li>
+      <li><a class="icon fa fa-twitter" href="http://www.twitter.com/"></a></li>
+      <li><a class="icon fa fa-google-plus" href="http://www.google.com/"></a></li>
+      <li><a class="icon fa fa-instagram" href="https://instagram.com/"></a></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid">
+ <div class="row">
+  <div class="slider-blog-fluid">
+   <div>
+    <div class="blog-fluid">
+     <a href="#">
+      <img src="{{media url=wysiwyg/myshop/custom/slider-blog-img-01.jpg}}" alt="">
+      <span class="icon">“</span>
+      <p>
+       Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do<br> eiusmod tempor incididunt ut labore.
+      </p>
+      <div class="title">
+       — Amanda
+      </div>
+     </a>
+    </div>
+   </div>
+   <div>
+    <div class="blog-fluid">
+     <a href="#">
+      <img src="{{media url=wysiwyg/myshop/custom/slider-blog-img-01.jpg}}" alt="">
+      <span class="icon">“</span>
+      <p>
+       Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do<br> eiusmod tempor incididunt ut labore.
+      </p>
+      <div class="title">
+       — Amanda
+      </div>
+     </a>
+    </div>
+   </div>
+   <div>
+    <div class="blog-fluid">
+     <a href="#">
+      <img src="{{media url=wysiwyg/myshop/custom/slider-blog-img-01.jpg}}" alt="">
+      <span class="icon">“</span>
+      <p>
+       Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do<br> eiusmod tempor incididunt ut labore.
+      </p>
+      <div class="title">
+       — Amanda
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+<script>
+	require([
+	"jquery",
+	"bootstrapminify",
+	"slick",
+	"sliders"
+	], function($) {
+
+    $(document).ready(function() {
+        setSlickGallery($('.carousel-brands'), 6, 5, 4, 2, 1, 'carousel');
+								setSlickGallery($('.slider-blog-fluid'), 1, 1, 1, 1, 1, 'slickSlider');
+    });
+
+});
+</script>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Gallery 1</title>
+            <identifier>gallery1</identifier>
+            <content><![CDATA[
+<h1 class="block-title large">GALLERY</h1>
+<div class="gallery">
+ <div class="filter-nav">
+  <div rel="all" class="current">ALL</div>
+  <div rel="woman">WOMAN</div>
+  <div rel="man">MAN</div>
+ </div>
+ <div class="gallery-content row effect-1">
+  <div class="item all man col-sm-6">
+   <figure>
+    <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-01.jpg}}" class="all man" alt="" />
+    <figcaption>
+     <div class="block-table">
+      <div class="block-table-cell">
+       <a href="#" class="tag">Fashion</a>
+       <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+       </p>
+       <div class="btn-icon">
+        <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-01.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+       </div>
+      </div>
+     </div>
+    </figcaption>
+   </figure>
+  </div>
+  <div class="item all man col-sm-6">
+   <figure>
+    <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-02.jpg}}" class="all man" alt="" />
+    <figcaption>
+     <div class="block-table">
+      <div class="block-table-cell">
+       <a href="#" class="tag">Fashion</a>
+       <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+       </p>
+       <div class="btn-icon">
+        <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-02.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+       </div>
+      </div>
+     </div>
+    </figcaption>
+   </figure>
+  </div>
+  <div class="item all man col-sm-6">
+   <figure>
+    <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-03.jpg}}" class="all man" alt="" />
+    <figcaption>
+     <div class="block-table">
+      <div class="block-table-cell">
+       <a href="#" class="tag">Fashion</a>
+       <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+       </p>
+       <div class="btn-icon">
+        <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-03.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+       </div>
+      </div>
+     </div>
+    </figcaption>
+   </figure>
+  </div>
+  <div class="item all man col-sm-6">
+   <figure>
+    <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-04.jpg}}" class="all man" alt="" />
+    <figcaption>
+     <div class="block-table">
+      <div class="block-table-cell">
+       <a href="#" class="tag">Fashion</a>
+       <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+       </p>
+       <div class="btn-icon">
+        <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-04.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+       </div>
+      </div>
+     </div>
+    </figcaption>
+   </figure>
+  </div>
+  <div class="item all woman col-sm-6">
+   <figure>
+    <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-05.jpg}}" class="all man" alt="" />
+    <figcaption>
+     <div class="block-table">
+      <div class="block-table-cell">
+       <a href="#" class="tag">Fashion</a>
+       <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+       </p>
+       <div class="btn-icon">
+        <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-05.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+       </div>
+      </div>
+     </div>
+    </figcaption>
+   </figure>
+  </div>
+  <div class="item all woman col-sm-6">
+   <figure>
+    <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-06.jpg}}" class="all man" alt="" />
+    <figcaption>
+     <div class="block-table">
+      <div class="block-table-cell">
+       <a href="#" class="tag">Fashion</a>
+       <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+       </p>
+       <div class="btn-icon">
+        <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-large/gallery-img-06.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+       </div>
+      </div>
+     </div>
+    </figcaption>
+   </figure>
+  </div>
+ </div>
+</div>
+
+<script>
+	require(["jquery","Magento_Theme/js/jquery.magnific-popup.min"], function($) {
+
+	if ($('.gallery, .gallery-masonry').length) {
+        $('.gallery .zomm-gallery, .gallery-masonry .zomm-gallery').magnificPopup({
+            type:'image',
+            gallery:{
+                enabled:true
+            }
+
+        });
+    }
+
+});
+</script>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Gallery 2</title>
+            <identifier>gallery2</identifier>
+            <content><![CDATA[
+<h1 class="block-title large">GALLERY</h1>
+ <div class="gallery">
+  <div class="filter-nav">
+   <div rel="all" class="current">ALL</div>
+   <div rel="woman">WOMAN</div>
+   <div rel="man">MAN</div>
+  </div>
+  <div class="gallery-content gallery-grid-col-3 row effect-1">
+   <div class="item all man col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-01.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-01.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all man col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-02.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-02.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all man col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-03.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-03.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all man col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-04.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-04.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all man col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-05.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-05.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all man col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-06.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-06.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all woman col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-07.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-07.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all man col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-08.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-08.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="item all woman col-sm-6 col-md-4 col-lg-4">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-09.jpg}}" class="all man" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed<br> do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-middle/gallery-img-09.jpg}}" class="zomm-gallery"  title="Title"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+  </div>
+ </div>
+ <script>
+	require(["jquery","Magento_Theme/js/jquery.magnific-popup.min"], function($) {
+
+	if ($('.gallery, .gallery-masonry').length) {
+        $('.gallery .zomm-gallery, .gallery-masonry .zomm-gallery').magnificPopup({
+            type:'image',
+            gallery:{
+                enabled:true
+            }
+
+        });
+    }
+
+});
+</script>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Gallery 3</title>
+            <identifier>gallery3</identifier>
+            <content><![CDATA[
+<h1 class="block-title large">GALLERY</h1>
+<div class="row">
+ <div class="gallery-masonry">
+  <div class="filter-nav">
+   <div class="button current" data-filter="*">SHOW ALL</div>
+   <div class="button" data-filter=".sort-value-01">WOMAN</div>
+   <div class="button" data-filter=".sort-value-02">MAN</div>
+  </div>
+  <div class="grid-gallery-masonry effect-1 gallery-content grid-gallery-masonry-col-2">
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-01.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-01.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-02">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-02.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-02.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-03.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-03.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-02">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-04.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-04.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-05.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-05.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-06.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-large/gallery-img-06.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+  </div>
+ </div>
+</div>
+<script>
+	require(["jquery","Magento_Theme/js/jquery.magnific-popup.min"], function($) {
+
+	if ($('.gallery, .gallery-masonry').length) {
+        $('.gallery .zomm-gallery, .gallery-masonry .zomm-gallery').magnificPopup({
+            type:'image',
+            gallery:{
+                enabled:true
+            }
+
+        });
+    }
+
+});
+</script>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Gallery 4</title>
+            <identifier>gallery4</identifier>
+            <content><![CDATA[
+<h1 class="block-title large">GALLERY</h1>
+<div class="row">
+ <div class="gallery-masonry">
+  <div class="filter-nav">
+   <div class="button current" data-filter="*">SHOW ALL</div>
+   <div class="button" data-filter=".sort-value-01">WOMAN</div>
+   <div class="button" data-filter=".sort-value-02">MAN</div>
+  </div>
+  <div class="grid-gallery-masonry gallery-content effect-1 grid-gallery-masonry-col-3">
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-01.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-01.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-02">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-02.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-02.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-03.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-03.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-02">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-04.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-04.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-05.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-05.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-02">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-06.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-06.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-07.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-07.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-02">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-08.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-08.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+   <div class="element-item sort-value-01">
+    <figure>
+     <img src="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-09.jpg}}" alt="" />
+     <figcaption>
+      <div class="block-table">
+       <div class="block-table-cell">
+        <a href="#" class="tag">Fashion</a>
+        <h6 class="title"><a href="#">Resposive Retina Ready</a></h6>
+        <p>
+         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <div class="btn-icon">
+         <a href="{{media url=wysiwyg/myshop/custom/gallery/gallery-masonry-middle/gallery-img-09.jpg}}" class="zomm-gallery"  title="Resposive Retina Ready"></a>
+        </div>
+       </div>
+      </div>
+     </figcaption>
+    </figure>
+   </div>
+  </div>
+ </div>
+</div>
+<script>
+	require(["jquery","Magento_Theme/js/jquery.magnific-popup.min"], function($) {
+
+	if ($('.gallery, .gallery-masonry').length) {
+        $('.gallery .zomm-gallery, .gallery-masonry .zomm-gallery').magnificPopup({
+            type:'image',
+            gallery:{
+                enabled:true
+            }
+
+        });
+    }
+
+});
+</script>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+    </pages>
+</default>

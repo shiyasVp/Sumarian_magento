@@ -1,0 +1,69 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$custom_tab = $ys_helper->getSystemValue('myshop_settings/product_page/custom_tab');
+$custom_tab_title = $ys_helper->getSystemValue('myshop_settings/product_page/custom_tab_title');
+?>
+<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
+    <div class="product info detailed offset-80">
+        <?php $layout = $block->getLayout(); ?>
+        <div class="product data items tt-product-page__tabs tt-tabs">
+            <div class="tt-tabs__head">
+                <ul>
+                    <?php $i = 0; ?>
+                    <?php foreach ($detailedInfoGroup as $name):?>
+                        <?php
+                        $html = $layout->renderElement($name);
+                        if (!trim($html)) {
+                            continue;
+                        }
+                        $alias = $layout->getElementAlias($name);
+                        $label = $block->getChildData($alias, 'title');
+                        ?>
+                        <li data-tab="tab-<?php /* @escapeNotVerified */ echo substr($label, 0, 3); ?>" <?php if ($i==0) { echo ' data-active="true"'; } ?>><span><?php /* @escapeNotVerified */ echo $label; ?></span></li>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                    <?php if ($custom_tab):?>
+                        <li><span><?php echo $custom_tab_title; ?></span></li>
+                    <?php endif; ?>
+                </ul>
+                <div class="tt-tabs__border"></div>
+            </div>
+            <div class="tt-tabs__body">
+                <?php foreach ($detailedInfoGroup as $name):?>
+                    <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                    ?>
+                    <div>
+                        <span class="tt-tabs__title"><?php /* @escapeNotVerified */ echo $label; ?></span>
+                        <div class="tt-tabs__content" data-role="content" id="<?php /* @escapeNotVerified */ echo $alias; ?>"><?php /* @escapeNotVerified */ echo $html; ?></div>
+                    </div>
+                <?php endforeach; ?>
+                <?php if ($custom_tab):?>
+                    <div>
+                        <span class="tt-tabs__title"><?php echo $custom_tab_title; ?></span>
+                        <?php
+                        $html=$this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ms_custom_tab')->toHtml();
+                        if($html!=''):
+                            ?>
+                            <div class="tt-tabs__content"><?php echo $html; ?></div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

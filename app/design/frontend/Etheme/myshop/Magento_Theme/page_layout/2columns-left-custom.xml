@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="2columns-left"/>
+    <referenceContainer name="columns" htmlClass="columns container offset-56">
+        <container name="main.columns.grid-row" htmlClass="row" htmlTag="div">
+            <container name="main.columns.grid-main" htmlId="centerColumn" htmlClass="col-sm-12 col-md-8 col-lg-9 col-md-push-4 col-lg-push-3 global-first-child" htmlTag="div" before="-"/>
+            <container name="main.columns.grid-left" htmlId="leftColumnCustom" htmlClass="col-sm-12 col-md-4 col-lg-3 col-md-pull-8 col-lg-pull-9 global-first-child" htmlTag="div" after="main.columns.grid-main" />
+        </container>
+    </referenceContainer>
+</layout>

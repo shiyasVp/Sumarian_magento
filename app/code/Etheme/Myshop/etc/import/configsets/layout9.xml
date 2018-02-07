@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <web>
+            <default>
+                <cms_home_page>myshop_home_page_9</cms_home_page>
+            </default>
+        </web>
+        <myshop_settings>
+            <header_settings>
+                <header>7</header>
+            </header_settings>
+            <footer_settings>
+                <footer>1</footer>
+                <dark_theme>0</dark_theme>
+                <top_line>1</top_line>
+                <spacer>none</spacer>
+                <footer_banners>1</footer_banners>
+                <footer_newsletter>0</footer_newsletter>
+            </footer_settings>
+        </myshop_settings>
+    </sections>
+</config>

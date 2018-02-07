@@ -1,0 +1,186 @@
+<?php
+$_theme_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$popup = $_theme_helper->getSystemValue('myshop_settings/newsletter/popup');
+$pop_time = $_theme_helper->getSystemValue('myshop_settings/newsletter/delay');
+$pop_text1 = $_theme_helper->getSystemValue('myshop_settings/newsletter/text1');
+$pop_text2 = $_theme_helper->getSystemValue('myshop_settings/newsletter/text2');
+$input_text = $_theme_helper->getSystemValue('myshop_settings/newsletter/input_text');
+?>
+<?php if ($popup): ?>
+<!-- Modal (newsletter) -->
+<div class="modal fade active" id="Modalnewsletter" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true"  data-pause=<?php if($pop_time) { echo $pop_time; } else { echo '2000'; } ?>>
+    <div class="modal-dialog modal-md-middle">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+                <?php if($pop_text1):?>
+                <h4 class="modal-title text-center text-uppercase"><?php echo $pop_text1; ?></h4>
+                <?php endif;?>
+            </div>
+            <form
+                  novalidate
+                  action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+                  method="post"
+                  data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                  id="newsletter-validate-detail2">
+                <div class="modal-body">
+                    <!--modal-add-cart-->
+                    <div class="modal-newsletter">
+                        <?php if($pop_text2):?>
+                        <p>
+                            <?php echo $pop_text2; ?>
+                        </p>
+                        <?php endif;?>
+                        <div class="subscribe-form">
+                                <div class="row-subscibe">
+                                    <div class="col-left">
+                                        <div class="input-group">
+                                                <span class="input-group-addon">
+                                                <span class="icon icon-email"></span>
+                                                </span>
+                                            <input name="email" type="email" id="newsletter" class="form-control" placeholder="<?php echo $input_text; ?>" data-validate="{required:true, 'validate-email':true}">
+                                        </div>
+                                    </div>
+                                    <div class="col-right">
+                                        <button type="submit" class="action btn-fill"><?php echo __('Subscribe') ?></button>
+                                    </div>
+                                </div>
+                                <div class="checkbox-group form-group-top clearfix">
+                                <input type="checkbox" id="checkBox1">
+                                <label for="checkBox1">
+                                    <span class="check"></span>
+                                    <span class="box"></span>
+                                    <?php echo __('Don\'t show this popup again') ?>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/modal-add-cart-->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- / Modal (newsletter) -->
+
+<script>
+    require([
+        'jquery',
+        'jquery/jquery.cookie'
+
+    ], function ($) {
+
+        jQuery(function(){
+            if (jQuery(window).width() > 768) {
+                show_popup= $.cookie('show_popup');
+                if(show_popup == null || show_popup=='enabled')
+                {
+                    openPopup();
+                }
+                jQuery('#checkBox1').change(function() {
+                    show_popup= $.cookie('show_popup');
+                    if(jQuery(this).is(":checked")) {
+                        show_popup= $.cookie('show_popup','disabled');
+                    }else
+                    {
+                        show_popup= $.cookie('show_popup','enabled');
+                    }
+                });
+            }
+        })
+
+        function openPopup(){
+            var pause = $('#Modalnewsletter').attr('data-pause');
+            setTimeout(function() {
+
+                $.fn.modal_custom = function() {
+                    if(!this.length) return;
+
+                    var $modal = $(this),
+                        $modal_dialog = $(this).find('.modal-dialog'),
+                        $close_modal = $(this).find('button.close'),
+                        $body = $('body'),
+                        $modal_bg = $('<div>').addClass('modal-backdrop fade'),
+                        speed = 300;
+
+
+                    var scrollWidth = function() {
+                        var $div = $('<div>').css({
+                            overflowY: 'scroll',
+                            width: '50px',
+                            height: '50px',
+                            visibility: 'hidden'
+                        });
+
+                        $body.append($div);
+                        var scrollWidth = $div.get(0).offsetWidth - $div.get(0).clientWidth;
+                        $div.remove();
+
+                        return scrollWidth;
+                    };
+
+                    $body.addClass('modal-open');
+                    $($body, $modal).css({paddingRight: scrollWidth()});
+
+                    $modal_bg.appendTo($body).fadeIn(speed*0.66).addClass('in');
+
+                    $modal.addClass('in').fadeIn();
+
+                    $modal_dialog
+                        .hide()
+                        .css({
+                            marginTop: '-220px'
+                        })
+                        .fadeIn(speed*0.66)
+                        .animate({
+                            marginTop: '0px'
+                        }, {
+                            duration: speed,
+                            queue: false
+                        });
+
+                    function close_modal() {
+                        $modal_dialog.animate({
+                            marginTop: '-220px',
+                            opacity: 0
+                        }, {
+                            duration: speed*0.66,
+                            queue: false
+                        });
+
+                        setTimeout(function() {
+                            $modal_bg.animate({
+                                opacity: 0
+                            }, {
+                                duration: speed,
+                                queue: false,
+                                complete: function() {
+                                    $modal.remove();
+                                    $modal_bg.remove();
+                                    $($body, $modal).css({padding: 'inherit'});
+                                    $body.removeClass('modal-open');
+                                }
+                            });
+                        }, speed*0.66);
+
+                    };
+
+                    $(this).on('click', function(e) {
+                        if(!$(e.target).parents('.modal').length) close_modal();
+                    });
+
+                    $($close_modal).on('click', function() {
+                        close_modal();
+                    });
+                };
+
+                $('#Modalnewsletter.active').modal_custom();
+                
+            }, pause);
+        }
+
+
+    });
+</script>
+
+<?php endif; ?>

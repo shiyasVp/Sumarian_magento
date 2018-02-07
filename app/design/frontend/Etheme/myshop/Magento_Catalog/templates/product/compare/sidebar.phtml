@@ -1,0 +1,51 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/* @var $block \Magento\Framework\View\Element\Template */
+?>
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$f_open = $ys_helper->getSystemValue('myshop_settings/product_listing/sidebar_collapse');
+?>
+<div class="collapse-block<?php if($f_open): ?> open<?php endif; ?>">
+    <div class="collapse-block_title">
+        <strong><?php echo __('Compare Products') ?></strong>
+    </div>
+    <div class="collapse-block_content">
+        <div class="block block-compare" data-bind="scope: 'compareProducts'" data-role="compare-products-sidebar">
+            <!-- ko if: compareProducts().count -->
+            <div class="block-content no-display" aria-labelledby="block-compare-heading" data-bind="css: {'no-display': !compareProducts().count}">
+                <ol id="compare-items" class="product-items product-items-names" data-bind="foreach: compareProducts().items">
+                        <li class="product-item">
+                            <input type="hidden" class="compare-item-id" data-bind="value: id"/>
+                            <strong class="product-item-name">
+                                <a data-bind="attr: {href: product_url}, html: name" class="product-item-link"></a>
+                            </strong>
+                            <a href="#" data-bind="attr: {'data-post': remove_url}" title="<?php /* @escapeNotVerified */ echo __('Remove This Item') ?>" class="action delete link-close icon icon-close">
+                                <span><?php /* @escapeNotVerified */ echo __('Remove This Item') ?></span>
+                            </a>
+                        </li>
+                </ol>
+                <div class="actions_side">
+                    <a data-bind="attr: {'href': compareProducts().listUrl}" class="action compare primary btn offset-right-20"><span><?php /* @escapeNotVerified */ echo __('Compare') ?></span></a>
+                    <a id="compare-clear-all" href="#" class="action clear btn btn-underline color-defaulttext2" data-post="<?=$block->escapeHtml(
+                        $this->helper('Magento\Catalog\Helper\Product\Compare')->getPostDataClearList()
+                    ) ?>">
+                        <span><?php /* @escapeNotVerified */ echo __('Clear All') ?></span>
+                    </a>
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- ko ifnot: compareProducts().count -->
+            <div class="empty"><?php /* @escapeNotVerified */ echo __('You have no items to compare.') ?></div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+{"[data-role=compare-products-sidebar]": {"Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>}}
+</script>

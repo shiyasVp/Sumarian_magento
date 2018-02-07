@@ -1,0 +1,91 @@
+.clearfix:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+.post-list {
+    margin-bottom: 60px;
+}
+.post-list .post-content .post-read-more {padding-top:10px; float:right;}
+
+.blog-category-view .category-content {padding-left: 40px;}
+
+.post-content .post-description img {margin:0 15px 0 15px;}
+.post-content .post-description ul,
+.post-content .post-description ol {list-style-position: inside;}
+
+.post-content .post-description .post-ftimg-hld {float: left; margin: 0 15px 0 15px; width: 33%}
+.post-content .post-description .post-ftimg-hld img {width:100%; padding:0px; margin:0px;}
+@media (max-width: 496px) {
+  .post-content .post-description .post-ftimg-hld {width: 100%; margin:0px;}
+}
+
+.post-list .post-header .post-title {max-width:80%;}
+.post-list .post-header .post-title a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #636363;
+}
+.post-list .post-header .post-title {
+    margin: 0px;
+    padding: 10px 0;
+    float:left;
+}
+.post-list .post-holder .post-header .addthis_toolbox {float: right; padding-top: 20px;}
+.post-list .hidden {display:none;}
+
+.post-view .post-holder .post-header .addthis_toolbox {float: right;}
+.post-view .post-bottom {margin-top:30px;}
+
+.post-view .post-nextprev-hld  {margin-bottom: 30px;}
+.post-view .post-nextprev-hld .nextprev-link {font-weight: 700;}
+.post-view .post-nextprev-hld .prev-link {float:left}
+.post-view .post-nextprev-hld .next-link {float:right}
+
+.post-view .block {margin-bottom: 30px;}
+
+.widget.block-recent-posts .block-content .item {
+        padding: 8px 0 0px 0px;
+}
+.widget.block-rss .rss-icon { width: 23px; padding-right: 10px; }
+
+/* Tag claud widget */
+.widget.block-tagclaud .smallest{font-size: 0.75em}
+.widget.block-tagclaud .small{font-size:1em}
+.widget.block-tagclaud .medium{font-size:1.25em}
+.widget.block-tagclaud .large{font-size:1.5em}
+.widget.block-tagclaud .largest{font-size:1.75em}
+
+.blog-widget-recent .post-list {
+    padding: 0px;
+    margin: 0px;
+}
+
+.blog-widget-recent .post-holder {
+    width: 29%;
+    float: left;
+    margin: 5px;
+}
+
+.blog-widget-recent .post-description .post-text-hld {
+    max-height: 150px;
+    min-height: 150px;
+    overflow-y: auto;
+}
+
+.blog-widget-recent-masonry .post-description .post-text-hld {
+    max-height: none;
+    min-height: 0;
+}
+.blog-widget-recent-masonry .post-description .post-ftimg-hld {
+    width: 100%;
+    margin: 0px;
+}
+
+.mfblog-autoloader {text-align: center;}
+.mfblog-autoloader .mfblog-show-onload {display: none;}
+
+
+@media (max-width: 420px) {
+  #mfblog_gcomments {max-width:345px; overflow-y: scroll;}
+}

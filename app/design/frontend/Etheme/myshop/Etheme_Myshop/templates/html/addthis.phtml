@@ -1,0 +1,7 @@
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$add_this = $ys_helper->getSystemValue('myshop_settings/product_page/add_this');
+?>
+<?php if($add_this): ?>
+<?php echo $add_this; ?>
+<?php endif ?>

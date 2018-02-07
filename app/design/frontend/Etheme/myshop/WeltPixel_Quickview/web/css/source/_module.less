@@ -1,0 +1,19 @@
+.weltpixel-quickview-catalog-product-view {
+
+  .reviews-actions .add {display: none;}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+  .weltpixel-quickview-catalog-product-view {
+    &.catalog-product-view .breadcrumbs,
+    &.catalog-product-view .columns,
+    &.catalog-product-view .page.messages,
+    &.catalog-product-view .page-title-wrapper {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+

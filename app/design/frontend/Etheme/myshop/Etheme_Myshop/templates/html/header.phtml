@@ -1,0 +1,1376 @@
+<?php
+$header = $this->getSystemValue('myshop_settings/header_settings/header');
+$sticky_var = $this->getSystemValue('myshop_settings/header_settings/sticky_menu');
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+
+if ($sticky_var == 0) {
+    $sticky = ' disabled';
+} else {
+    $sticky = '';
+}
+?>
+
+<?php /* Header 1 */ ?>
+<?php if($header == 1): ?>
+    <header>
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                    <div class="mini-menu-dropdown dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon icon-more_horiz"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="mini-menu">
+                                <?php echo $this->getChildHtml("header_links"); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+
+        <!-- desktop-header -->
+        <div class="desktop-header  header-06">
+            <div class="container">
+                <div class="pull-left">
+                    <!-- mini-menu -->
+                    <div class="mini-menu">
+                        <?php echo $this->getChildHtml("header_links"); ?>
+                    </div>
+                    <!-- /mini-menu -->
+                </div>
+                <div class="pull-right text-right">
+                    <!-- box-info -->
+                    <?php echo $this->getChildHtml("header_phone"); ?>
+                    <!-- /box-info -->
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container">
+                    <div class="pull-left">
+                        <!-- logo -->
+                        <?php echo $this->getChildHtml("logo"); ?>
+                        <!-- /logo -->
+                    </div>
+                    <div class="pull-right">
+                        <!-- account -->
+                        <?php echo $this->getChildHtml("tops_links"); ?>
+                        <!-- /account -->
+                        <!-- cart -->
+                        <div class="main-parent-cart">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                        <!-- /cart -->
+                    </div>
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container">
+                    <div class="pull-left">
+                        <div class="menu-parent-box">
+                            <!-- header-menu -->
+                            <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                            <!-- /header-menu -->
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <!-- search -->
+                        <?php echo $this->getChildHtml("top.search"); ?>
+                        <!-- /search -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php /* @escapeNotVerified */ echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 2): ?>
+    <header class="no-shadow">
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header header-02">
+            <div class="container">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                </div>
+                <div class="pull-right">
+                    <!-- social-icon -->
+                    <?php echo $this->getChildHtml("header_socials"); ?>
+                    <!-- /social-icon -->
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container">
+                    <div class="pull-left">
+                        <!-- logo -->
+                        <?php echo $this->getChildHtml("logo"); ?>
+                        <!-- /logo -->
+                    </div>
+                    <div class="pull-right">
+                        <!-- box-info -->
+                        <?php echo $this->getChildHtml("header_phone"); ?>
+                        <!-- /box-info -->
+                        <!-- box-wishlist -->
+                        <a href="<?php echo $block->getUrl('wishlist'); ?>" class="box-wishlist">
+                            <span class="badge badge"><?php echo $ys_helper->getWishlistCount(); ?></span>
+                            <span class="icon icon-favorite_border"></span>
+                            <span class="title"><?php echo __('Wishlist') ?></span>
+                        </a>
+                        <!-- /box-wishlist -->
+                        <!-- box-compare -->
+                        <a href="<?php echo $ys_helper->getCompareListUrl(); ?>" class="box-compare">
+                            <span class="badge badge"><?php echo $ys_helper->getCompareListCount(); ?></span>
+                            <span class="icon fa fa-balance-scale"></span>
+                            <span class="title"><?php echo __('Compare') ?></span>
+                        </a>
+                        <!-- /box-compare -->
+                        <!-- cart -->
+                        <div class="main-parent-cart">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                        <!-- /cart -->
+                    </div>
+                </div>
+            </div>
+            <div class="fill-bg-base">
+                <div class="container">
+                    <div class="pull-left">
+                        <div class="menu-parent-box">
+                            <!-- header-menu -->
+                            <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                            <!-- /header-menu -->
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <!-- search -->
+                        <?php echo $this->getChildHtml("top.search"); ?>
+                        <!-- /search -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 3): ?>
+    <header class="no-shadow">
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header  header-03">
+            <div class="container">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                </div>
+                <div class="pull-right">
+                    <!-- social-icon -->
+                    <?php echo $this->getChildHtml("header_socials"); ?>
+                    <!-- /social-icon -->
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <!-- box-info -->
+                            <?php echo $this->getChildHtml("header_phone"); ?>
+                            <!-- /box-info -->
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <!-- logo -->
+                            <?php echo $this->getChildHtml("logo"); ?>
+                            <!-- /logo -->
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <!-- cart -->
+                            <div class="main-parent-cart">
+                                <?php echo $this->getChildHtml("minicart"); ?>
+                            </div>
+                            <!-- /cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container ">
+                <div class="fill-bg-base text-center menu_cont_wrapper">
+                    <div class="menu-parent-box">
+                        <!-- header-menu -->
+                        <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                        <!-- /header-menu -->
+                    </div>
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 4): ?>
+    <header>
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                    <div class="mini-menu-dropdown dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon icon-more_horiz"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="mini-menu">
+                                <?php echo $this->getChildHtml("header_links"); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+								<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header header-01">
+            <div class="container">
+                <div class="pull-right">
+                    <!-- box-info -->
+                    <?php echo $this->getChildHtml("header_phone"); ?>
+                    <!-- /box-info -->
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+                <div class="pull-left">
+                    <!-- mini-menu -->
+                    <div class="mini-menu">
+                        <?php echo $this->getChildHtml("header_links"); ?>
+                    </div>
+                    <!-- /mini-menu -->
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <!-- social-icon -->
+                            <?php echo $this->getChildHtml("header_socials"); ?>
+                            <!-- /social-icon -->
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <!-- logo -->
+                            <?php echo $this->getChildHtml("logo"); ?>
+                            <!-- /logo -->
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <!-- account -->
+                            <?php echo $this->getChildHtml("tops_links"); ?>
+                            <!-- /account -->
+                            <!-- cart -->
+                            <div class="main-parent-cart">
+                                <?php echo $this->getChildHtml("minicart"); ?>
+                            </div>
+                            <!-- /cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container">
+                    <div class="pull-left">
+                        <div class="menu-parent-box">
+                            <!-- header-menu -->
+                            <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                            <!-- /header-menu -->
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <!-- search -->
+                        <?php echo $this->getChildHtml("top.search"); ?>
+                        <!-- /search -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 5): ?>
+    <header>
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header  header-05">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- mini-menu -->
+                    <div class="mini-menu">
+                        <?php echo $this->getChildHtml("header_links"); ?>
+                    </div>
+                    <!-- /mini-menu -->
+                </div>
+                <div class="pull-right text-right">
+                    <!-- box-info -->
+                    <?php echo $this->getChildHtml("header_phone"); ?>
+                    <!-- /box-info -->
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-2">
+                            <!-- logo -->
+                            <?php echo $this->getChildHtml("logo"); ?>
+                            <!-- /logo -->
+                        </div>
+                        <div class="col-md-6 col-lg-8 text-center">
+                            <div class="menu-parent-box f_m_width">
+                                <!-- header-menu -->
+                                <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                                <!-- /header-menu -->
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-lg-2 text-right">
+                            <!-- search -->
+                            <?php echo $this->getChildHtml("top.search"); ?>
+                            <!-- /search -->
+                            <!-- account -->
+                            <?php echo $this->getChildHtml("tops_links"); ?>
+                            <!-- /account -->
+                            <!-- cart -->
+                            <div class="main-parent-cart">
+                                <?php echo $this->getChildHtml("minicart"); ?>
+                            </div>
+                            <!-- /cart -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 6): ?>
+    <header>
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header  header-04">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- toggle-menu -->
+                        <div class="toggle-menu dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <?php echo $this->getChildHtml("header_links"); ?>
+                            </div>
+                        </div>
+                        <!-- /toggle-menu -->
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <!-- logo -->
+                        <div class="text-center">
+                            <?php echo $this->getChildHtml("logo"); ?>
+                        </div>
+                        <!-- /logo -->
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <div class="pull-right">
+                            <!-- cart -->
+                            <div class="main-parent-cart">
+                                <?php echo $this->getChildHtml("minicart"); ?>
+                            </div>
+                            <!-- /cart -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- account -->
+                            <?php echo $this->getChildHtml("tops_links"); ?>
+                            <!-- /account -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- search -->
+                            <?php echo $this->getChildHtml("top.search"); ?>
+                            <!-- /search -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- currency -->
+                            <?php echo $this->getChildHtml("currency"); ?>
+                            <!-- /currency -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- language -->
+                            <?php echo $this->getChildHtml("store_language"); ?>
+                            <!-- /language -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="menu-parent-box f_m_width">
+                        <!-- header-menu -->
+                        <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                        <!-- /header-menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 7): ?>
+    <header>
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header  header-07">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- language -->
+                        <?php echo $this->getChildHtml("store_language"); ?>
+                        <!-- /language -->
+                        <!-- currency -->
+                        <?php echo $this->getChildHtml("currency"); ?>
+                        <!-- /currency -->
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <!-- social-icon -->
+                        <?php echo $this->getChildHtml("header_socials"); ?>
+                        <!-- /social-icon -->
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <!-- search -->
+                        <?php echo $this->getChildHtml("top.search"); ?>
+                        <!-- /search -->
+                        <!-- account -->
+                        <?php echo $this->getChildHtml("tops_links"); ?>
+                        <!-- /account -->
+                        <!-- cart -->
+                        <div class="main-parent-cart">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                        <!-- /cart -->
+                    </div>
+                </div>
+            </div>
+            <div class="top-line">
+                <div class="container">
+                    <div class="row text-center">
+                        <!-- logo -->
+                        <?php echo $this->getChildHtml("logo"); ?>
+                        <!-- /logo -->
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="menu-parent-box f_m_width">
+                            <!-- header-menu -->
+                            <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                            <!-- /header-menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 8): ?>
+    <header class="header-static no-shadow">
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                    <div class="mini-menu-dropdown dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon icon-more_horiz"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="mini-menu">
+                                <?php echo $this->getChildHtml("header_links"); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header  header-08">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- toggle-menu -->
+                        <div class="toggle-menu dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <?php echo $this->getChildHtml("header_links"); ?>
+                            </div>
+                        </div>
+                        <!-- /toggle-menu -->
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <!-- logo -->
+                        <div class="text-center">
+                            <?php echo $this->getChildHtml("logo"); ?>
+                        </div>
+                        <!-- /logo -->
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <div class="pull-right">
+                            <!-- cart -->
+                            <div class="main-parent-cart">
+                                <?php echo $this->getChildHtml("minicart"); ?>
+                            </div>
+                            <!-- /cart -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- account -->
+                            <?php echo $this->getChildHtml("tops_links"); ?>
+                            <!-- /account -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- search -->
+                            <?php echo $this->getChildHtml("top.search"); ?>
+                            <!-- /search -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- currency -->
+                            <?php echo $this->getChildHtml("currency"); ?>
+                            <!-- /currency -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- language -->
+                            <?php echo $this->getChildHtml("store_language"); ?>
+                            <!-- /language -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="menu-parent-box f_m_width">
+                        <!-- header-menu -->
+                        <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                        <!-- /header-menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 9): ?>
+    <header>
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header  header-09">
+            <div class="container">
+                <div class="pull-left">
+                    <!-- logo -->
+                    <div class="text-center">
+                        <?php echo $this->getChildHtml("logo"); ?>
+                    </div>
+                    <!-- /logo -->
+                </div>
+                <div class="pull-right">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="main-parent-cart">
+                        <?php echo $this->getChildHtml("minicart"); ?>
+                    </div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container">
+                <div class="pull-left">
+                    <div class="menu-parent-box">
+                        <!-- header-menu -->
+                        <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                        <!-- /header-menu -->
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>
+
+<?php if($header == 10): ?>
+    <header class="header-static">
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <!-- language -->
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <!-- /language -->
+                    <!-- currency -->
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <!-- /currency -->
+                    <div class="mini-menu-dropdown dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon icon-more_horiz"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="mini-menu">
+                                <?php echo $this->getChildHtml("header_links"); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- account -->
+                    <?php echo $this->getChildHtml("tops_links"); ?>
+                    <!-- /account -->
+                    <!-- cart -->
+                    <div class="mobile-parent-cart"></div>
+                    <!-- /cart -->
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                <!-- logo -->
+                <?php echo $this->getChildHtml("logo"); ?>
+                <!-- /logo -->
+            </div>
+            <div class="container-fluid top-line">
+                <div class="pull-left">
+                    <div class="mobile-parent-menu">
+                        <div class="mobile-menu-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="menu-text">
+                                <?php echo __('Menu'); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- search -->
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                    <!-- /search -->
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-header -->
+        <!-- desktop-header -->
+        <div class="desktop-header  header-08">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- toggle-menu -->
+                        <div class="toggle-menu dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <?php echo $this->getChildHtml("header_links"); ?>
+                            </div>
+                        </div>
+                        <!-- /toggle-menu -->
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <!-- logo -->
+                        <div class="text-center">
+                            <?php echo $this->getChildHtml("logo"); ?>
+                        </div>
+                        <!-- /logo -->
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <div class="pull-right">
+                            <!-- cart -->
+                            <div class="main-parent-cart">
+                                <?php echo $this->getChildHtml("minicart"); ?>
+                            </div>
+                            <!-- /cart -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- account -->
+                            <?php echo $this->getChildHtml("tops_links"); ?>
+                            <!-- /account -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- search -->
+                            <?php echo $this->getChildHtml("top.search"); ?>
+                            <!-- /search -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- currency -->
+                            <?php echo $this->getChildHtml("currency"); ?>
+                            <!-- /currency -->
+                        </div>
+                        <div class="pull-right">
+                            <!-- language -->
+                            <?php echo $this->getChildHtml("store_language"); ?>
+                            <!-- /language -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="menu-parent-box">
+                        <!-- header-menu -->
+                        <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                        <!-- /header-menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /desktop-header -->
+        <!-- stuck nav -->
+        <div class="stuck-nav<?php echo $sticky; ?>">
+            <div class="container">
+                <div class="pull-left stick_menu_width">
+                    <div class="stuck-menu-parent-box">
+                        <div class="mobile-menu-toggle hidden-lg">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+								<span class="menu-text">
+									<?php echo __('Menu'); ?>
+								</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="stuck-cart-parent-box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /stuck nav -->
+    </header>
+<?php endif ?>

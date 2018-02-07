@@ -1,0 +1,41 @@
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$footer_newsletter_title = $ys_helper->getSystemValue('myshop_settings/footer_settings/footer_newsletter_title');
+$footer_newsletter_slogan = $ys_helper->getSystemValue('myshop_settings/footer_settings/footer_newsletter_slogan');
+$footer_newsletter_placeholder = $ys_helper->getSystemValue('myshop_settings/footer_settings/footer_newsletter_placeholder');
+$footer_newsletter_button = $ys_helper->getSystemValue('myshop_settings/footer_settings/footer_newsletter_button');
+?>
+<!-- subscribe-box -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="subscribe-box-01">
+            <div class="container">
+                <div class="row mobile-collapse">
+                    <h4 class="mobile-collapse_title visible-xs"><?php echo $footer_newsletter_title; ?></h4>
+                    <div class="mobile-collapse_content">
+                        <div class="col-md-12 col-lg-7">
+                            <div class="title hidden-xs"><?php echo $footer_newsletter_title; ?></div>
+                            <p><?php echo $footer_newsletter_slogan; ?></p>
+                        </div>
+                        <div class="col-md-12 col-lg-5">
+                            <form class="form form-inline"
+                                  novalidate
+                                  action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+                                  method="post"
+                                  data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                                  id="newsletter-validate-detail">
+                                <label class="sr-only" for="email"><?php /* @escapeNotVerified */ echo __('Email') ?></label>
+                                <span class="addon-icon">
+                                    <span class="icon icon-email"></span>
+                                </span>
+                                <input name="email" type="email" id="newsletter" placeholder="<?php echo $footer_newsletter_placeholder; ?>" class="form-control addon-icon" data-validate="{required:true, 'validate-email':true}"/>
+                                <button type="submit" title="<?php echo $footer_newsletter_button; ?>" class="action btn-inversion"><span><?php echo $footer_newsletter_button; ?></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /subscribe-box -->

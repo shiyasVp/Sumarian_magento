@@ -1,0 +1,17 @@
+<?php
+$ys_helper = $this->helper('Etheme\Myshop\Helper\Data');
+$f_open = $ys_helper->getSystemValue('myshop_settings/product_listing/sidebar_collapse');
+$c_block = $ys_helper->getSystemValue('myshop_settings/product_listing/sidebar_custom');
+$c_title = $ys_helper->getSystemValue('myshop_settings/product_listing/sidebar_custom_title');
+$c_content = $ys_helper->getSystemValue('myshop_settings/product_listing/sidebar_custom_body');
+?>
+<?php if ($c_block): ?>
+<div class="collapse-block<?php if($f_open): ?> open<?php endif; ?>">
+    <h3 class="collapse-block_title "><?php echo $c_title; ?></h3>
+    <div class="collapse-block_content">
+        <div class="aside-custom-block">
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($c_content)->toHtml(); ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

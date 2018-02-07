@@ -1,0 +1,73 @@
+<?php
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post view template
+ *
+ * @var $block \Magefan\Blog\Block\Post\View
+ */
+?>
+<?php
+    $_post = $this->getPost();
+    $_postUrl = $_post->getPostUrl();
+    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+?>
+<div class="blog-single-post post text-left post-holder-<?php echo $_post->getId() ?>">
+    <div class="title-block">
+        <?php $collection = $_post->getParentCategories(); ?>
+        <?php if ($_categoriesCount = $_post->getCategoriesCount()) : ?>
+            <div class="post-tag">
+                <?php foreach($collection as $ct) { ?>
+                    <a href="<?php echo $ct->getCategoryUrl(); ?>"><?php echo $ct->getTitle(); ?></a>
+                <?php } ?>
+            </div>
+        <?php endif; ?>
+        <div class="post-meta">
+            <span class="post__meta__item">
+                <?php if($_post->getAuthor()): ?>
+                    <span class="autor"><?php echo __('by') ?> <b><?php echo $_post->getAuthor()->getTitle(); ?></b></span>
+                <?php endif; ?>
+                <span class="time"><?php echo __('on') ?> <?php echo $_post->getPublishDate('M'); ?> <b><?php echo $_post->getPublishDate('d'); ?>, <?php echo $_post->getPublishDate('Y'); ?></b></span>
+            </span>
+        </div>
+    </div>
+    <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
+        <div class="indent-top-bottom">
+            <img src="<?php echo $featuredImage ?>" alt="<?php echo $_postName ?>" />
+        </div>
+    <?php } ?>
+    <?php echo $block->getContent() ?>
+    <div class="clear"></div>
+
+    <?php $collection2 = $_post->getRelatedTags(); ?>
+    <?php if ($_tagsCount = $_post->getTagsCount()) : ?>
+        <div class="post-meta separators">
+        <span class="item">
+            <?php echo __('Tag:') ?>
+            <?php foreach($collection2 as $ct2) { ?>
+                <a href="<?php echo $ct2->getTagUrl(); ?>"><?php echo $ct2->getTitle(); ?></a>
+            <?php } ?>
+        </span>
+        </div>
+    <?php endif; ?>
+
+    <div class="post-social-icon">
+        <div class="addthis_toolbox addthis_default_style" addthis:url="<?php echo $_postUrl ?>">
+            <a class="addthis_button_facebook"></a>
+            <a class="addthis_button_twitter"></a>
+            <a class="addthis_button_email"></a>
+            <a class="addthis_button_compact"></a>
+        </div>
+    </div>
+    <hr>
+    <div class="post-bottom">
+        <?php echo $this->getChildHtml('blog.post.bottom') ?>
+    </div>
+</div>
+

@@ -1,0 +1,2828 @@
+<?xml version="1.0"?>
+<default>
+    <blocks>
+
+        <block>
+            <title>Header Links</title>
+            <identifier>header_links</identifier>
+            <content>
+                <![CDATA[
+<ul>
+ <li><a href="#">Home</a></li>
+ <li><a href="#">Delivery</a></li>
+ <li><a href="#">Blog</a></li>
+ <li><a href="#">Contacts</a></li>
+</ul>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Header Phone</title>
+            <identifier>header_phone</identifier>
+            <content>
+                <![CDATA[
+<div class="box-info">
+ <div class="telephone">
+		<span class="icon icon-call"></span>+300-9876-2345
+ </div>
+ <div class="time">
+		7 Days a week from 9:00 am to 7:00 pm
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Header Socials</title>
+            <identifier>header_socials</identifier>
+            <content>
+                <![CDATA[
+<div class="social-icon">
+ <ul>
+  <li><a class="icon fa fa-facebook" href="http://www.facebook.com/"></a></li>
+  <li><a class="icon fa fa-twitter" href="http://www.twitter.com/"></a></li>
+  <li><a class="icon fa fa-google-plus" href="http://www.google.com/"></a></li>
+  <li><a class="icon fa fa-instagram" href="https://instagram.com/"></a></li>
+ </ul>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer links block 1</title>
+            <identifier>footer_links_block_1</identifier>
+            <content>
+                <![CDATA[
+<div class="mobile-collapse">
+ <h4 class="mobile-collapse_title">INFORMATION</h4>
+ <div class="mobile-collapse_content">
+  <div class="v-links-list">
+   <ul>
+    <li><a href="{{store url=""}}about/">About Us</a></li>
+    <li><a href="{{store url=""}}customer-service/">Customer Service</a></li>
+    <li><a href="{{store url=""}}privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+    <li><a href="{{store url=""}}search/term/popular/">Search Terms</a></li>
+    <li><a href="{{store url=""}}catalogsearch/advanced/">Advanced Search</a></li>
+    <li><a href="{{store url=""}}sales/guest/form/">Orders and Returns</a></li>
+    <li><a href="{{store url=""}}contact/">Contact Us</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer links block 2</title>
+            <identifier>footer_links_block_2</identifier>
+            <content>
+                <![CDATA[
+<div class="mobile-collapse">
+ <h4 class="mobile-collapse_title">WHY BUY FROM US</h4>
+ <div class="mobile-collapse_content">
+  <div class="v-links-list ">
+   <ul>
+    <li><a href="#">Shipping & Returns</a></li>
+    <li><a href="#">Secure Shopping</a></li>
+    <li><a href="#">International Shipping</a></li>
+    <li><a href="#">Affiliates</a></li>
+    <li><a href="#">Group Sales</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer links block 3</title>
+            <identifier>footer_links_block_3</identifier>
+            <content>
+                <![CDATA[
+<div class="mobile-collapse">
+ <h4 class="mobile-collapse_title">MY ACCOUNT</h4>
+ <div class="mobile-collapse_content">
+  <div class="v-links-list ">
+   <ul>
+    <li><a href="{{store url=""}}customer/account/login/">Sign In</a></li>
+    <li><a href="{{store url=""}}checkout/cart/">View Cart</a></li>
+    <li><a href="{{store url=""}}wishlist/">My Wishlist</a></li>
+    <li><a href="#">Track My Order</a></li>
+    <li><a href="#">Help</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer contacts</title>
+            <identifier>footer_contacts</identifier>
+            <content>
+                <![CDATA[
+<div class="mobile-collapse">
+ <h4 class="mobile-collapse_title">Contacts</h4>
+ <div class="mobile-collapse_content">
+  <div class="list-info">
+   <ul>
+    <li>Address: 7563 St. Vicent Place, Glasgow</li>
+    <li>Phone: +777 2345 7885</li>
+    <li>Fax: +777 2345 7886</li>
+    <li>Hours: 7 Days a week from 10:00 am</li>
+    <li>E-mail: <a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer Socials</title>
+            <identifier>footer_socials</identifier>
+            <content>
+                <![CDATA[
+<div class="social-icon-round">
+ <ul>
+  <li><a class="icon fa fa-facebook" href="http://www.facebook.com/"></a></li>
+  <li><a class="icon fa fa-twitter" href="http://www.twitter.com/"></a></li>
+  <li><a class="icon fa fa-google-plus" href="http://www.google.com/"></a></li>
+  <li><a class="icon fa fa-instagram" href="https://instagram.com/"></a></li>
+ </ul>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer Payments</title>
+            <identifier>footer_payments</identifier>
+            <content>
+                <![CDATA[
+<ul>
+    <li><a class="icon-01" href="#"></a></li>
+    <li><a class="icon-02" href="#"></a></li>
+    <li><a class="icon-03" href="#"></a></li>
+    <li><a class="icon-04" href="#"></a></li>
+    <li><a class="icon-05" href="#"></a></li>
+    <li><a class="icon-06" href="#"></a></li>
+    <li><a class="icon-07" href="#"></a></li>
+    <li><a class="icon-08" href="#"></a></li>
+</ul>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer Info Banners</title>
+            <identifier>footer_info_banners</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <div class="row">
+  <div class="col-sm-6 col-md-3">
+      <div class="mobile-collapse">
+          <h4 class="mobile-collapse_title visible-xs">Free Shipping</h4>
+          <div class="mobile-collapse_content">
+              <a href="#" class="services-block">
+                  <span class="icon icon-airplanemode_active"></span>
+                  <div class="title">Free Shipping</div>
+                  <p>Free on all products</p>
+              </a>
+          </div>
+      </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+      <div class="mobile-collapse">
+          <h4 class="mobile-collapse_title visible-xs">Secured Shopping</h4>
+          <div class="mobile-collapse_content">
+              <a href="#" class="services-block">
+                  <span class="icon icon-security"></span>
+                  <div class="title">Secured Shopping</div>
+                  <p>We use the best security features</p>
+              </a>
+          </div>
+      </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+      <div class="mobile-collapse">
+          <h4 class="mobile-collapse_title visible-xs">Free Returns</h4>
+          <div class="mobile-collapse_content">
+              <a href="#" class="services-block">
+                  <span class="icon icon-assignment_return"></span>
+                  <div class="title">Free Returns</div>
+                  <p>Return for free within 30 days</p>
+              </a>
+          </div>
+      </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+      <div class="mobile-collapse">
+          <h4 class="mobile-collapse_title visible-xs">Support</h4>
+          <div class="mobile-collapse_content">
+              <a href="#" class="services-block">
+                  <span class="icon icon-headset_mic"></span>
+                  <div class="title">Support</div>
+                  <p>Effectiveand Friendly Support</p>
+              </a>
+          </div>
+      </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer Contacts List</title>
+            <identifier>footer_contacts_list</identifier>
+            <content>
+                <![CDATA[
+<div class="mobile-collapse">
+ <h4 class="mobile-collapse_title visible-xs">Contacts</h4>
+ <div class="mobile-collapse_content">
+  <div class="list-info-center">
+   <ul>
+    <li>Address: 7563 St. Vicent Place, Glasgow</li>
+    <li>Phone: +777 2345 7885</li>
+    <li>Fax: +777 2345 7886</li>
+    <li>Hours: 7 Days a week from 10:00 am</li>
+    <li>E-mail: <a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Footer Menu</title>
+            <identifier>footer_menu</identifier>
+            <content>
+                <![CDATA[
+<ul>
+ <li><a href="{{store url=""}}about/">About Us</a></li>
+ <li><a href="{{store url=""}}customer-service/">Customer Service</a></li>
+ <li><a href="{{store url=""}}privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+ <li><a href="{{store url=""}}search/term/popular/">Search Terms</a></li>
+ <li><a href="{{store url=""}}catalogsearch/advanced/">Advanced Search</a></li>
+ <li><a href="{{store url=""}}contact/">Contact Us</a></li>
+ <li><a href="{{store url=""}}blog/">Blog</a></li>
+</ul>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Category Banners</title>
+            <identifier>category_banners</identifier>
+            <content>
+                <![CDATA[
+<div class="content offset-0">
+ <p class="offset-0">
+  High Perfomance and pixel perfect design gives your customers a seamless user experience on both desktop and mobile devices. It is a perfect choice for any type of webstore.
+ </p>
+ <div class="offset-44">
+  <a href="#" class="promo-box zoom-in  design-10">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-29.jpg}}" alt="">
+   <div class="description point-center-vertical point-left">
+    <div class="block-table">
+     <div class="block-table-cell">
+      <div class="title">Ajax Layered<br> Navigation</div>
+      <p>Ajax Layered Navigation is making customer's store<br> interaction fast and easy as possible.</p>
+      <span class="btn btn-red">SHOP NOW!</span>
+     </div>
+    </div>
+   </div>
+  </a>
+ </div>
+</div>
+<div class="content offset-60">
+ <hr>
+</div>
+<div class="content offset-18 bottomset-53">
+ <div class="row">
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-01.jpg}}" alt="">
+   </span>
+   <span class="title">Clothing</span>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-04.jpg}}" alt="">
+   </span>
+   <span class="title">Shoes</span>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-06.jpg}}" alt="">
+   </span>
+   <span class="title">Sunglasses</span>
+   </a>
+  </div>
+ </div>
+</div>
+
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Category Banners 2</title>
+            <identifier>category_banners_2</identifier>
+            <content>
+                <![CDATA[
+<div class="content offset-0">
+ <p class="offset-0">
+  High Perfomance and pixel perfect design gives your customers a seamless user experience on both desktop and mobile devices. It is a perfect choice for any type of webstore.
+ </p>
+ <div class="offset-44">
+  <a href="#" class="promo-box zoom-in  design-10">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-29-man.jpg}}" alt="">
+   <div class="description point-center-vertical point-left">
+    <div class="block-table">
+     <div class="block-table-cell">
+      <div class="title">Ajax Layered<br> Navigation</div>
+      <p>Ajax Layered Navigation is making customer's store<br> interaction fast and easy as possible.</p>
+      <span class="btn">SHOP NOW!</span>
+     </div>
+    </div>
+   </div>
+  </a>
+ </div>
+</div>
+<div class="content offset-60">
+ <hr>
+</div>
+<div class="content offset-18 bottomset-53">
+ <div class="row">
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-07.jpg}}" alt="">
+   </span>
+   <span class="title">Clothing</span>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-08.jpg}}" alt="">
+   </span>
+   <span class="title">Shirts</span>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-09.jpg}}" alt="">
+   </span>
+   <span class="title">Hats</span>
+   </a>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Category Banners 3</title>
+            <identifier>category_banners_3</identifier>
+            <content>
+                <![CDATA[
+<div class="content offset-0">
+ <p class="offset-0">
+  High Perfomance and pixel perfect design gives your customers a seamless user experience on both desktop and mobile devices. It is a perfect choice for any type of webstore.
+ </p>
+</div>
+<div class="content offset-0">
+ <div class="row">
+  <div class="col-sm-6 col-md-6">
+   <div class="offset-44">
+    <a href="#" class="promo-box zoom-in design-11">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-31.jpg}}" alt="">
+     <div class="description point-center-vertical point-left">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title">Ajax Layered<br> Navigation</div>
+        <p>Ajax Layered Navigation is making customer's store interaction fast and easy as possible.</p>
+        <span class="btn btn-red">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+  <div class="col-sm-6 col-md-6">
+   <div class="offset-44">
+    <a href="#" class="promo-box zoom-in design-11">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-32.jpg}}" alt="">
+     <div class="description point-center-vertical point-left">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title">Grow your  business<br>  with MyShop</div>
+        <span class="btn">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="content offset-60">
+ <hr>
+</div>
+<div class="content offset-20">
+ <div class="row subcategory-listing">
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-01.jpg}}" alt="">
+   </span>
+   <span class="title">Clothing</span>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-04.jpg}}" alt="">
+   </span>
+   <span class="title">Shoes</span>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-06.jpg}}" alt="">
+   </span>
+   <span class="title">Sunglasses</span>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+   <a href="#" class="subcategory-item zoom-in">
+   <span>
+   <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-03.jpg}}" alt="">
+   </span>
+   <span class="title">Bags</span>
+   </a>
+  </div>
+ </div>
+</div>
+<div class="content" style="margin-bottom:58px;">
+ <hr>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Sidebar Custom Content</title>
+            <identifier>sidebar_custom_content</identifier>
+            <content>
+                <![CDATA[
+<h6><a href="#"><span class="color-base icon icon-local_shipping"></span> Shipping and Delivery</a></h6>
+<p>
+    We're dedicated to delivering your purchase as quickly and affordably as possible. We offer a range of delivery and pickup options, so you can choose the shipping method that best meets your needs.
+</p>
+<h6><a href="#"><span class="color-base icon icon-payment"></span> Payment Methods</a></h6>
+<p>
+    Every country and shopper has their prefered method to pay online. Offering your buyers safe and convenient payment choices can help your sale go smoothly, earn you positive Feedback, and bring them back for more.
+</p>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>MyShop Custom Tab</title>
+            <identifier>ms_custom_tab</identifier>
+            <content>
+                <![CDATA[
+Custom Tab Content
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Contacts Page Info</title>
+            <identifier>contacts_page_info</identifier>
+            <content>
+                <![CDATA[
+<h2 class="block-title big text-left text-capitalize">Contacts</h2>
+<div class="contact-layout-02">
+ <ul class="list-information">
+     <li>
+         <span class="icon icon-home"></span>
+         Address : 7563 St. Vicent Place, Glasgow
+     </li>
+     <li>
+         <span class="icon icon-call"></span>
+         Phone: +777 2345 7885; +777 2345 7886
+     </li>
+     <li>
+         <span class="icon icon-schedule"></span>
+         Hours: 7 Days a week from 10:00 am to 6:00 pm
+     </li>
+     <li>
+         <span class="icon icon-mail"></span>
+         E-mail: <a href="mailto:info@mydomain.com">info@mydomain.com</a>
+     </li>
+ </ul>
+ <div class="social-icon-round">
+     <ul>
+         <li><a class="icon fa fa-facebook" href="http://www.facebook.com/"></a></li>
+         <li><a class="icon fa fa-twitter" href="http://www.twitter.com/"></a></li>
+         <li><a class="icon fa fa-google-plus" href="http://www.google.com/"></a></li>
+         <li><a class="icon fa fa-instagram" href="https://instagram.com/"></a></li>
+     </ul>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners</title>
+            <identifier>ms_index_banners</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid offset-0">
+ <div class="row custom-layout indent-col-none">
+  <div class="col-xs-6 col-sm-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-06.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell"></div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-07.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div>
+        <img class="img-responsive" src="{{media url=wysiwyg/myshop/custom/promo-img-07-icon-01.png}}" alt="">
+       </div>
+       <div class="title">High Perfomance<br>and Pixel Perfect Design</div>
+       <span class="btn btn-lg btn-red">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-08.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell"></div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-09.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="title">Built with Love,<br>Trusted and Experienced<br>Elite Author</div>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-10.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell"></div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-11.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="title">It Does not Matter -<br>what Kind of Products do<br>You Want to Sell.</div>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Collections</title>
+            <identifier>ms_index_collections</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <h1 class="block-title">COLLECTIONS</h1>
+ <div class="row">
+  <div class="carousel-products-mobile subcategory-listing">
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-01.jpg}}" alt="">
+    </span>
+    <span class="title">Women’s</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-02.jpg}}" alt="">
+    </span>
+    <span class="title">Men’s</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-03.jpg}}" alt="">
+    </span>
+    <span class="title">Bags</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-04.jpg}}" alt="">
+    </span>
+    <span class="title">Shoes</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-05.jpg}}" alt="">
+    </span>
+    <span class="title">Hats</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-06.jpg}}" alt="">
+    </span>
+    <span class="title">Sunglasses</span>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Brands</title>
+            <identifier>ms_index_brands</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <div class="row">
+  <div class="carousel-brands">
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-01.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-02.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-03.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-04.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-05.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-06.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-07.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-08.png}}" alt="">
+    </a>
+   </div>
+   <div>
+    <a href="#">
+    <img src="{{media url=wysiwyg/myshop/custom/brand-09.png}}" alt="">
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+<script>
+	require([
+	"jquery",
+	"bootstrapminify",
+	"slick",
+	"sliders"
+	], function($) {
+
+		$(document).ready(function() {
+						setSlickGallery($('.carousel-brands'), 6, 5, 4, 2, 1, 'carousel');
+		});
+
+});
+</script>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Wide Banner</title>
+            <identifier>ms_index_wide_banner</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid">
+ <div class="row">
+  <a href="#" class="home4_banner_big zoom-in">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-05.jpg}}" alt="">
+   <div class="box-arrow-bottom-right">
+    <div class="animation-hover">
+     <div class="svg-icon">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+       <path     d="M234.625,393.808c0,0,86.365,97.951,151.666,151.666s37.917,13.692,37.917,16.852c0,3.16,104.27,73.727,183.263,111.643
+        c78.993,37.917,133.761,43.183,168.518,45.289c34.757,2.106,38.97,0,38.97,0s-86.365-4.213-117.963-20.012
+        c-31.597-15.799,55.822,15.799,117.963,5.266c62.141-10.532,70.567-22.118,70.567-22.118s-230.659,42.012-409.709-125.394
+        s-179.05-175.832-179.05-175.832s52.662,51.609,116.909,50.555c64.247-1.053,85.312-48.449,50.555-58.981
+        S217.773,237.929,217.773,237.929s-10.532-12.639-44.236,6.319s-33.704,18.958-33.704,18.958s51.609,78.993,71.62,218.02
+        s21.065,182.21,21.065,182.21l15.799-54.768"/>
+      </svg>
+     </div>
+     <div class="text">
+      MyShop over 3000 hours<br>
+      of Hard Work!
+     </div>
+    </div>
+   </div>
+   <div class="description">
+    <div class="block-table">
+     <div class="block-table-cell text-center">
+      <p class="color-defaulttext2">Grow your business with</p>
+      <div class="title color-defaulttext2">MyShop</div>
+      <span class="btn btn-lg">SHOP NOW!</span>
+     </div>
+    </div>
+   </div>
+  </a>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 2)</title>
+            <identifier>ms_index_banners_page2</identifier>
+            <content>
+                <![CDATA[
+<div class="content">
+ <h1 class="block-title small">COLLECTIONS</h1>
+ <div class="row">
+  <div class="carousel-products-mobile-md subcategory-listing">
+   <div class="col-xs-6 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-01.jpg}}" alt="">
+    </span>
+    <span class="title">Women’s</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-02.jpg}}" alt="">
+    </span>
+    <span class="title">Men’s</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-03.jpg}}" alt="">
+    </span>
+    <span class="title">Bags</span>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>MyShop Categories Tabs</title>
+            <identifier>ms_categories_tabs</identifier>
+            <content>
+                <![CDATA[
+<div class="content">
+ <div class="tabs-wrapper">
+  <h2 class="block-title text-left small">FEATURED</h2>
+  <ul class="nav nav-tabs nav-tabs--carusel text-center" role="tablist">
+   <li class="active">
+    <a href="#Tab1" role="tab" data-toggle="tab">FEATURED</a>
+   </li>
+   <li>
+    <a href="#Tab2" role="tab" data-toggle="tab">NEW</a>
+   </li>
+   <li>
+    <a href="#Tab3" role="tab" data-toggle="tab">SPECIALS</a>
+   </li>
+  </ul>
+  <div class="tab-content tab-content-carusel">
+   <div role="tabpanel" class="tab-pane active" id="Tab1"></div>
+   <div role="tabpanel" class="tab-pane" id="Tab2"></div>
+   <div role="tabpanel" class="tab-pane" id="Tab3"></div>
+  </div>
+  <div id="Tab1-clone" style="display:none">
+   <!-- carousel -->
+    {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs.phtml" limit="10" category_id="71"}}
+   <!-- /carousel -->
+  </div>
+  <div id="Tab2-clone" style="display:none">
+   <!-- carousel -->
+    {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs.phtml" limit="10" category_id="22"}}
+   <!-- /carousel -->
+  </div>
+  <div id="Tab3-clone" style="display:none">
+   <!-- carousel -->
+    {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs.phtml" limit="10" category_id="13"}}
+   <!-- /carousel -->
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>MyShop Categories Tabs 2</title>
+            <identifier>ms_categories_tabs2</identifier>
+            <content>
+                <![CDATA[
+<div class="content">
+ <div class="tabs-wrapper">
+  <h2 class="block-title text-left small">WOMEN’S</h2>
+  <ul class="nav nav-tabs nav-tabs--carusel text-center" role="tablist">
+   <li class="active">
+    <a href="#Tab10" role="tab" data-toggle="tab">WOMEN’S</a>
+   </li>
+   <li>
+    <a href="#Tab20" role="tab" data-toggle="tab">MEN’S</a>
+   </li>
+  </ul>
+  <div class="tab-content tab-content-carusel">
+   <div role="tabpanel" class="tab-pane active" id="Tab10"></div>
+   <div role="tabpanel" class="tab-pane" id="Tab20"></div>
+  </div>
+  <div id="Tab10-clone" style="display:none">
+   {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs.phtml" limit="10" category_id="22"}}
+  </div>
+  <div id="Tab20-clone" style="display:none">
+   {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs.phtml" limit="10" category_id="13"}}
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Sidebar Banner</title>
+            <identifier>sidebar_banner</identifier>
+            <content>
+                <![CDATA[
+<div class="box-aside no-space">
+ <div class="text-center-sm">
+  <a href="#" class="promo-box-1">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-item-01.jpg}}" alt="">
+    <div class="description">
+    <span class="btn action primary">SHOP NOW!</span>
+   </div>
+  </a>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Sidebar Testimonials</title>
+            <identifier>sidebar_testimonials</identifier>
+            <content>
+                <![CDATA[
+<div class="box-aside no-space">
+ <div class="testimonialsAsid">
+  <a href="#">
+   <div>
+    <img src="{{media url=wysiwyg/myshop/custom/slider-blog-img-01.jpg}}" alt="">
+    <p>
+     <span class="icon">“</span>
+     The other reason are design quality, code quality and features availability for 5 stars. Thank you
+    </p>
+    <p>—  Amanda </p>
+   </div>
+  </a>
+  <a href="#">
+   <div>
+    <img src="{{media url=wysiwyg/myshop/custom/slider-blog-img-01.jpg}}" alt="">
+    <p>
+     <span class="icon">“</span>
+     The flexible way to adjust and replace made our webshop good.
+    </p>
+    <p>—  Jessica</p>
+   </div>
+  </a>
+  <a href="#">
+   <div>
+    <img src="{{media url=wysiwyg/myshop/custom/slider-blog-img-01.jpg}}" alt="">
+    <p>
+     <span class="icon">“</span>
+     The flexible way to adjust and replace made our webshop good.
+    </p>
+    <p>—  Jessica</p>
+   </div>
+  </a>
+ </div>
+</div>
+<script>
+require([
+	"jquery",
+	"bootstrapminify",
+	"slick",
+	"sliders"
+], function($) {
+
+	setSlickGallery($('.testimonialsAsid'), 1, 1, 1, 1, 1, 'slickSlider');
+
+});
+</script>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Sidebar Facebook</title>
+            <identifier>sidebar_facebook</identifier>
+            <content>
+                <![CDATA[
+<div class="box-aside no-space">
+ <h3 class="title-aside">FACEBOOK</h3>
+ <div class="text-center-sm">
+  <div class="facebook-box">
+   <iframe src="http://www.facebook.com/plugins/likebox.php?id=134612429900944&amp;width=265px&amp;connections=9&amp;stream=false&amp;header=false&amp;height=230"></iframe>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners2 (page 2)</title>
+            <identifier>ms_index_banners2_page2</identifier>
+            <content>
+                <![CDATA[
+<div class="content hidden-mobile offset-56">
+ <hr>
+</div>
+<div class="content offset-56">
+ <div class="row">
+  <div class="custom-layout carousel-products-mobile-md">
+   <div class="col-xs-6 col-md-4">
+    <a href="#" class="promo-box zoom-in design-01">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-12.jpg}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title color-defaulttext2">Pixel Perfect<br>Design</div>
+        <span class="btn btn-underline color-base">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+   <div class="col-xs-6 col-md-4">
+    <a href="#" class="promo-box zoom-in  design-02">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-13.jpg}}" alt="">
+     <div class="description small-indent">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <img class="img-responsive" src="{{media url=wysiwyg/myshop/custom/promo-img-13-icon-01.png}}" alt="">
+        <div class="title">MyShop</div>
+        <p>is Dedicated Ecommerce Theme</p>
+        <span class="btn btn-underline color-base">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+   <div class="col-xs-6 col-md-4">
+    <a href="#" class="promo-box zoom-in design-03">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-14.jpg}}" alt="">
+     <div class="description point-left">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title">It Does not<br>Matter - what<br>Kind of Products<br>do You Want<br>to Sell.</div>
+        <span class="btn action primary btn-red">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 3)</title>
+            <identifier>ms_index_banners_page3</identifier>
+            <content>
+                <![CDATA[
+<div class="container offset-0">
+<div class="row">
+ <div class="col-md-8">
+  <div class="offset-50">
+   <div class="slick-slider-content">
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/03/slide-1.jpg}}" alt="">
+     <div class="description point-left point-left">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p class="color-defaulttext2">We'll Help to Manage</p>
+        <div class="title color-defaulttext2">
+         Your Online<br>Business
+        </div>
+        <a href="#" class="btn">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/03/slide-2.jpg}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p>
+         Our Experience Gives us the Ability to
+        </p>
+        <div class="title">Features as You See<br>in MyShop</div>
+        <a href="#" class="btn">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/03/slide-3.jpg}}" alt="">
+     <div class="description point-right">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title color-defaulttext2">
+         Get Ready<br>for Website<br>Creation
+        </div>
+        <p class="color-defaulttext2">
+         Unlike Anything You<br> Have Ever Seen
+        </p>
+        <a href="#" class="btn btn-red">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/03/slide-4.jpg}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p>
+         Our Experience Gives us the Ability to
+        </p>
+        <div class="title">
+         Create Stunning Webstore
+        </div>
+        <a href="#" class="btn">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="col-md-4 hidden-xs hidden-sm">
+  <div class="offset-50 text-center">
+   <a href="#" class="promo-box-1">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-item-02.jpg}}" alt="">
+    <div class="description point-bottom-large">
+     <span class="btn btn-white btn-border">SHOP NOW!</span>
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+</div>
+<script>
+	require([
+	"jquery",
+	"bootstrapminify",
+	"slick",
+	"sliders"
+	], function($) {
+
+		$(document).ready(function() {
+						setSlickGallery($('.slick-slider-content'), 1, 1, 1, 1, 1, 'slickSlider');
+		});
+
+});
+</script>
+<div class="container offset-0">
+<div class="row offset-44">
+ <div class="custom-layout carousel-products-mobile">
+  <div class="col-xs-4">
+   <a href="#" class="promo-box zoom-in design-01">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-16.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="title">Built<br>with Love</div>
+       <span class="btn btn-sm color-white btn-underline">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-4">
+   <a href="#" class="promo-box zoom-in design-01">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-15.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="title">Attention to<br>the Details</div>
+       <span class="btn btn-sm color-white btn-underline">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-4">
+   <a href="#" class="promo-box zoom-in design-01">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-48.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="title color-defaulttext2">Pixel Perfect<br>Design</div>
+       <span class="btn btn-sm color-base btn-underline">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 4)</title>
+            <identifier>ms_index_banners_page4</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid offset-0">
+ <div class="row custom-layout indent-col-none">
+  <div class="item-small">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-01.jpg}}" alt="">
+   </a>
+  </div>
+  <div class="item-large">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-02.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="box-arrow-top-right">
+        <div class="animation-hover">
+         <div class="svg-icon">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+           <path   transform="matrix(-1 0 0 1 300 0)"  d="M234.625,393.808c0,0,86.365,97.951,151.666,151.666s37.917,13.692,37.917,16.852c0,3.16,104.27,73.727,183.263,111.643
+            c78.993,37.917,133.761,43.183,168.518,45.289c34.757,2.106,38.97,0,38.97,0s-86.365-4.213-117.963-20.012
+            c-31.597-15.799,55.822,15.799,117.963,5.266c62.141-10.532,70.567-22.118,70.567-22.118s-230.659,42.012-409.709-125.394
+            s-179.05-175.832-179.05-175.832s52.662,51.609,116.909,50.555c64.247-1.053,85.312-48.449,50.555-58.981
+            S217.773,237.929,217.773,237.929s-10.532-12.639-44.236,6.319s-33.704,18.958-33.704,18.958s51.609,78.993,71.62,218.02
+            s21.065,182.21,21.065,182.21l15.799-54.768"/>
+          </svg>
+         </div>
+         <div class="text">
+          Best choice
+         </div>
+        </div>
+       </div>
+       <div class="hide-img"><img src="{{media url=wysiwyg/myshop/custom/promo-img-02-icon-01.png}}" alt=""></div>
+       <div class="title">MyShop is Dedicated Ecommerce Theme<br>with Increadible Features</div>
+       <span class="btn btn-lg btn-red">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="item-large">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-03.jpg}}" alt="">
+    <div class="description point-center-vertical point-left left-offset text-center">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="title color-base">High Perfomance<br>and Pixel Perfect Design</div>
+       <p class="color-defaulttext">High Perfomance and pixel perfect design gives your customers a<br>seamless user experience on both desktop and mobile devices. It is a<br>perfect choice for any type of webstore.</p>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="item-small">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-04.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div class="title">It Does not Matter -<br>what Kind of Products do<br>You Want to Sell.</div>
+       <p>Be amazed how quickly you get your next<br>website up and running.</p>
+       <span class="btn btn-lg btn-white btn-border">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+
+<div class="container">
+ <h1 class="block-title">COLLECTIONS</h1>
+ <div class="row">
+  <div class="carousel-products-mobile subcategory-listing">
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="listing-left-column.html" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-01.jpg}}" alt="">
+    </span>
+    <span class="title">Women’s</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="listing-left-column.html" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-02.jpg}}" alt="">
+    </span>
+    <span class="title">Men’s</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="listing-left-column.html" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-03.jpg}}" alt="">
+    </span>
+    <span class="title">Bags</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="listing-left-column.html" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-04.jpg}}" alt="">
+    </span>
+    <span class="title">Shoes</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="listing-left-column.html" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-05.jpg}}" alt="">
+    </span>
+    <span class="title">Hats</span>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+    <a href="listing-left-column.html" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-06.jpg}}" alt="">
+    </span>
+    <span class="title">Sunglasses</span>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Instagram</title>
+            <identifier>ms_instagram</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <h2 class="block-title">FOLLOW US INSTAGRAM
+  <span>#MYSHOP</span>
+ </h2>
+ <div id="instafeed" class="instafeed"></div>
+</div>
+<script>
+	require(["jquery","js/instafeed.min"], function($,Instafeed) {
+
+//instafeed
+$.fn.func_instafeed = function(new_obj) {
+  var $this = $(this);
+
+  if (!$this.length) return;
+
+  var new_obj = new_obj || {},
+    set_obj = {
+      get: 'user',
+      userId: '5479786510',
+      clientId: 'ede82b534d604f089beffd75353ff44f',
+      limit: 6,
+      sortBy: 'most-liked',
+      resolution: "standard_resolution",
+      accessToken: '5479786510.ede82b5.32885449218644e59b3d9655846d6d3b',
+      template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+    };
+
+  $.extend(set_obj, new_obj);
+
+  var feed = new Instafeed(set_obj);
+  feed.run();
+};
+
+$(document).ready(function() {
+  $('.instafeed').func_instafeed({
+    limit: 6
+  });
+  $('.instafeed-fluid').func_instafeed({
+    limit: 10
+  });
+});
+
+});
+</script>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 5)</title>
+            <identifier>ms_index_banners_page5</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid offset-0">
+ <div class="row">
+  <div class="slider-scroll">
+   <ul class="nav-slider-scroll">
+    <li class="active"><a href="#"></a></li>
+    <li><a href="#"></a></li>
+    <li><a href="#"></a></li>
+    <li><a href="#"></a></li>
+    <li><a href="#"></a></li>
+   </ul>
+   <div class="item">
+    <img src="{{media url=wysiwyg/myshop/custom/slides/05/slide-1.jpg}}"  alt="">
+    <div class="description point-left">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>Get Ready for Website Creation Unlike</p>
+       <div class="title">
+        Anything You<br>Have Ever Seen
+       </div>
+       <a href="#" class="btn btn-red  btn-lg">SHOP NOW!</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="item">
+    <img src="{{media url=wysiwyg/myshop/custom/slides/05/slide-2.jpg}}"  alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>Our Experience Gives us the Ability to</p>
+       <div class="title">
+        Create Stunning<br>Webstore
+       </div>
+       <a href="#" class="btn btn-lg">SHOP NOW!</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="item">
+    <img src="{{media url=wysiwyg/myshop/custom/slides/05/slide-3.jpg}}"  alt="">
+    <div class="description point-right">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>MyShop is Dedicated Ecommerce Theme</p>
+       <div class="title">
+        With Increadible<br>Features
+       </div>
+       <a href="#" class="btn  btn-lg">SHOP NOW!</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="item">
+    <img src="{{media url=wysiwyg/myshop/custom/slides/05/slide-4.jpg}}"  alt="">
+    <div class="box-arrow-bottom-left">
+     <div class="animation-hover">
+      <div class="svg-icon">
+       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+        <path     d="M234.625,393.808c0,0,86.365,97.951,151.666,151.666s37.917,13.692,37.917,16.852c0,3.16,104.27,73.727,183.263,111.643
+         c78.993,37.917,133.761,43.183,168.518,45.289c34.757,2.106,38.97,0,38.97,0s-86.365-4.213-117.963-20.012
+         c-31.597-15.799,55.822,15.799,117.963,5.266c62.141-10.532,70.567-22.118,70.567-22.118s-230.659,42.012-409.709-125.394
+         s-179.05-175.832-179.05-175.832s52.662,51.609,116.909,50.555c64.247-1.053,85.312-48.449,50.555-58.981
+         S217.773,237.929,217.773,237.929s-10.532-12.639-44.236,6.319s-33.704,18.958-33.704,18.958s51.609,78.993,71.62,218.02
+         s21.065,182.21,21.065,182.21l15.799-54.768"/>
+       </svg>
+      </div>
+      <div class="text">
+       Stay in touch and<br>stay in style
+      </div>
+     </div>
+    </div>
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p class="color-defaulttext2">There are Thousands Different<br>Ecommerce Themes,</p>
+       <div class="title color-defaulttext2">
+        Why is Myshop?
+       </div>
+       <a href="#" class="btn  btn-lg">SHOP NOW!</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="item">
+    <img src="{{media url=wysiwyg/myshop/custom/slides/05/slide-5.jpg}}"  alt="">
+    <div class="description point-left">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>Built with Love, Trusted and </p>
+       <div class="title">
+        Experienced<br>Elite Author
+       </div>
+       <a href="#" class="btn btn-red  btn-lg">SHOP NOW!</a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<script>
+	require([
+	"jquery"
+	], function($) {
+
+		/* slider-scroll */
+$.fn.sliderScroll = function() {
+  var $slider = this;
+
+  if (!$slider.length) return false;
+
+  var $nav = $slider.find('.nav-slider-scroll');
+
+  $nav.on('click', 'li', function(e) {
+    var wind_H = window.innerHeight,
+      wind_W = window.innerWidth,
+      $li = $nav.children(),
+      $item,
+      item_top,
+      item_H,
+      scroll_to,
+      responsive = (wind_W < 768 && wind_H > 562) ? (wind_H - 562) / 2 : 0,
+      eq = 0,
+      i = 0;
+
+    for (; i < $li.length; i++) {
+      if ($li.get(i) === this)
+        eq = i;
+    }
+
+    $item = $slider.find('.item').eq(eq),
+      item_top = $item.offset().top,
+      item_H = $item.outerHeight(),
+      scroll_to = item_top - wind_H / 2 + item_H / 2;
+
+    $('html, body').animate({
+      scrollTop: scroll_to + responsive
+    }, 500);
+
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  });
+
+  $(window).on('resize scroll load', function() {
+    var wind_H = window.innerHeight,
+      wind_W = window.innerWidth,
+      $items = $slider.find('.item'),
+      nav_marg_bottom = parseInt($nav.find('li:last-child a').css('margin-bottom')),
+      nav_H = $nav.innerHeight() - nav_marg_bottom - 14,
+      nav_top = $nav.offset().top,
+      $last_item = $slider.find('.item:last-child'),
+      last_item_top = $last_item.offset().top,
+      last_item_H = $last_item.outerHeight(),
+      last_item_max = last_item_top + last_item_H / 2,
+      $first_item = $slider.find('.item').eq(0),
+      first_item_top = $first_item.offset().top,
+      first_item_H = $first_item.outerHeight(),
+      first_item_max = first_item_top + first_item_H / 2,
+      pos_top = 0,
+      responsive = (wind_W < 768 && wind_H > 562) ? (wind_H - 562) / 2 : 0,
+      i = 0;
+
+    if (last_item_max < pageYOffset + wind_H / 2 - responsive)
+      pos_top = last_item_max - nav_H / 2 - pageYOffset;
+    else if (first_item_max > pageYOffset + wind_H / 2 - responsive)
+      pos_top = first_item_max - nav_H / 2 - pageYOffset;
+    else
+      pos_top = wind_H / 2 - nav_H / 2 - responsive;
+
+    $nav.css({
+      'top': pos_top
+    });
+
+    for (; i < $items.length; i++) {
+      var $item = $items.eq(i),
+        this_bottom = $item.offset().top + $item.outerHeight(),
+        eq;
+
+      if (this_bottom > nav_top + nav_H / 2) {
+        $nav.find('li').removeClass('active').eq(i).addClass('active');
+        break;
+      }
+    }
+  });
+};
+
+$('.slider-scroll').sliderScroll();
+
+});
+</script>
+
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 6)</title>
+            <identifier>ms_index_banners_page6</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid offset-0">
+ <div class="row indent-col-none custom-layout">
+  <div class="col-sm-12 col-md-6 col-lg-6">
+   <div class="slick-slider-content">
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/06/slide-1.jpg}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p>Our Experience Gives us the Ability to</p>
+        <div class="title font-size80">Create Stunning<br>Webstore</div>
+        <a href="#" class="btn btn-lg">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/06/slide-2.jpg}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p>Get Ready for Website Creation Unlike</p>
+        <div class="title font-size80">Anything You<br>Have Ever Seen</div>
+        <a href="#" class="btn btn-lg btn-red">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/06/slide-3.jpg}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p>We'll Help to Manage</p>
+        <div class="title font-size80">Your Online<br>Business</div>
+        <a href="#" class="btn btn-lg">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+     <img src="{{media url=wysiwyg/myshop/custom/slides/06/slide-4.jpg}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p> There is no other theme<br>with that amount of</p>
+        <div class="title">Features as You See <br>in MyShop</div>
+        <a href="#" class="btn btn-lg btn-border btn-white">SHOP NOW!</a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script>
+	require([
+	"jquery",
+	"bootstrapminify",
+	"slick",
+	"sliders"
+	], function($) {
+
+		$(document).ready(function() {
+						setSlickGallery($('.slick-slider-content'), 1, 1, 1, 1, 1, 'slickSlider');
+		});
+
+});
+</script>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-6">
+   <a href="#" class="promo-box zoom-in design-06">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-19.jpg}}" alt="">
+    <div class="description point-left">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>MyShop is Dedicated</p>
+       <div class="title">Ecommerce Theme with<br>Increadible Features</div>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+   <a href="#" class="promo-box zoom-in design-06">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-20.jpg}}" alt="">
+    <div class="description right-offset">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p class="color-defaulttext2">No Matter Which Web Experience do You have,</p>
+       <div class="title color-defaulttext2">Your Website will be <br>Modern and Functional</div>
+       <span class="btn btn-red btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners2 (page 6)</title>
+            <identifier>ms_index_banners2_page6</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid">
+ <div class="row offset-padding-10 custom-layout indent-col-none carousel-products-mobile-md">
+  <div class="col-xs-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-21.jpg}}" alt="">
+   </a>
+  </div>
+  <div class="col-xs-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-22.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <div><img class="img-responsive" src="{{media url=wysiwyg/myshop/custom/promo-img-22-icon-01.png}}" alt=""></div>
+       <div class="title">High Perfomance<br> and Pixel Perfect Design</div>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-xs-6 col-md-4">
+   <a href="#" class="promo-box zoom-in design-default">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-23.jpg}}" alt="">
+   </a>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 7)</title>
+            <identifier>ms_index_banners_page7</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <div class="row">
+  <div class="custom-layout carousel-products-mobile">
+   <div class="col-xs-6">
+    <a href="#" class="promo-box zoom-in design-default">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-26.jpg}}" alt="">
+    </a>
+   </div>
+   <div class="col-xs-6">
+    <a href="#" class="promo-box design-07 promo-border">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-25.png}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title color-defaulttext2">Resposive/Retina<br> Ready.</div>
+        <p class="color-defaulttext">
+         The highest responsiveness level. Your website will look crisp and amazing on any device. No matter what kind of display you are using. Test it.
+        </p>
+        <span class="btn btn-lg">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+   <div class="col-xs-6">
+    <a href="#" class="promo-box design-07 promo-border">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-25.png}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title color-defaulttext2">Bootstrap.</div>
+        <p class="color-defaulttext">
+         SASS html5 version. Preprocessors. The most popular latest HTML, CSS, and JS framework and technology. Designed for everyone, everywhere.
+        </p>
+        <span class="btn btn-lg">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+   <div class="col-xs-6">
+    <a href="#" class="promo-box zoom-in">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-28.jpg}}" alt="">
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners2 (page 7)</title>
+            <identifier>ms_index_banners2_page7</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <div class="row">
+  <div class="custom-layout carousel-products-mobile">
+   <div class="col-xs-6">
+    <a href="#" class="promo-box zoom-in">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-24.jpg}}" alt="">
+    </a>
+   </div>
+   <div class="col-xs-6">
+    <a href="#" class="promo-box  design-07 promo-border">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-25.png}}" alt="">
+     <div class="description">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <div class="title color-defaulttext2">Blog Ready.</div>
+        <p class="color-defaulttext">
+         MyShop is using FishPig magento extension (FREE). Fill the power of wordpress functionality. Our theme is optimized for its using.
+        </p>
+        <span class="btn btn-lg">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners3 (page 7)</title>
+            <identifier>ms_index_banners3_page7</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <div class="row">
+  <div class="custom-layout carousel-products-mobile-md">
+   <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <a href="#" class="services-block-border height-md">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <span class="icon icon-airplanemode_active"></span>
+       <div class="title">Free Shipping</div>
+       <p>Free on all products</p>
+      </div>
+     </div>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <a href="#" class="services-block-border  height-md">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <span class="icon icon-security"></span>
+       <div class="title">Secured Shopping</div>
+       <p>We use the best security features</p>
+      </div>
+     </div>
+    </a>
+   </div>
+   <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <a href="#" class="services-block-border  height-md">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <span class="icon icon-headset_mic"></span>
+       <div class="title">Support</div>
+       <p>Effectiveand Friendly Support</p>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Instagram Fluid</title>
+            <identifier>ms_instagram_fluid</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid">
+ <div class="row">
+  <div class="instafeed-fluid-indent-0">
+   <div id="instafeed" class="instafeed-fluid"></div>
+  </div>
+ </div>
+</div>
+<script>
+	require(["jquery","js/instafeed.min"], function($,Instafeed) {
+
+//instafeed
+$.fn.func_instafeed = function(new_obj) {
+  var $this = $(this);
+
+  if (!$this.length) return;
+
+  var new_obj = new_obj || {},
+    set_obj = {
+      get: 'user',
+      userId: '5479786510',
+      clientId: 'ede82b534d604f089beffd75353ff44f',
+      limit: 6,
+      sortBy: 'most-liked',
+      resolution: "standard_resolution",
+      accessToken: '5479786510.ede82b5.32885449218644e59b3d9655846d6d3b',
+      template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+    };
+
+  $.extend(set_obj, new_obj);
+
+  var feed = new Instafeed(set_obj);
+  feed.run();
+};
+
+$(document).ready(function() {
+  $('.instafeed').func_instafeed({
+    limit: 6
+  });
+  $('.instafeed-fluid').func_instafeed({
+    limit: 10
+  });
+});
+
+});
+</script>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 8)</title>
+            <identifier>ms_index_banners_page8</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <div class="row custom-layout">
+  <div class="col-xs-6">
+   <div class="box-product-info" style="background-image: url({{media url=wysiwyg/myshop/custom/box-product-info-img01.jpg}});">
+    <div class="title">WOMEN’S</div>
+    <ul>
+     <li><a href="#">Blouses &amp; Shirts</a></li>
+     <li><a href="#">Dresses</a></li>
+     <li><a href="#">Tops  &amp; T-shirts</a></li>
+     <li><a href="#">Sleeveless Tops</a></li>
+     <li><a href="#">Sweaters  &amp; Cardigans</a></li>
+     <li><a href="#">Jackets</a></li>
+     <li><a href="#">Outerwear</a></li>
+    </ul>
+    <a href="#" class="btn-link">SEE ALL PRODUCTS</a>
+   </div>
+  </div>
+  <div class="col-xs-6">
+   <div class="box-product-info" style="background-image: url({{media url=wysiwyg/myshop/custom/box-product-info-img02.jpg}});">
+    <div class="title">MEN’S</div>
+    <ul>
+     <li><a href="#">Blouses  &amp; Shirts</a></li>
+     <li><a href="#">Dresses</a></li>
+     <li><a href="#">Tops  &amp; T-shirts</a></li>
+     <li><a href="#">Sleeveless Tops</a></li>
+     <li><a href="#">Sweaters  &amp; Cardigans</a></li>
+     <li><a href="#">Jackets</a></li>
+     <li><a href="#">Outerwear</a></li>
+    </ul>
+    <a href="#" class="btn-link">SEE ALL PRODUCTS</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="container-fluid">
+ <div class="row">
+  <a href="#" class="home4_banner_big zoom-in">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-35.jpg}}" alt="">
+   <div class="box-arrow-bottom-left">
+    <div class="animation-hover">
+     <div class="svg-icon  color-white">
+      <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+       <path   transform="matrix(-1 0 0 1 300 0)"  d="M234.625,393.808c0,0,86.365,97.951,151.666,151.666s37.917,13.692,37.917,16.852c0,3.16,104.27,73.727,183.263,111.643
+        c78.993,37.917,133.761,43.183,168.518,45.289c34.757,2.106,38.97,0,38.97,0s-86.365-4.213-117.963-20.012
+        c-31.597-15.799,55.822,15.799,117.963,5.266c62.141-10.532,70.567-22.118,70.567-22.118s-230.659,42.012-409.709-125.394
+        s-179.05-175.832-179.05-175.832s52.662,51.609,116.909,50.555c64.247-1.053,85.312-48.449,50.555-58.981
+        S217.773,237.929,217.773,237.929s-10.532-12.639-44.236,6.319s-33.704,18.958-33.704,18.958s51.609,78.993,71.62,218.02
+        s21.065,182.21,21.065,182.21l15.799-54.768"/>
+      </svg>
+     </div>
+     <div class="text  color-white">
+      MyShop over 3000 hours<br>
+      of Hard Work!
+     </div>
+    </div>
+   </div>
+   <div class="description point-right">
+    <div class="container">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>Grow Your Business with </p>
+       <div class="title">MyShop</div>
+       <span class="btn btn-lg btn-red">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </a>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>MyShop Categories Tabs 3</title>
+            <identifier>ms_categories_tabs3</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <div class="tabs-wrapper">
+  <h2 class="block-title text-left small">FEATURED</h2>
+  <div class="row">
+   <ul class="nav nav-tabs nav-tabs--carusel text-center" role="tablist">
+    <li class="active">
+     <a href="#Tab1" role="tab" data-toggle="tab">FEATURED</a>
+    </li>
+    <li>
+     <a href="#Tab2" role="tab" data-toggle="tab">NEW</a>
+    </li>
+    <li>
+     <a href="#Tab3" role="tab" data-toggle="tab">SPECIALS</a>
+    </li>
+   </ul>
+   <div class="tab-content tab-content-carusel">
+    <div role="tabpanel" class="tab-pane active" id="Tab1"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab2"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab3"></div>
+   </div>
+   <div id="Tab1-clone" style="display:none">
+    <!-- carousel -->
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs2.phtml" limit="10" category_id="71"}}
+    <!-- /carousel -->
+   </div>
+   <div id="Tab2-clone" style="display:none">
+    <!-- carousel -->
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs2.phtml" limit="10" category_id="22"}}
+    <!-- /carousel -->
+   </div>
+   <div id="Tab3-clone" style="display:none">
+    <!-- carousel -->
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/carousel_tabs2.phtml" limit="10" category_id="13"}}
+    <!-- /carousel -->
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners2 (page 8)</title>
+            <identifier>ms_index_banners2_page8</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid">
+ <div class="row">
+  <a href="#" class="home4_banner_big zoom-in">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-34.jpg}}" alt="">
+   <div class="description">
+    <div class="container">
+     <div class="block-table">
+      <div class="block-table-cell text-right">
+       <p class="color-defaulttext2">We'll Help to Manage</p>
+       <div class="title color-defaulttext2">Your Online<br>Business</div>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </a>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners3 (page 8)</title>
+            <identifier>ms_index_banners3_page8</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid">
+ <div class="row">
+  <a href="#" class="home4_banner_big zoom-in">
+   <img src="{{media url=wysiwyg/myshop/custom/promo-img-33.jpg}}" alt="">
+   <div class="description point-left">
+    <div class="container">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>Built with Love, Trusted and Experienced </p>
+       <div class="title">Elite Author</div>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </a>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 9)</title>
+            <identifier>ms_index_banners_page9</identifier>
+            <content>
+                <![CDATA[
+<div class="container">
+ <h1 class="block-title">COLLECTIONS</h1>
+ <div class="row">
+  <div class="carousel-products-mobile subcategory-listing">
+   <div class="col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-01.jpg}}" alt="">
+    </span>
+    <span class="title">Women’s</span>
+    </a>
+   </div>
+   <div class="col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-02.jpg}}" alt="">
+    </span>
+    <span class="title">Men’s</span>
+    </a>
+   </div>
+   <div class="col-sm-4 col-md-4 col-lg-4">
+    <a href="#" class="subcategory-item zoom-in">
+    <span>
+    <img src="{{media url=wysiwyg/myshop/custom/subcategory-item-03.jpg}}" alt="">
+    </span>
+    <span class="title">Bags</span>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>MyShop Categories Tabs 4</title>
+            <identifier>ms_categories_tabs4</identifier>
+            <content>
+                <![CDATA[
+<div class="container offset-57">
+ <div class="tab-aside row">
+  <div class="col-xs-12 col-sm-3 col-md-3">
+   <h2 class="block-title text-left">WOMEN’S</h2>
+   <ul class="nav nav-tabs nav-tabs--carusel" role="tablist">
+    <li class="active">
+     <a href="#Tab1" role="tab" data-toggle="tab">Blouses &amp; Shirts </a>
+    </li>
+    <li>
+     <a href="#Tab2" role="tab" data-toggle="tab">Dresses </a>
+    </li>
+    <li>
+     <a href="#Tab3" role="tab" data-toggle="tab">Tops &amp; T-shirts</a>
+    </li>
+    <li>
+     <a href="#Tab4" role="tab" data-toggle="tab">Sleeveless Tops</a>
+    </li>
+    <li>
+     <a href="#Tab5" role="tab" data-toggle="tab">Sweaters &amp; Cardigans</a>
+    </li>
+    <li>
+     <a href="#Tab6" role="tab" data-toggle="tab">Jackets</a>
+    </li>
+    <li>
+     <a href="#Tab7" role="tab" data-toggle="tab">Outerwear</a>
+    </li>
+   </ul>
+  </div>
+  <div class="col-xs-12 col-sm-9 col-md-9">
+   <div class="tab-content tab-content-carusel">
+    <div role="tabpanel" class="tab-pane active" id="Tab1"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab2"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab3"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab4"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab5"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab6"></div>
+    <div role="tabpanel" class="tab-pane" id="Tab7"></div>
+   </div>
+   <!-- carousel-products  row -->
+  	 <div id="Tab1-clone" style="display:none">
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/categories.phtml" limit="9" category_id="71"}}
+    </div>
+    <div id="Tab2-clone" style="display:none">
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/categories.phtml" limit="9" category_id="13"}}
+    </div>
+    <div id="Tab3-clone" style="display:none">
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/categories.phtml" limit="9" category_id="22"}}
+    </div>
+    <div id="Tab4-clone" style="display:none">
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/categories.phtml" limit="9" category_id="21"}}
+    </div>
+    <div id="Tab5-clone" style="display:none">
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/categories.phtml" limit="9" category_id="20"}}
+    </div>
+    <div id="Tab6-clone" style="display:none">
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/categories.phtml" limit="9" category_id="12"}}
+    </div>
+    <div id="Tab7-clone" style="display:none">
+     {{block class="Magento\Catalog\Block\Product\ListProduct" template="Etheme_Myshop::products/categories.phtml" limit="9" category_id="71"}}
+    </div>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners2 (page 9)</title>
+            <identifier>ms_index_banners2_page9</identifier>
+            <content>
+                <![CDATA[
+<div class="container offset-0">
+ <div class="row offset-97">
+  <div class="menu-content">
+   <ul>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_01.png}}" alt="Shirts">
+     <span class="title">Shirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_02.png}}" alt="Sweaters">
+     <span class="title">Sweaters</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_03.png}}" alt="Sweatshirts">
+     <span class="title">Sweatshirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_04.png}}" alt="Denim">
+     <span class="title">Denim</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_05.png}}" alt="T-Shirts">
+     <span class="title">T-Shirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_06.png}}" alt="Jackets">
+     <span class="title">Jackets</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_07.png}}" alt="Outerwear">
+     <span class="title">Outerwear</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_08.png}}" alt="Pants">
+     <span class="title">Pants</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_09.png}}" alt="Skirts">
+     <span class="title">Skirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_10.png}}" alt="Dresses">
+     <span class="title">Dresses</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_11.png}}" alt="Shorts">
+     <span class="title">Shorts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_12.png}}" alt="Lingerie">
+     <span class="title">Lingerie</span>
+     </a>
+    </li>
+   </ul>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Myshop Index Banners (page 10)</title>
+            <identifier>ms_index_banners_page10</identifier>
+            <content>
+                <![CDATA[
+<div class="container-fluid offset-0">
+ <div class="row indent-col-none custom-layout">
+  <div class="col-sm-6">
+   <a href="#" class="promo-box zoom-in design-08">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-36.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>Get Ready for Website Creation Unlike</p>
+       <div class="title">Anything You Have Ever Seen</div>
+       <span class="btn btn-lg">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="col-sm-6">
+   <a href="#" class="promo-box zoom-in design-08">
+    <img src="{{media url=wysiwyg/myshop/custom/promo-img-37.jpg}}" alt="">
+    <div class="description">
+     <div class="block-table">
+      <div class="block-table-cell">
+       <p>Our Experience Gives us the Ability to</p>
+       <div class="title">Create Stunning Webstore</div>
+       <span class="btn btn-lg btn-red">SHOP NOW!</span>
+      </div>
+     </div>
+    </div>
+   </a>
+  </div>
+ </div>
+ <div class="row indent-col-none custom-layout">
+  <div class="col-sm-6">
+   <div class="row indent-col-none">
+    <div class="col-extra-400 col-xs-6 col-md-6">
+     <a href="#" class="promo-box zoom-in point-left design-14">
+      <img src="{{media url=wysiwyg/myshop/custom/promo-img-38.jpg}}" alt="">
+      <div class="description point-left">
+       <div class="block-table">
+        <div class="block-table-cell">
+         <div class="title color-defaulttext2">Women’s</div>
+         <span class="btn btn-lg btn-underline color-base">SHOP NOW!</span>
+        </div>
+       </div>
+      </div>
+     </a>
+    </div>
+    <div class="col-extra-400 col-xs-6 col-md-6">
+     <a href="#" class="promo-box zoom-in design-14">
+      <img src="{{media url=wysiwyg/myshop/custom/promo-img-39.jpg}}" alt="">
+      <div class="description point-left">
+       <div class="block-table">
+        <div class="block-table-cell">
+         <div class="title color-defaulttext2">Men’s</div>
+         <span class="btn btn-lg btn-underline color-base">SHOP NOW!</span>
+        </div>
+       </div>
+      </div>
+     </a>
+    </div>
+   </div>
+   <div class="row">
+    <a href="#" class="promo-box zoom-in design-09">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-41.jpg}}" alt="">
+     <div class="description point-left">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p class="text-xl">Grow your Business</p>
+        <div class="title">With MyShop</div>
+        <span class="btn btn-red btn-lg">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+  <div class="col-sm-6">
+   <div class="row">
+    <a href="#" class="promo-box zoom-in design-06">
+     <img src="{{media url=wysiwyg/myshop/custom/promo-img-40.jpg}}" alt="">
+     <div class="description point-left">
+      <div class="block-table">
+       <div class="block-table-cell">
+        <p>MyShop is Dedicated </p>
+        <div class="title">Ecommerce Theme with<br>  Increadible Features</div>
+        <span class="btn btn-lg btn-border color-white">SHOP NOW!</span>
+       </div>
+      </div>
+     </div>
+    </a>
+   </div>
+   <div class="row indent-col-none">
+    <div class="col-extra-400 col-xs-6 col-md-6">
+     <a href="#" class="promo-box zoom-in design-14">
+      <img src="{{media url=wysiwyg/myshop/custom/promo-img-42.jpg}}" alt="">
+      <div class="description point-left">
+       <div class="block-table">
+        <div class="block-table-cell">
+         <div class="title color-defaulttext2">Shoes</div>
+         <span class="btn btn-lg btn-underline color-base">SHOP NOW!</span>
+        </div>
+       </div>
+      </div>
+     </a>
+    </div>
+    <div class="col-extra-400 col-xs-6 col-md-6">
+     <a href="#" class="promo-box zoom-in design-14">
+      <img src="{{media url=wysiwyg/myshop/custom/promo-img-43.jpg}}" alt="">
+      <div class="description point-left">
+       <div class="block-table">
+        <div class="block-table-cell">
+         <div class="title color-defaulttext2">Sunglasses</div>
+         <span class="btn btn-lg btn-underline color-base">SHOP NOW!</span>
+        </div>
+       </div>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="container offset-0">
+ <div class="row offset-87">
+  <div class="menu-content">
+   <ul>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_01.png}}" alt="Shirts">
+     <span class="title">Shirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_02.png}}" alt="Sweaters">
+     <span class="title">Sweaters</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_03.png}}" alt="Sweatshirts">
+     <span class="title">Sweatshirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_04.png}}" alt="Denim">
+     <span class="title">Denim</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_05.png}}" alt="T-Shirts">
+     <span class="title">T-Shirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_06.png}}" alt="Jackets">
+     <span class="title">Jackets</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_07.png}}" alt="Outerwear">
+     <span class="title">Outerwear</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_08.png}}" alt="Pants">
+     <span class="title">Pants</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_09.png}}" alt="Skirts">
+     <span class="title">Skirts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_10.png}}" alt="Dresses">
+     <span class="title">Dresses</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_11.png}}" alt="Shorts">
+     <span class="title">Shorts</span>
+     </a>
+    </li>
+    <li>
+     <a href="#">
+     <img src="{{media url=wysiwyg/myshop/custom/clothes_img_12.png}}" alt="Lingerie">
+     <span class="title">Lingerie</span>
+     </a>
+    </li>
+   </ul>
+  </div>
+ </div>
+</div>
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+        <block>
+            <title>Megamenu Left Part</title>
+            <identifier>ms_megamenu_left</identifier>
+            <content>
+                <![CDATA[
+<li class="tonyMenu__item">
+ <a href="#">layout</a>
+ <div class="tonyMenu__megamenu tonyMenu__col-0-5-0"
+   data-tm-width="1210"
+   data-tm-align-horizontal="left"
+   data-tm-align-vertical="menu-bottom"
+   data-tm-animation="emersion"
+   data-tm-animation-in="emersion"
+   data-tm-animation-out="emersion"
+   data-tm-duration="300"
+   data-tm-emersion-distance="60">
+  <div class="tonyMenu__box-center">
+   <div class="tonyMenu__box-inner">
+    <h2 class="title-submenu">Layout</h2>
+    <ul class="tonyMenu__list-preview tonyMenu__list-outer-border tonyMenu__inner-col-6">
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-01.jpg}}" alt="">
+       Home page 1
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-02.jpg}}" alt="">
+       Home page 2
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-03.jpg}}" alt="">
+       Home page 3
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-04.jpg}}" alt="">
+       Home page 4
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-05.jpg}}" alt="">
+       Home page 5
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-06.jpg}}" alt="">
+       Home page 6
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-07.jpg}}" alt="">
+       Home page 7
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-08.jpg}}" alt="">
+       Home page 8
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-09.jpg}}" alt="">
+       Home page 9
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-10.jpg}}" alt="">
+       Home page 10
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-11.jpg}}" alt="">
+       Home page 11
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/layout-img-12.jpg}}" alt="">
+       Home page 12
+      </a>
+     </li>
+    </ul>
+    <div class="clearfix"></div>
+   </div>
+  </div>
+ </div>
+</li>
+<li class="tonyMenu__item">
+ <a href="#">listing</a>
+ <div class="tonyMenu__megamenu tonyMenu__col-0-5-0"
+   data-tm-width="1210"
+   data-tm-align-horizontal="left"
+   data-tm-align-vertical="menu-bottom"
+   data-tm-animation="emersion"
+   data-tm-animation-in="fade"
+   data-tm-duration="300"
+   data-tm-emersion-distance="60">
+  <div class="tonyMenu__box-center">
+   <div class="tonyMenu__box-inner">
+    <h2 class="title-submenu">listing</h2>
+    <ul class="tonyMenu__list-preview tonyMenu__inner-col-6">
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-01.png}}" alt="">
+       Left Column
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-03.png}}" alt="">
+       Right Column
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-04.png}}" alt="">
+       Left Column, Without Static Block
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-05.png}}" alt="">
+       Without Columns
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-06.png}}" alt="">
+       Without Column And 6 Items In Line
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-07.png}}" alt="">
+       Without Column And 4 Items In Line
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-08.png}}" alt="">
+       Without Column And 3 Items In Line
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/listing-img-09.png}}" alt="">
+       Without Column And 2 Items In Line
+      </a>
+     </li>
+    </ul>
+    <div class="clearfix"></div>
+   </div>
+  </div>
+ </div>
+</li>
+<li class="tonyMenu__item">
+ <a href="#">gallery</a>
+ <div class="tonyMenu__megamenu tonyMenu__col-0-5-0"
+   data-tm-width="1210"
+   data-tm-align-horizontal="left"
+   data-tm-align-vertical="menu-bottom"
+   data-tm-animation="emersion"
+   data-tm-duration="300"
+   data-tm-emersion-distance="60">
+  <div class="tonyMenu__box-center">
+   <div class="tonyMenu__box-inner">
+    <h2 class="title-submenu">gallery</h2>
+    <ul class="tonyMenu__list-preview tonyMenu__inner-col-6">
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/gallery-img-01.png}}" alt="">
+       Grid Layout 2 cols
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/gallery-img-02.png}}" alt="">
+       Grid Layout 3 cols
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/gallery-img-03.png}}" alt="">
+       Masonry Layout 2 cols
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       <img src="{{media url=wysiwyg/myshop/custom/gallery-img-04.png}}" alt="">
+       Masonry Layout 3 cols
+      </a>
+     </li>
+    </ul>
+    <div class="clearfix"></div>
+   </div>
+  </div>
+ </div>
+</li>
+
+                ]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+
+    </blocks>
+</default>

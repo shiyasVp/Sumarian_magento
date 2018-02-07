@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <myshop_settings>
+            <general>
+                <show_load>1</show_load>
+                <show_back_to_top>1</show_back_to_top>
+                <rtl_mode>0</rtl_mode>
+            </general>
+            <header_settings>
+                <header>1</header>
+                <sticky_menu>1</sticky_menu>
+                <minicart_boxed>0</minicart_boxed>
+            </header_settings>
+            <footer_settings>
+                <footer>1</footer>
+                <dark_theme>0</dark_theme>
+                <top_line>0</top_line>
+                <spacer>none</spacer>
+                <footer_banners>1</footer_banners>
+                <footer_newsletter>1</footer_newsletter>
+                <footer_newsletter_title><![CDATA[Get the latest news delivered daily!]]></footer_newsletter_title>
+                <footer_newsletter_slogan><![CDATA[Give us your email and you will be daily updated with the latest events, in detail!]]></footer_newsletter_slogan>
+                <footer_newsletter_placeholder><![CDATA[Enter please your e-mail]]></footer_newsletter_placeholder>
+                <footer_newsletter_button><![CDATA[Subscribe]]></footer_newsletter_button>
+                <footer_copyright><![CDATA[<a href="#">MyShop</a> &copy; 2017. <span>All Rights Reserved.</span>]]></footer_copyright>
+            </footer_settings>
+            <footer_socials>
+                <social_facebook><![CDATA[http://www.facebook.com/]]></social_facebook>
+                <social_twitter><![CDATA[http://www.twitter.com/]]></social_twitter>
+                <social_google><![CDATA[http://www.google.com/]]></social_google>
+                <social_instagram><![CDATA[https://instagram.com/]]></social_instagram>
+            </footer_socials>
+            <product_listing>
+                <products_size_row>0</products_size_row>
+                <sale_label>1</sale_label>
+                <new_label>1</new_label>
+                <specials_counter>1</specials_counter>
+                <quick_view>1</quick_view>
+                <sidebar_custom>1</sidebar_custom>
+                <sidebar_custom_title>Custom Block</sidebar_custom_title>
+                <sidebar_custom_body>sidebar_custom_content</sidebar_custom_body>
+            </product_listing>
+            <product_page>
+                <prev_next>1</prev_next>
+                <sale_label>1</sale_label>
+                <new_label>1</new_label>
+                <specials_counter>1</specials_counter>
+                <add_this><![CDATA[<div class="addthis_inline_share_toolbox"></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ee008fd5002d6f8"></script>]]></add_this>
+                <custom_tab>1</custom_tab>
+                <custom_tab_title>Custom Tab</custom_tab_title>
+            </product_page>
+            <homepage_widget>
+                <title>Recent Posts</title>
+                <limit>6</limit>
+                <posts>latest</posts>
+            </homepage_widget>
+            <newsletter>
+                <popup>1</popup>
+                <text1><![CDATA[GET THE LATEST NEWS<br>DELIVERED DAILY!]]></text1>
+                <text2><![CDATA[Give us your email and you will be daily updated with <br>the latest events, in detail!]]></text2>
+                <input_text><![CDATA[Enter please your e-mail]]></input_text>
+                <delay>1500</delay>
+            </newsletter>
+            <contacts>
+                <contact_title>Get in Touch</contact_title>
+                <contact_slogan><![CDATA[Contact us for any further questions, possible projects and business partnerships.]]></contact_slogan>
+                <contact_static>1</contact_static>
+                <static_id>contacts_page_info</static_id>
+                <google_map>1</google_map>
+                <gm_coordinates>40.6700, -73.9400</gm_coordinates>
+                <gm_zoom>11</gm_zoom>
+                <gm_scrollwheel>0</gm_scrollwheel>
+                <gm_draggable>1</gm_draggable>
+                <gm_ui>0</gm_ui>
+                <gm_styles><![CDATA[[{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#abd0fa"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#e1d9c6"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#eee9da"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"000"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#eee9da"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fffbf8"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fffbf8"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#fbf7ee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#d6d6d6"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#3c3424"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#aee9c6"}]}]]]></gm_styles>
+                <gm_marker_title>Snazzy!</gm_marker_title>
+                <gm_marker_coordinates>40.6700, -73.9400</gm_marker_coordinates>
+                <gm_marker_img>beachflag.png</gm_marker_img>
+            </contacts>
+        </myshop_settings>
+    </default>
+</config>
+

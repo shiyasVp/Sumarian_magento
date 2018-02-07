@@ -1,0 +1,1131 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>        <!-- Add new Tab -->
+        <tab id="etheme_myshop" translate="label" sortOrder="10">
+            <label>MyShop 1.0.0</label>
+        </tab>
+        <section id="myshop_settings" translate="label" type="text" sortOrder="10" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Theme Settings</label>
+            <tab>etheme_myshop</tab>
+            <resource>Etheme_Myshop::config_myshop</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Options</label>
+                <field id="logo_footer" translate="label" type="image" sortOrder="2" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Logo (footer)</label>
+                    <comment>Upload logo image (JPG, PNG or GIF image)</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">myshop/logo</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">myshop/logo</upload_dir>
+                </field>
+                <!--
+                <field id="logo_sticky_desktop" translate="label" type="image" sortOrder="3" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Logo for desktop sticky menu</label>
+                    <comment>Upload logo image (JPG, PNG or GIF image)</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">myshop/logo</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">myshop/logo</upload_dir>
+                </field>
+                <field id="logo_sticky_mobile" translate="label" type="image" sortOrder="4" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Logo for mobile sticky menu</label>
+                    <comment>Upload logo image (JPG, PNG or GIF image)</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">myshop/logo</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">myshop/logo</upload_dir>
+                </field>
+                -->
+                <field id="show_load" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Show site load animation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_back_to_top" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Back To Top Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="rtl_mode" translate="label" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>RTL Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sidebar_megamenu" translate="label" type="select" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sidebar Megamenu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="fonts" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Captions Font</label>
+                <field id="own" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Use Own</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="font" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Font</label>
+                    <source_model>Etheme\Myshop\Model\Config\Source\Font\Font</source_model>
+                    <depends>
+                        <field id="own">1</field>
+                    </depends>
+                </field>
+                <field id="font_custom" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Custom</label>
+                    <comment>
+                        <![CDATA[CSS font name, for ex. :<br/> <em>"Trebuchet MS" or Arial, Verdana, Geneva</em>]]></comment>
+                    <depends>
+                        <field id="font">custom</field>
+                        <field id="own">1</field>
+                    </depends>
+                </field>
+                <field id="font_google" translate="label" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Google Font</label>
+                    <comment>
+                        <![CDATA[Font preview <a href="http://www.google.com/webfonts">Google Fonts</a>]]></comment>
+                    <source_model>Etheme\Myshop\Model\Config\Source\Font\Fontsgoogle</source_model>
+                    <depends>
+                        <field id="font">google</field>
+                        <field id="own">1</field>
+                    </depends>
+                </field>
+                <field id="font_latin" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Latin Extended</label>
+                    <comment>
+                        <![CDATA[Full list of fonts and font subsets available here <a href="http://www.google.com/webfonts">Google Fonts</a>.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <depends>
+                        <field id="font">google</field>
+                        <field id="own">1</field>
+                    </depends>
+                </field>
+                <field id="font_character_subset" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Font Character Subset</label>
+                    <comment>
+                        <![CDATA[Full list of fonts and font subsets available here <a href="http://www.google.com/webfonts">Google Fonts</a>.]]></comment>
+                    <depends>
+                        <field id="font">google</field>
+                        <field id="own">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="header_settings" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Header</label>
+                <field id="header" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Header variant</label>
+                    <source_model>Etheme\Myshop\Model\Config\Source\Header</source_model>
+                </field>
+                <field id="sticky_menu" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sticky header menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="minicart_boxed" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Header Minicart boxed style</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Yes - boxed/No - wide</comment>
+                </field>
+            </group>
+            <group id="footer_settings" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Footer</label>
+                <field id="footer" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Footer variant</label>
+                    <source_model>Etheme\Myshop\Model\Config\Source\Footer</source_model>
+                </field>
+                <field id="dark_theme" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Dark color theme</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="top_line" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Top line separator</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="spacer" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Footer Top Spacer</label>
+                    <source_model>Etheme\Myshop\Model\Config\Source\Spacer</source_model>
+                </field>
+                <field id="footer_banners" translate="label" type="select" sortOrder="42" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Banners Row</label>
+                    <depends>
+                        <field id="footer">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="footer_newsletter" translate="label" type="select" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Newsletter</label>
+                    <depends>
+                        <field id="footer">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="footer_newsletter_title" translate="label" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Newsletter Title</label>
+                    <depends>
+                        <field id="footer_newsletter">1</field>
+                    </depends>
+                    <comment>Type text here</comment>
+                </field>
+                <field id="footer_newsletter_slogan" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Newsletter Slogan</label>
+                    <depends>
+                        <field id="footer_newsletter">1</field>
+                    </depends>
+                    <comment>Type text here</comment>
+                </field>
+                <field id="footer_newsletter_placeholder" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Newsletter Placeholder</label>
+                    <depends>
+                        <field id="footer_newsletter">1</field>
+                    </depends>
+                    <comment>Type text here</comment>
+                </field>
+                <field id="footer_newsletter_button" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Newsletter Button</label>
+                    <depends>
+                        <field id="footer_newsletter">1</field>
+                    </depends>
+                    <comment>Type text here</comment>
+                </field>
+                <field id="footer_copyright" translate="label" type="textarea" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer copyright</label>
+                    <comment>Put here your custom copyright content. HTML tags a allowed.</comment>
+                </field>
+            </group>
+            <group id="footer_socials" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Footer Socials Links</label>
+                <field id="social_facebook" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Facebook</label>
+                    <comment>Type link here</comment>
+                </field>
+                <field id="social_twitter" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Twitter</label>
+                    <comment>Type link here</comment>
+                </field>
+                <field id="social_google" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Google Plus</label>
+                    <comment>Type link here</comment>
+                </field>
+                <field id="social_instagram" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Instagram</label>
+                    <comment>Type link here</comment>
+                </field>
+            </group>
+
+            <group id="product_listing" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Product Listing</label>
+                <field id="products_size_row" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Product size</label>
+                    <source_model>Etheme\Myshop\Model\Config\Source\Products\Listing</source_model>
+                </field>
+                <field id="sale_label" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sale label</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="new_label" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>New label</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="specials_counter" translate="label" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Special price countdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="quick_view" translate="label" type="select" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>QuickView button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="heading_sidebar" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Sidebar settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="sidebar_collapse" translate="label" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Open Sidebar block by default</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sidebar_custom" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Custom Sidebar block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sidebar_custom_title" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Block Title</label>
+                    <depends>
+                        <field id="sidebar_custom">1</field>
+                    </depends>
+                </field>
+                <field id="sidebar_custom_body" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Block Content</label>
+                    <comment>Put here ID of static block</comment>
+                    <depends>
+                        <field id="sidebar_custom">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="product_page" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Product Page</label>
+                <field id="prev_next" translate="label" type="select" sortOrder="0" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Prev/Next products arrows</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sale_label" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sale label</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="new_label" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>New label</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="specials_counter" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Special price countdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="add_this" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>AddThis Icons</label>
+                    <comment>Put here your addthis code</comment>
+                </field>
+                <field id="custom_tab" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="custom_tab_title" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Tab Title</label>
+                    <depends>
+                        <field id="custom_tab">1</field>
+                    </depends>
+                </field>
+
+            </group>
+            <group id="homepage_widget" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Blog Home Page Widget</label>
+                <field id="title" translate="label comment" type="text" sortOrder="3" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Title text</label>
+                </field>
+                <field id="limit" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Number of Posts</label>
+                </field>
+                <field id="posts" translate="label comment" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Select posts</label>
+                    <source_model>Etheme\Myshop\Model\Config\Source\SelectPosts</source_model>
+                </field>
+                <field id="posts_ids" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Post IDs</label>
+                    <depends>
+                        <field id="posts">manual</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[                            Post IDs comma separated list. Example: <b>2, 3, 4</b><br />                            Sort order according to this list.<br /> Example: <b>2, 3, 4</b> - ascending, <b>4, 3, 2</b> - descending, <b>4, 2, 3</b> - custom                        ]]>                    </comment>
+                </field>
+            </group>
+
+            <group id="newsletter" translate="label" sortOrder="110" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Newsletter popup</label>
+                <field id="popup" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Newsletter Popup</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="text1" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup title text</label>
+                </field>
+                <field id="text2" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup slogan text</label>
+                </field>
+                <field id="input_text" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup input holder text</label>
+                </field>
+                <field id="delay" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Delay</label>
+                    <source_model>Etheme\Myshop\Model\Config\Source\Popup</source_model>
+                </field>
+            </group>
+            <group id="contacts" translate="label" sortOrder="120" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Contact Us</label>
+                <field id="contact_title" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page title</label>
+                </field>
+                <field id="contact_slogan" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page slogan</label>
+                </field>
+                <field id="contact_static" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Contact Info static block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="static_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Static Block ID</label>
+                    <depends>
+                        <field id="contact_static">1</field>
+                    </depends>
+                    <comment>Default static block ID: contacts_page_info</comment>
+                </field>
+                <field id="heading_gm" translate="label" sortOrder="25" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Google Map settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="google_map" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Google Map</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="gm_coordinates" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Coordinates</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Set map center coordinates. You can copy them from the google map link. Fox example: 40.6700, -73.9400</comment>
+                </field>
+                <field id="gm_zoom" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Zoom</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Specify zoom level.</comment>
+                </field>
+                <field id="gm_scrollwheel" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Scrollwheel</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <source_model>Etheme\Myshop\Model\Config\Source\FalseTrue</source_model>
+                    <comment>If false, disables scrollwheel zooming on the map</comment>
+                </field>
+                <field id="gm_draggable" translate="label" type="select" sortOrder="62" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Draggable</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <source_model>Etheme\Myshop\Model\Config\Source\FalseTrue</source_model>
+                    <comment>If false, prevents the map from being dragged</comment>
+                </field>
+                <field id="gm_ui" translate="label" type="select" sortOrder="65" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Disable UI</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <source_model>Etheme\Myshop\Model\Config\Source\FalseTrue</source_model>
+                    <comment>Disable Google Map user interface elements</comment>
+                </field>
+                <field id="gm_styles" translate="label" type="textarea" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Styles</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Google map styles. Can be taken from snazzymaps.com</comment>
+                </field>
+                <field id="gm_marker_title" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Marker title</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Set title for marker </comment>
+                </field>
+                <field id="gm_marker_coordinates" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Marker coordinates</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Coordinates. Set coordinates of marker. You can copy them from the google map link. Fox example: 40.6700, -73.9400</comment>
+                </field>
+                <field id="gm_marker_img" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Marker image</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Marker image filename (e.g. marker.png) It should be placed in pub/media/myshop/marker/ directory. </comment>
+                </field>
+            </group>
+        </section>
+
+        <section id="myshop_colors" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Theme Colors</label>
+            <tab>etheme_myshop</tab>
+            <resource>Etheme_Myshop::config_myshop</resource>
+            <group id="general" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General (CSS update files)</label>
+                <field id="colors_enable" translate="label" type="select" sortOrder="0" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show custom colors</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="button_update_css" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Cssgenerate\Cssupdate</frontend_model>
+                    <comment>click this after 'Save Config' if you changed colors. Be sure that exists folder pub/media/myshop/ with 777 pemissions</comment>
+                </field>
+                <field id="body_bg" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Body background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Site text color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="theme_main" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Theme main color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_hover" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links hover color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="borders_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Borders color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="buttons_colors" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Buttons</label>
+                <field id="heading_buttons1" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Default Button</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text_hover" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text:hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="background" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="background_hover" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background:hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+
+                <field id="heading_buttons2" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Link Button</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="text_link" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text_link_hover" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text:hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text_link_icon" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Icon</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text_link_icon_hover" translate="label" type="text" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Icon:hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="inputs" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Inputs colors</label>
+                <field id="input_text" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input text</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="input_bg" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="input_border" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input border</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="megamenu" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Megamenu</label>
+                <field id="links_1_level" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 1 level</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_1_level_hover" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 1 level hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_2_level" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 2 level</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_2_level_hover" translate="label" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 2 level hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_2_level_line" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links 2 line</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_2_level_line_hover" translate="label" type="text" sortOrder="65" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links 2 line hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_3_level" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 3 level</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_3_level_hover" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 3 level hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_3_level_arrow" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links 3 arrow</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_color" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Label text</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_bg" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Label background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="dropdown_bg" translate="label" type="text" sortOrder="125" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Dropdown shape background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+
+                <field id="sticky_bg" translate="label" type="text" sortOrder="126" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Sticky menu shape background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sticky_link" translate="label" type="text" sortOrder="127" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Sticky menu link color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sticky_link_hover" translate="label" type="text" sortOrder="128" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Sticky menu link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+
+                <field id="heading_megamenu" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Simple Menu</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="links_simple_text" translate="label" type="text" sortOrder="140" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Text</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_simple_text_hover" translate="label" type="text" sortOrder="150" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Text hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_simple_background" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_simple_background_hover" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Background hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_simple_border" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Border color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="mobile_menu" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Mobile menu</label>
+                <field id="shape_bg" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Background shape</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_border" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links border</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="arrow_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Arrow color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_color_active" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links color active</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="bg_links_active" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links background active</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="header_colors" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Header</label>
+                <field id="drop_label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown label</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="drop_link" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown link</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="drop_link_hover" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cart_link" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cart link</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cart_link_hover" translate="label" type="text" sortOrder="46" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cart link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cart_link_icon" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cart link icon</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cart_link_icon_hover" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cart link icon hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="badge_color" translate="label" type="text" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Circle badge color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="badge_bg" translate="label" type="text" sortOrder="66" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Circle badge background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="search_link" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search link</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="search_link_hover" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="acc_link" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account link</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="acc_link_hover" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="top_links_color" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top links color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="top_links_color_hover" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top links color hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="heading_mobile" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Mobile icons color</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="mobile_drop_link" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown link</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mobile_drop_link_hover" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mobile_search_link" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search link</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mobile_search_link_hover" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mobile_acc_link" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account link</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mobile_acc_link_hover" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account link hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="captions_colors" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Captions</label>
+                <field id="text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Title text color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sidebar_caption" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Sidebar titles color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="breadcrumbs_colors" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Breadcrumbs</label>
+                <field id="active_page" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Current page</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_hover" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links:hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="separator" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Separator color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="products_listing" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Products Listing</label>
+                <field id="block_bg" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Product shape bg</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Name</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="name_hover" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Name:hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="wishlist_compare_links" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare Links</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="wishlist_compare_links_hover" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare Links:hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sale_lable_bg" translate="label" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sale Lable Bg</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sale_lable_color" translate="label" type="text" sortOrder="55" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sale Lable Color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="new_lable_bg" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>New Lable Bg</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="new_lable_color" translate="label" type="text" sortOrder="65" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>New Lable Color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="regular_price" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Regular Price</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="special_price" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Special Price</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="old_price" translate="label" type="text" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Old Price</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="footer" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Footer</label>
+                <field id="footer_bg" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="back_to_bg" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Back to top color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Colums Title color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_link" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Colums Links color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_link_hover" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Colums Links hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="copyright_bg" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright row background</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="copyright_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright text color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="copyright_link" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright link color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="socials_icon_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials icon color</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="socials_icon_color_hover" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials icon color hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="socials_icon_border" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials icon border</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="socials_icon_border_hover" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials icon border hover</label>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="custom_css" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Custom CSS</label>
+                <field id="css_lines" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom styles</label>
+                    <comment>Put here your custom CSS</comment>
+                </field>
+            </group>
+        </section>
+
+        <section id="myshop_install" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Theme Install</label>
+            <tab>etheme_myshop</tab>
+            <resource>Etheme_Myshop::config_myshop</resource>
+            <group id="install_theme" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Install Theme</label>
+                <field id="button_install_theme" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Install\Theme</frontend_model>
+                    <comment>Automatically loads theme static blocks/pages and default layout</comment>
+                </field>
+            </group>
+            <group id="button_install_blocks" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Install/Reset Cms Blocks</label>
+                <field id="button_load_new_blocks" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Staticblocks\Loadnew</frontend_model>
+                </field>
+                <field id="button_rewrite_blocks" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Staticblocks\Rewrite</frontend_model>
+                </field>
+            </group>
+            <group id="button_install_pages" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Install/Reset Cms Pages</label>
+                <field id="button_load_new_pages" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Staticpages\Loadnew</frontend_model>
+                </field>
+                <field id="button_rewrite_pages" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Staticpages\Rewrite</frontend_model>
+                </field>
+            </group>
+
+            <group id="button_layouts" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Layouts</label>
+                <field id="button_load_layout_test1" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 1</button_label>
+                    <attribute type="skin_xml">layout1</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test2" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 2</button_label>
+                    <attribute type="skin_xml">layout2</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test3" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 3</button_label>
+                    <attribute type="skin_xml">layout3</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test4" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 4</button_label>
+                    <attribute type="skin_xml">layout4</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test5" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 5</button_label>
+                    <attribute type="skin_xml">layout5</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test6" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 6</button_label>
+                    <attribute type="skin_xml">layout6</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test7" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 7</button_label>
+                    <attribute type="skin_xml">layout7</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test8" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 8</button_label>
+                    <attribute type="skin_xml">layout8</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test9" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 9</button_label>
+                    <attribute type="skin_xml">layout9</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test10" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 10</button_label>
+                    <attribute type="skin_xml">layout10</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test11" translate="label" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 11</button_label>
+                    <attribute type="skin_xml">layout11</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test12" translate="label" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 12</button_label>
+                    <attribute type="skin_xml">layout12</attribute>
+                    <frontend_model>Etheme\Myshop\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+            </group>
+
+        </section>
+
+        <section id="myshop_lic" translate="label" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Theme License</label>
+            <tab>etheme_myshop</tab>
+            <resource>Etheme_Myshop::config_myshop</resource>
+            <group id="license" translate="label" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Activate your license</label>
+                <field id="lic_code" translate="label" type="password" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Purchase Code</label>
+                </field>
+                <field id="status" translate="label" type="hidden" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="0">
+                    <label>Status</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
