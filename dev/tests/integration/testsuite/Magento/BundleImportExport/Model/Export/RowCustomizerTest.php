@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\BundleImportExport\Model\Export;
@@ -8,7 +8,7 @@ namespace Magento\BundleImportExport\Model\Export;
 /**
  * @magentoAppArea adminhtml
  */
-class RowCustomizerTest extends \PHPUnit\Framework\TestCase
+class RowCustomizerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\BundleImportExport\Model\Export\RowCustomizer
@@ -24,7 +24,7 @@ class RowCustomizerTest extends \PHPUnit\Framework\TestCase
     {
         $this->objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
         $this->model = $this->objectManager->create(
-            \Magento\BundleImportExport\Model\Export\RowCustomizer::class
+            'Magento\BundleImportExport\Model\Export\RowCustomizer'
         );
     }
 
@@ -33,11 +33,11 @@ class RowCustomizerTest extends \PHPUnit\Framework\TestCase
      */
     public function testPrepareData()
     {
-        $parsedAdditionalAttributes = 'text_attribute=!@#$%^&*()_+1234567890-=|\\:;"\'<,>.?/'
+        $parsedAdditonalAttributes = 'text_attribute=!@#$%^&*()_+1234567890-=|\\:;"\'<,>.?/'
             . ',text_attribute2=,';
-        $allAdditionalAttributes = $parsedAdditionalAttributes . ',weight_type=0,price_type=1';
+        $allAdditionalAttributes = $parsedAdditonalAttributes . ',weight_type=0,price_type=1';
         /** @var \Magento\Catalog\Model\ResourceModel\Product\Collection $collection */
-        $collection = $this->objectManager->get(\Magento\Catalog\Model\ResourceModel\Product\Collection::class);
+        $collection = $this->objectManager->get('Magento\Catalog\Model\ResourceModel\Product\Collection');
         $select = $collection->getConnection()->select()
             ->from(['p' => $collection->getTable('catalog_product_entity')], ['sku', 'entity_id'])
             ->where('sku IN(?)', ['simple', 'custom-design-simple-product', 'bundle-product']);
@@ -54,6 +54,6 @@ class RowCustomizerTest extends \PHPUnit\Framework\TestCase
         $this->assertArrayHasKey('bundle_values', $result);
         $this->assertContains('sku=simple,', $result['bundle_values']);
         $this->assertEquals([], $this->model->addData([], $ids['simple']));
-        $this->assertEquals($parsedAdditionalAttributes, $result['additional_attributes']);
+        $this->assertEquals($parsedAdditonalAttributes, $result['additional_attributes']);
     }
 }

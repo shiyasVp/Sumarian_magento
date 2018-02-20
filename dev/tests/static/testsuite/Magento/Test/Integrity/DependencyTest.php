@@ -2,25 +2,19 @@
 /**
  * Scan source code for incorrect or undeclared modules dependencies
  *
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  *
  */
 namespace Magento\Test\Integrity;
 
-use Magento\Framework\App\Utility\Files;
 use Magento\Framework\Component\ComponentRegistrar;
-use Magento\TestFramework\Dependency\DbRule;
-use Magento\TestFramework\Dependency\DiRule;
-use Magento\TestFramework\Dependency\LayoutRule;
-use Magento\TestFramework\Dependency\PhpRule;
-use Magento\TestFramework\Dependency\ReportsConfigRule;
-use Magento\TestFramework\Dependency\VirtualType\VirtualTypeMapper;
+use Magento\Framework\App\Utility\Files;
 
 /**
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
-class DependencyTest extends \PHPUnit\Framework\TestCase
+class DependencyTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Types of dependencies between modules
@@ -152,6 +146,7 @@ class DependencyTest extends \PHPUnit\Framework\TestCase
         $root = BP;
         $rootJson = json_decode(file_get_contents($root . '/composer.json'), true);
         if (preg_match('/magento\/project-*/', $rootJson['name']) == 1) {
+
             // The Dependency test is skipped for vendor/magento build
             self::markTestSkipped(
                 'MAGETWO-43654: The build is running from vendor/magento. DependencyTest is skipped.'
@@ -216,15 +211,13 @@ class DependencyTest extends \PHPUnit\Framework\TestCase
             $dbRuleTables = array_merge($dbRuleTables, @include $fileName);
         }
         self::$_rulesInstances = [
-            new PhpRule(self::$_mapRouters, self::$_mapLayoutBlocks),
-            new DbRule($dbRuleTables),
-            new LayoutRule(
+            new \Magento\TestFramework\Dependency\PhpRule(self::$_mapRouters, self::$_mapLayoutBlocks),
+            new \Magento\TestFramework\Dependency\DbRule($dbRuleTables),
+            new \Magento\TestFramework\Dependency\LayoutRule(
                 self::$_mapRouters,
                 self::$_mapLayoutBlocks,
                 self::$_mapLayoutHandles
             ),
-            new DiRule(new VirtualTypeMapper()),
-            new ReportsConfigRule($dbRuleTables),
         ];
     }
 

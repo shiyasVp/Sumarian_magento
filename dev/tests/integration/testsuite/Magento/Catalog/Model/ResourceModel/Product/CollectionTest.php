@@ -1,11 +1,11 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Catalog\Model\ResourceModel\Product;
 
-class CollectionTest extends \PHPUnit\Framework\TestCase
+class CollectionTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\Catalog\Model\ResourceModel\Product\Collection
@@ -18,26 +18,17 @@ class CollectionTest extends \PHPUnit\Framework\TestCase
     protected $processor;
 
     /**
-     * @var \Magento\Catalog\Api\ProductRepositoryInterface
-     */
-    private $productRepository;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         $this->collection = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Catalog\Model\ResourceModel\Product\Collection::class
+            'Magento\Catalog\Model\ResourceModel\Product\Collection'
         );
 
         $this->processor = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Catalog\Model\Indexer\Product\Price\Processor::class
-        );
-
-        $this->productRepository = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Catalog\Api\ProductRepositoryInterface::class
+            'Magento\Catalog\Model\Indexer\Product\Price\Processor'
         );
     }
 
@@ -50,7 +41,7 @@ class CollectionTest extends \PHPUnit\Framework\TestCase
         $this->processor->getIndexer()->setScheduled(true);
         $this->assertTrue($this->processor->getIndexer()->isScheduled());
         $productRepository = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
-            ->create(\Magento\Catalog\Api\ProductRepositoryInterface::class);
+            ->create('Magento\Catalog\Api\ProductRepositoryInterface');
         /** @var \Magento\Catalog\Api\Data\ProductInterface $product */
         $product = $productRepository->get('simple');
         $this->assertEquals(10, $product->getPrice());
@@ -69,7 +60,7 @@ class CollectionTest extends \PHPUnit\Framework\TestCase
         $this->processor->getIndexer()->reindexList([1]);
 
         $this->collection = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Catalog\Model\ResourceModel\Product\Collection::class
+            'Magento\Catalog\Model\ResourceModel\Product\Collection'
         );
         $this->collection->addPriceData(0, 1);
         $this->collection->load();
@@ -94,7 +85,7 @@ class CollectionTest extends \PHPUnit\Framework\TestCase
         $this->processor->getIndexer()->setScheduled(false);
         $this->assertFalse($this->processor->getIndexer()->isScheduled());
         $productRepository = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
-            ->create(\Magento\Catalog\Api\ProductRepositoryInterface::class);
+            ->create('Magento\Catalog\Api\ProductRepositoryInterface');
         /** @var \Magento\Catalog\Api\Data\ProductInterface $product */
         $product = $productRepository->get('simple');
         $this->assertNotEquals(15, $product->getPrice());
@@ -111,17 +102,28 @@ class CollectionTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDataFixture Magento/Catalog/Model/ResourceModel/_files/product_simple.php
-     * @magentoDbIsolation enabled
+     * @magentoDataFixture Magento/Catalog/_files/product_simple.php
+     * @magentoAppIsolation enabled
      */
-    public function testGetProductsWithTierPrice()
+    public function testAddTierPrice()
     {
-        $product = $this->productRepository->get('simple products');
-        $items = $this->collection->addIdFilter($product->getId())->addAttributeToSelect('price')
-            ->load()->addTierPriceData();
-        $tierPrices = $items->getFirstItem()->getTierPrices();
-        $this->assertCount(3, $tierPrices);
-        $this->assertEquals(50, $tierPrices[2]->getExtensionAttributes()->getPercentageValue());
-        $this->assertEquals(5, $tierPrices[2]->getValue());
+        $this->assertEquals($this->collection->getFlag('tier_price_added'), false);
+
+        $productRepository = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
+            ->create('Magento\Catalog\Api\ProductRepositoryInterface');
+
+        /** @var \Magento\Catalog\Api\Data\ProductInterface $product */
+        $product = $productRepository->get('simple');
+        $this->assertEquals(3, count($product->getTierPrices()));
+
+        $product->setTierPrices([]);
+        $this->assertEquals(0, count($product->getTierPrices()));
+
+        $this->collection->addTierPriceData();
+        $this->collection->load();
+
+        $items = $this->collection->getItems();
+        $product = reset($items);
+        $this->assertEquals(3, count($product->getTierPrices()));
     }
 }

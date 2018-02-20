@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Customer\Test\Block\Account;
@@ -27,7 +27,7 @@ class AddressesAdditional extends Block
      *
      * @var string
      */
-    protected $addressesSelector = '//li[address]';
+    private $addressesSelector = '//li[address]';
 
     /**
      * Selector for delete link
@@ -83,6 +83,7 @@ class AddressesAdditional extends Block
                 break;
             }
         }
+        
         return $additionalAddressExists;
     }
 

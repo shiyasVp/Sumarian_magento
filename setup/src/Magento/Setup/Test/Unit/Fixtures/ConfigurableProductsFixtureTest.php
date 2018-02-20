@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -8,14 +8,14 @@ namespace Magento\Setup\Test\Unit\Fixtures;
 
 use Magento\Eav\Model\ResourceModel\Entity\Attribute\CollectionFactory;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
+use Magento\Setup\Fixtures\ConfigurableProductsFixture;
 use Magento\Setup\Fixtures\AttributeSet\AttributeSetFixture;
 use Magento\Setup\Fixtures\AttributeSet\Pattern;
-use Magento\Setup\Fixtures\ConfigurableProductsFixture;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class ConfigurableProductsFixtureTest extends \PHPUnit\Framework\TestCase
+class ConfigurableProductsFixtureTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject|\Magento\Setup\Fixtures\FixtureModel
@@ -41,13 +41,20 @@ class ConfigurableProductsFixtureTest extends \PHPUnit\Framework\TestCase
     {
         $this->fixtureModelMock = $this->getMockBuilder(\Magento\Setup\Fixtures\FixtureModel::class)
             ->disableOriginalConstructor()
-            ->setMethods(['createAttributeSet', 'getValue', 'getObjectManager'])
+            ->setMethods(['createAttributeSet', 'getValue'])
             ->getMock();
 
         $this->attributeSetsFixtureMock = $this->getMockBuilder(AttributeSetFixture::class)
             ->disableOriginalConstructor()
             ->getMock();
 
+        $this->attributePatternMock = $this->getMockBuilder(Pattern::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->attributePatternMock = $this->getMockBuilder(CollectionFactory::class)
+            ->disableOriginalConstructor()
+            ->getMock();
         $this->attributePatternMock = $this->getMockBuilder(Pattern::class)
             ->disableOriginalConstructor()
             ->getMock();

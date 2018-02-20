@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -24,6 +24,7 @@ class AssertPagersSummaryText extends AbstractConstraint
      * @param CheckoutCart $checkoutCart
      * @param \Magento\Checkout\Test\Fixture\Cart $cart
      * @param ConfigData $config
+     * @return void
      */
     public function processAssert(CheckoutCart $checkoutCart, Cart $cart, ConfigData $config)
     {

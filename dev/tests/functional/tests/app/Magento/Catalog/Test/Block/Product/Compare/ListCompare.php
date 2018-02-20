@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -16,6 +16,13 @@ use Magento\Mtf\Client\Element\SimpleElement;
  */
 class ListCompare extends Block
 {
+    /**
+     * Price displaying format.
+     *
+     * @var int
+     */
+    protected $priceFormat = 2;
+
     /**
      * Selector by product info.
      *
@@ -87,19 +94,12 @@ class ListCompare extends Block
     protected $messageBlock = '#messages';
 
     /**
-     * Selector for confirm.
-     *
-     * @var string
-     */
-    protected $confirmModal = '.confirm._show[data-role=modal]';
-
-    /**
-     * Get product info.
+     * Get Product info.
      *
      * @param int $index
      * @param string $attributeKey
      * @param string $currency
-     * @return string
+     * @return string|array
      */
     public function getProductInfo($index, $attributeKey, $currency = ' $')
     {
@@ -196,13 +196,6 @@ class ListCompare extends Block
     public function removeProduct($index = 1)
     {
         $this->_rootElement->find(sprintf($this->removeButton, $index), Locator::SELECTOR_XPATH)->click();
-        $modalElement = $this->browser->find($this->confirmModal);
-        /** @var \Magento\Ui\Test\Block\Adminhtml\Modal $modal */
-        $modal = $this->blockFactory->create(
-            \Magento\Ui\Test\Block\Adminhtml\Modal::class,
-            ['element' => $modalElement]
-        );
-        $modal->acceptAlert();
     }
 
     /**
@@ -215,7 +208,7 @@ class ListCompare extends Block
         $this->waitForElementVisible(sprintf($this->removeButton, 1), Locator::SELECTOR_XPATH);
         /** @var \Magento\Backend\Test\Block\Messages $messageBlock */
         $messageBlock = $this->blockFactory->create(
-            \Magento\Backend\Test\Block\Messages::class,
+            'Magento\Backend\Test\Block\Messages',
             ['element' => $this->browser->find($this->messageBlock)]
         );
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Braintree\Block\Form;
@@ -16,7 +16,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 /**
  * Class ContainerTest
  */
-class ContainerTest extends \PHPUnit\Framework\TestCase
+class ContainerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var ObjectManagerInterface

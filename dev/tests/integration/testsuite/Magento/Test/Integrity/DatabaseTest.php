@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -8,7 +8,7 @@ namespace Magento\Test\Integrity;
 
 use Magento\TestFramework\Helper\Bootstrap;
 
-class DatabaseTest extends \PHPUnit\Framework\TestCase
+class DatabaseTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Assure that there are no redundant indexes declared in database

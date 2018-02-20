@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Security\Model\Plugin;
@@ -8,7 +8,7 @@ namespace Magento\Security\Model\Plugin;
 /**
  * @magentoAppIsolation enabled
  */
-class AuthSessionTest extends \PHPUnit\Framework\TestCase
+class AuthSessionTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\Backend\Model\Auth
@@ -41,6 +41,13 @@ class AuthSessionTest extends \PHPUnit\Framework\TestCase
     protected $dateTime;
 
     /**
+     * Session Manager.
+     *
+     * @var \Magento\Framework\Session\SessionManager
+     */
+    private $sessionManager;
+
+    /**
      * Set up
      */
     protected function setUp()
@@ -48,6 +55,7 @@ class AuthSessionTest extends \PHPUnit\Framework\TestCase
         parent::setUp();
 
         $this->objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
+        $this->sessionManager = $this->objectManager->create(\Magento\Framework\Session\SessionManager::class);
         $this->objectManager->get(\Magento\Framework\Config\ScopeInterface::class)
             ->setCurrentScope(\Magento\Backend\App\Area\FrontNameResolver::AREA_CODE);
         $this->auth = $this->objectManager->create(\Magento\Backend\Model\Auth::class);

@@ -1,12 +1,11 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Magento\LayeredNavigation\Test\Block;
 
-use Magento\Catalog\Test\Fixture\Category;
 use Magento\Mtf\Block\Block;
 use Magento\Mtf\Client\Locator;
 
@@ -36,15 +35,6 @@ class Navigation extends Block
      */
     protected $optionTitle = './/div[@class="filter-options-title" and contains(text(),"%s")]';
 
-    // @codingStandardsIgnoreStart
-    /**
-     * Locator value for corresponding filtered attribute option content.
-     *
-     * @var string
-     */
-    protected $optionContent = './/div[@class="filter-options-title" and contains(text(),"")]/following-sibling::div//a[contains(text(), \'SIZE\')]';
-    // @codingStandardsIgnoreEnd
-
     /**
      * Locator value for correspondent "Filter" link.
      *
@@ -59,19 +49,14 @@ class Navigation extends Block
      */
     protected $expandFilterButton = '[data]';
 
+    // @codingStandardsIgnoreStart
     /**
-     * Locator for category name.
+     * Locator value for correspondent Attribute filter option contents.
      *
      * @var string
      */
-    private $categoryName = './/li[@class="item"]//a[contains(text(),"%s")]';
-
-    /**
-     * Locator for element with product quantity.
-     *
-     * @var string
-     */
-    private $productQty = '/following-sibling::span[contains(text(), "%s")]';
+     protected $optionContent = './/*[@id="narrow-by-list"]/div[contains(@class,"filter-options-item") and contains(@class,"active")]//li[@class="item"]/a';
+    // @codingStandardsIgnoreEnd
 
     /**
      * Remove all applied filters.
@@ -102,24 +87,7 @@ class Navigation extends Block
     }
 
     /**
-     * Get all available filters.
-     *
-     * @return array
-     */
-    public function getFilterContents()
-    {
-        $this->waitForElementVisible($this->loadedNarrowByList);
-        $optionContents = $this->_rootElement->find($this->optionContent, Locator::SELECTOR_XPATH);
-        $data =[];
-        foreach ($optionContents as $optionContent) {
-            $data[] = trim(strtoupper($optionContent->getText()));
-        }
-
-        return $data;
-    }
-
-    /**
-     * Apply Layered Navigation filter.
+     * Apply Layerd Navigation filter.
      *
      * @param string $filter
      * @param string $linkPattern
@@ -147,17 +115,27 @@ class Navigation extends Block
     }
 
     /**
-     * Check that category with product quantity can be displayed on layered navigation.
+     * Gets all available filters with options.
      *
-     * @param Category $category
-     * @param int $qty
-     * @return bool
+     * @param $attributeName
+     * @return array
      */
-    public function isCategoryVisible(Category $category, $qty)
+    public function getOptionsContentForAttribute($attributeName)
     {
-        return $this->_rootElement->find(
-            sprintf($this->categoryName, $category->getName()) . sprintf($this->productQty, $qty),
+        $this->waitForElementVisible($this->loadedNarrowByList);
+
+        $this->_rootElement->find(
+            sprintf($this->optionTitle, $attributeName),
             Locator::SELECTOR_XPATH
-        )->isVisible();
+        )->click();
+
+        $options = $this->_rootElement->getElements($this->optionContent, Locator::SELECTOR_XPATH);
+        $data = [];
+
+        foreach ($options as $option) {
+            $data[] = explode(' ', $option->getText())[0];
+        }
+
+        return $data;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Customer\Api;
@@ -90,24 +90,24 @@ class AccountManagementTest extends WebapiAbstract
     public function setUp()
     {
         $this->accountManagement = Bootstrap::getObjectManager()->get(
-            \Magento\Customer\Api\AccountManagementInterface::class
+            'Magento\Customer\Api\AccountManagementInterface'
         );
         $this->searchCriteriaBuilder = Bootstrap::getObjectManager()->create(
-            \Magento\Framework\Api\SearchCriteriaBuilder::class
+            'Magento\Framework\Api\SearchCriteriaBuilder'
         );
         $this->sortOrderBuilder = Bootstrap::getObjectManager()->create(
-            \Magento\Framework\Api\SortOrderBuilder::class
+            'Magento\Framework\Api\SortOrderBuilder'
         );
         $this->filterGroupBuilder = Bootstrap::getObjectManager()->create(
-            \Magento\Framework\Api\Search\FilterGroupBuilder::class
+            'Magento\Framework\Api\Search\FilterGroupBuilder'
         );
         $this->customerHelper = new CustomerHelper();
 
         $this->dataObjectProcessor = Bootstrap::getObjectManager()->create(
-            \Magento\Framework\Reflection\DataObjectProcessor::class
+            'Magento\Framework\Reflection\DataObjectProcessor'
         );
         $this->config = Bootstrap::getObjectManager()->create(
-            \Magento\Config\Model\Config::class
+            'Magento\Config\Model\Config'
         );
         $this->initSubscriber();
 
@@ -154,14 +154,13 @@ class AccountManagementTest extends WebapiAbstract
             $this->configValue
         );
         $this->config->save();
-        $this->accountManagement = null;
-        $this->subscriber = null;
+        unset($this->accountManagement);
+        unset($this->subscriber);
     }
 
-    private function initSubscriber()
-    {
+    private function initSubscriber() {
         $this->subscriber = Bootstrap::getObjectManager()->create(
-            \Magento\Newsletter\Model\Subscriber::class
+            'Magento\Newsletter\Model\Subscriber'
         );
     }
 
@@ -186,7 +185,7 @@ class AccountManagementTest extends WebapiAbstract
 
         $customerDataArray = $this->dataObjectProcessor->buildOutputDataArray(
             $this->customerHelper->createSampleCustomerDataObject(),
-            \Magento\Customer\Api\Data\CustomerInterface::class
+            '\Magento\Customer\Api\Data\CustomerInterface'
         );
         $invalidEmail = 'invalid';
         $customerDataArray['email'] = $invalidEmail;
@@ -283,7 +282,7 @@ class AccountManagementTest extends WebapiAbstract
     {
         $customerData = $this->_createCustomer();
         /** @var \Magento\Customer\Model\Customer $customerModel */
-        $customerModel = Bootstrap::getObjectManager()->create(\Magento\Customer\Model\CustomerFactory::class)
+        $customerModel = Bootstrap::getObjectManager()->create('Magento\Customer\Model\CustomerFactory')
             ->create();
         $customerModel->load($customerData[Customer::ID]);
         $rpToken = 'lsdj579slkj5987slkj595lkj';
@@ -573,7 +572,7 @@ class AccountManagementTest extends WebapiAbstract
         ];
         $customerData = $this->dataObjectProcessor->buildOutputDataArray(
             $customerData,
-            \Magento\Customer\Api\Data\CustomerInterface::class
+            '\Magento\Customer\Api\Data\CustomerInterface'
         );
         $requestData = ['customer' => $customerData];
         $validationResponse = $this->_webApiCall($serviceInfo, $requestData);
@@ -682,7 +681,7 @@ class AccountManagementTest extends WebapiAbstract
 
         $customerDataArray = $this->dataObjectProcessor->buildOutputDataArray(
             $customerData,
-            \Magento\Customer\Api\Data\CustomerInterface::class
+            '\Magento\Customer\Api\Data\CustomerInterface'
         );
         $requestData = ['customer' => $customerDataArray, 'password' => CustomerHelper::PASSWORD];
         $customerData = $this->_webApiCall($serviceInfo, $requestData);
@@ -824,11 +823,11 @@ class AccountManagementTest extends WebapiAbstract
         $this->assertEquals($customerData['id'], $this->subscriber->getCustomerId());
         //Manage customer in order to unsubscribe
         $this->customerHelper->updateSampleCustomer(
-            $customerData["id"],
             array_merge(
                 $customerData,
                 ["extension_attributes" => ["is_subscribed" => false]]
-            )
+            ),
+            $customerData["id"]
         );
         $this->initSubscriber();
 

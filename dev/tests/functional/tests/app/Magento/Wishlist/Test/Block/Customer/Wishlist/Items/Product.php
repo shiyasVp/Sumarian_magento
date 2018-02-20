@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -77,13 +77,6 @@ class Product extends Form
      * @var string
      */
     protected $price = '.price';
-
-    /**
-     * Locator value for item Price in Product Grid.
-     *
-     * @var string
-     */
-    protected $priceInGrid = '.products-grid .price';
 
     /**
      * Fill item with details.
@@ -166,7 +159,7 @@ class Product extends Form
      */
     public function hoverProductBlock()
     {
-        $this->_rootElement->find($this->priceInGrid)->hover();
+        $this->_rootElement->find($this->price)->hover();
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Setup\Console\Command;
@@ -68,7 +68,7 @@ abstract class AbstractModuleManageCommand extends AbstractModuleCommand
         $isEnable = $this->isEnable();
         if ($input->getOption(self::INPUT_KEY_ALL)) {
             /** @var \Magento\Framework\Module\FullModuleList $fullModulesList */
-            $fullModulesList = $this->objectManager->get(\Magento\Framework\Module\FullModuleList::class);
+            $fullModulesList = $this->objectManager->get('Magento\Framework\Module\FullModuleList');
             $modules = $fullModulesList->getNames();
         } else {
             $modules = $input->getArgument(self::INPUT_KEY_MODULES);
@@ -178,7 +178,7 @@ abstract class AbstractModuleManageCommand extends AbstractModuleCommand
      * Get deployment config
      *
      * @return DeploymentConfig
-     * @deprecated 2.0.6
+     * @deprecated
      */
     private function getDeploymentConfig()
     {
@@ -192,7 +192,7 @@ abstract class AbstractModuleManageCommand extends AbstractModuleCommand
      * Get deployment config
      *
      * @return GeneratedFiles
-     * @deprecated 2.1.0
+     * @deprecated
      */
     private function getGeneratedFiles()
     {

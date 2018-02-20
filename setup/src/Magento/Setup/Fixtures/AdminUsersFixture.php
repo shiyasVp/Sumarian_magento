@@ -1,18 +1,10 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Magento\Setup\Fixtures;
-
-use Magento\Authorization\Model\Acl\Role\Group;
-use Magento\Authorization\Model\RoleFactory;
-use Magento\Authorization\Model\RulesFactory;
-use Magento\Authorization\Model\UserContextInterface;
-use Magento\Framework\Acl\RootResource;
-use Magento\User\Model\ResourceModel\User\CollectionFactory as UserCollectionFactory;
-use Magento\User\Model\UserFactory;
 
 /**
  * Generate admin users
@@ -29,52 +21,36 @@ class AdminUsersFixture extends Fixture
     protected $priority = 5;
 
     /**
-     * @var UserFactory
+     * @var \Magento\User\Model\UserFactory
      */
     private $userFactory;
 
     /**
-     * @var RoleFactory
+     * @var \Magento\Authorization\Model\RoleFactory
      */
     private $roleFactory;
 
     /**
-     * @var UserCollectionFactory
+     * @var \Magento\User\Model\ResourceModel\User\CollectionFactory
      */
     private $userCollectionFactory;
 
     /**
-     * @var RulesFactory
-     */
-    private $rulesFactory;
-
-    /**
-     * @var RootResource
-     */
-    private $rootResource;
-
-    /**
+     * @param \Magento\User\Model\UserFactory $userFactory
+     * @param \Magento\User\Model\ResourceModel\User\CollectionFactory $userCollectionFactory
+     * @param \Magento\Authorization\Model\RoleFactory $roleFactory
      * @param FixtureModel $fixtureModel
-     * @param UserFactory $userFactory
-     * @param UserCollectionFactory $userCollectionFactory
-     * @param RoleFactory $roleFactory
-     * @param RulesFactory $rulesFactory
-     * @param RootResource $rootResource
      */
     public function __construct(
-        FixtureModel $fixtureModel,
-        UserFactory $userFactory,
-        UserCollectionFactory $userCollectionFactory,
-        RoleFactory $roleFactory,
-        RulesFactory $rulesFactory,
-        RootResource $rootResource
+        \Magento\User\Model\UserFactory $userFactory,
+        \Magento\User\Model\ResourceModel\User\CollectionFactory $userCollectionFactory,
+        \Magento\Authorization\Model\RoleFactory $roleFactory,
+        FixtureModel $fixtureModel
     ) {
         parent::__construct($fixtureModel);
         $this->userFactory = $userFactory;
         $this->roleFactory = $roleFactory;
         $this->userCollectionFactory = $userCollectionFactory;
-        $this->rulesFactory = $rulesFactory;
-        $this->rootResource = $rootResource;
     }
 
     /**
@@ -89,11 +65,12 @@ class AdminUsersFixture extends Fixture
             return;
         }
 
-        $role = $this->createAdministratorRole();
+        $defaultAdminUser = $this->userFactory->create()->loadByUsername('admin');
+        $defaultAdminRole = $this->roleFactory->create()->load($defaultAdminUser->getAclRole());
 
         for ($i = $adminUsersStartIndex; $i <= $adminUsersNumber; $i++) {
             $adminUser = $this->userFactory->create();
-            $adminUser->setRoleId($role->getId())
+            $adminUser
                 ->setEmail('admin' . $i . '@example.com')
                 ->setFirstName('Firstname')
                 ->setLastName('Lastname')
@@ -101,6 +78,17 @@ class AdminUsersFixture extends Fixture
                 ->setPassword('123123q')
                 ->setIsActive(1);
             $adminUser->save();
+
+            $role = $this->roleFactory->create();
+            $role
+                ->setUserId($adminUser->getId())
+                ->setRoleName('admin')
+                ->setRoleType($defaultAdminRole->getRoleType())
+                ->setUserType($defaultAdminRole->getUserType())
+                ->setTreeLevel($defaultAdminRole->getTreeLevel())
+                ->setSortOrder($defaultAdminRole->getSortOrder())
+                ->setParentId(1);
+            $role->save();
         }
     }
 
@@ -120,33 +108,5 @@ class AdminUsersFixture extends Fixture
         return [
             'admin_users' => 'Admin Users'
         ];
-    }
-
-    /**
-     * Create administrator role with all privileges.
-     *
-     * @return \Magento\Authorization\Model\Role
-     */
-    private function createAdministratorRole()
-    {
-        $role = $this->roleFactory->create();
-        $role->setParentId(0)
-            ->setTreeLevel(1)
-            ->setSortOrder(1)
-            ->setRoleType(Group::ROLE_TYPE)
-            ->setUserId(0)
-            ->setUserType(UserContextInterface::USER_TYPE_ADMIN)
-            ->setRoleName('Example Administrator');
-        $role->save();
-
-        /** @var \Magento\Authorization\Model\Rules $rule */
-        $rule = $this->rulesFactory->create();
-        $rule->setRoleId($role->getId())
-            ->setResourceId($this->rootResource->getId())
-            ->setPrivilegies(null)
-            ->setPermission('allow');
-        $rule->save();
-
-        return $role;
     }
 }

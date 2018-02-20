@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -51,7 +51,7 @@ class FixtureModel
      * Parameters labels
      *
      * @var array
-     * @deprecated 2.2.0
+     * @deprecated
      */
     protected $paramLabels = [];
 
@@ -109,11 +109,6 @@ class FixtureModel
                     'fixtureModel' => $this,
                 ]
             );
-            if (isset($this->fixtures[$fixture->getPriority()])) {
-                throw new \InvalidArgumentException(
-                    sprintf('Duplicate priority %d in fixture %s', $fixture->getPriority(), $type)
-                );
-            }
             $this->fixtures[$fixture->getPriority()] = $fixture;
         }
 
@@ -125,7 +120,7 @@ class FixtureModel
      * Get param labels
      *
      * @return array
-     * @deprecated 2.2.0
+     * @deprecated
      */
     public function getParamLabels()
     {
@@ -196,7 +191,7 @@ class FixtureModel
      * Reset object manager
      *
      * @return \Magento\Framework\ObjectManagerInterface
-     * @deprecated 2.2.0
+     * @deprecated
      */
     public function resetObjectManager()
     {

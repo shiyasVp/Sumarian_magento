@@ -1,10 +1,11 @@
 <?php
 /**
- * Rollback for quote_with_configurable_product_last_variation.php fixture.
- *
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
+ * 
+ * Rollback for quote_with_configurable_product_last_variation.php fixture.
  */
+ 
 /** @var $objectManager \Magento\TestFramework\ObjectManager */
 $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
 $quote = $objectManager->create(\Magento\Quote\Model\Quote::class);

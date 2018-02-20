@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Store\Block;
@@ -8,7 +8,7 @@ namespace Magento\Store\Block;
 /**
  * Integration tests for \Magento\Store\Block\Switcher block.
  */
-class SwitcherTest extends \PHPUnit\Framework\TestCase
+class SwitcherTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\TestFramework\ObjectManager

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Sales\Model\Order\Address;
@@ -9,12 +9,15 @@ use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\Sales\Model\Order\Address\Renderer as OrderAddressRenderer;
 use Magento\Config\Model\ResourceModel\Config as ConfigResourceModel;
-use Magento\Framework\App\Config;
+use Magento\Framework\App\Config\ScopeConfigInterface as Config;
 use Magento\Store\Model\Store;
 use Magento\Sales\Model\Order\Address as OrderAddress;
 use Magento\Sales\Model\Order;
 
-class RendererTest extends \PHPUnit\Framework\TestCase
+/**
+ * Order address render test
+ */
+class RendererTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var ObjectManagerInterface

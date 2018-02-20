@@ -1,9 +1,12 @@
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 /*eslint max-nested-callbacks: 0*/
+/*jscs:disable requirePaddingNewLinesInObjects*/
+/*jscs:disable jsDoc*/
+
 define([
     'underscore',
     'uiRegistry',
@@ -52,7 +55,6 @@ define([
             });
             it('Check returned value if method called with object argument', function () {
                 var arg = {
-                    /** Stub */
                     initContainer: function () {
                     }
                 };
@@ -61,7 +63,6 @@ define([
             });
             it('Check returned value type if method called with object argument', function () {
                 var arg = {
-                        /** Stub */
                         initContainer: function () {
                         }
                     },
@@ -71,7 +72,6 @@ define([
             });
             it('Check called "this.insertToIndexed" method with object argument', function () {
                 var arg = {
-                    /** Stub */
                     initContainer: function () {
                     }
                 };
@@ -92,7 +92,6 @@ define([
             });
             it('Check called "insertToIndexed" method with object argument', function () {
                 var arg = {
-                    /** Stub */
                     initContainer: function () {
                     }
                 };

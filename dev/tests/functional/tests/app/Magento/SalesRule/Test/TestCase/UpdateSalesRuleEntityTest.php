@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -24,13 +24,14 @@ use Magento\Mtf\TestCase\Injectable;
  * 5. Click 'Save' button.
  * 6. Perform asserts.
  *
- * @group Shopping_Cart_Price_Rules
+ * @group Shopping_Cart_Price_Rules_(CS)
  * @ZephyrId MAGETWO-24860
  */
 class UpdateSalesRuleEntityTest extends Injectable
 {
     /* tags */
     const MVP = 'yes';
+    const DOMAIN = 'CS';
     /* end tags */
 
     /**

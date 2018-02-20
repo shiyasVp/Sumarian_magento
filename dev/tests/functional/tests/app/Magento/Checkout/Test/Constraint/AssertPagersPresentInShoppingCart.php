@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -18,6 +18,7 @@ class AssertPagersPresentInShoppingCart extends AbstractConstraint
      * Verify that pagers are visible on the shopping cart page.
      *
      * @param CheckoutCart $checkoutCart
+     * @return void
      */
     public function processAssert(CheckoutCart $checkoutCart)
     {

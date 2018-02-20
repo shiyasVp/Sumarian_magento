@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav;
@@ -13,7 +13,7 @@ use Magento\TestFramework\Helper\Bootstrap;
  * Class SourceTest
  * @magentoAppIsolation enabled
  */
-class SourceTest extends \PHPUnit\Framework\TestCase
+class SourceTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\Source
@@ -37,15 +37,15 @@ class SourceTest extends \PHPUnit\Framework\TestCase
     protected function setUp()
     {
         $this->source = Bootstrap::getObjectManager()->create(
-            \Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\Source::class
+            'Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\Source'
         );
 
         $this->productResource = Bootstrap::getObjectManager()->get(
-            \Magento\Catalog\Model\ResourceModel\Product::class
+            'Magento\Catalog\Model\ResourceModel\Product'
         );
 
         $this->_eavIndexerProcessor = Bootstrap::getObjectManager()->get(
-            \Magento\Catalog\Model\Indexer\Product\Eav\Processor::class
+            'Magento\Catalog\Model\Indexer\Product\Eav\Processor'
         );
     }
 
@@ -56,28 +56,28 @@ class SourceTest extends \PHPUnit\Framework\TestCase
      */
     public function testReindexEntitiesForConfigurableProduct()
     {
-        $objectManager = Bootstrap::getObjectManager();
         /** @var ProductRepositoryInterface $productRepository */
-        $productRepository = $objectManager->create(ProductRepositoryInterface::class);
+        $productRepository = Bootstrap::getObjectManager()
+            ->create(ProductRepositoryInterface::class);
+        $product = $productRepository->get('configurable');
 
         /** @var \Magento\Catalog\Model\ResourceModel\Eav\Attribute $attr **/
-        $attr = Bootstrap::getObjectManager()->get(\Magento\Eav\Model\Config::class)
+        $attr = Bootstrap::getObjectManager()->get('Magento\Eav\Model\Config')
            ->getAttribute('catalog_product', 'test_configurable');
         $attr->setIsFilterable(1)->save();
 
         $this->_eavIndexerProcessor->reindexAll();
 
         /** @var \Magento\Eav\Model\ResourceModel\Entity\Attribute\Option\Collection $options **/
-        $options = $objectManager->create(
-            \Magento\Eav\Model\ResourceModel\Entity\Attribute\Option\Collection::class
+        $options = Bootstrap::getObjectManager()->create(
+            'Magento\Eav\Model\ResourceModel\Entity\Attribute\Option\Collection'
         );
         $options->setAttributeFilter($attr->getId())->load();
         $optionIds = $options->getAllIds();
 
         $connection = $this->productResource->getConnection();
-
         $select = $connection->select()->from($this->productResource->getTable('catalog_product_index_eav'))
-            ->where('entity_id = ?', 1)
+            ->where('entity_id = ?', $product->getId())
             ->where('attribute_id = ?', $attr->getId())
             ->where('value IN (?)', $optionIds);
 
@@ -103,17 +103,19 @@ class SourceTest extends \PHPUnit\Framework\TestCase
      */
     public function testReindexMultiselectAttribute()
     {
-        $objectManager = Bootstrap::getObjectManager();
-
         /** @var ProductRepositoryInterface $productRepository */
-        $productRepository = $objectManager->create(ProductRepositoryInterface::class);
+        $productRepository = Bootstrap::getObjectManager()
+            ->create(ProductRepositoryInterface::class);
 
         /** @var \Magento\Catalog\Model\ResourceModel\Eav\Attribute $attr **/
-        $attr = $objectManager->get(\Magento\Eav\Model\Config::class)
+        $attr = Bootstrap::getObjectManager()->get('Magento\Eav\Model\Config')
            ->getAttribute('catalog_product', 'multiselect_attribute');
+        $attr->setIsFilterable(1)->save();
 
         /** @var $options \Magento\Eav\Model\ResourceModel\Entity\Attribute\Option\Collection */
-        $options = $objectManager->create(\Magento\Eav\Model\ResourceModel\Entity\Attribute\Option\Collection::class);
+        $options = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
+            'Magento\Eav\Model\ResourceModel\Entity\Attribute\Option\Collection'
+        );
         $options->setAttributeFilter($attr->getId());
         $optionIds = $options->getAllIds();
         $product1Id = $optionIds[0] * 10;
@@ -132,6 +134,7 @@ class SourceTest extends \PHPUnit\Framework\TestCase
         $productRepository->save($product2);
 
         $this->_eavIndexerProcessor->reindexAll();
+
         $connection = $this->productResource->getConnection();
         $select = $connection->select()->from($this->productResource->getTable('catalog_product_index_eav'))
             ->where('entity_id in (?)', [$product1Id, $product2Id])

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -10,18 +10,19 @@
 namespace Magento\CustomerImportExport\Model\Import;
 
 use Magento\Framework\App\Filesystem\DirectoryList;
+use Magento\Framework\Filesystem;
+use Magento\ImportExport\Model\Import as ImportModel;
+use Magento\TestFramework\Helper\Bootstrap;
+use Magento\ImportExport\Model\Import\Adapter as ImportAdapter;
 
-/**
- * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
- */
-class AddressTest extends \PHPUnit\Framework\TestCase
+class AddressTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Tested class name
      *
      * @var string
      */
-    protected $_testClassName = \Magento\CustomerImportExport\Model\Import\Address::class;
+    protected $_testClassName = 'Magento\CustomerImportExport\Model\Import\Address';
 
     /**
      * Fixture key from fixture
@@ -86,10 +87,10 @@ class AddressTest extends \PHPUnit\Framework\TestCase
     protected function setUp()
     {
         /** @var \Magento\Catalog\Model\ResourceModel\Product $productResource */
-        $this->customerResource = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->get(
-            \Magento\Customer\Model\ResourceModel\Customer::class
+        $this->customerResource = Bootstrap::getObjectManager()->get(
+            'Magento\Customer\Model\ResourceModel\Customer'
         );
-        $this->_entityAdapter = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
+        $this->_entityAdapter = Bootstrap::getObjectManager()->create(
             $this->_testClassName
         );
     }
@@ -158,10 +159,10 @@ class AddressTest extends \PHPUnit\Framework\TestCase
     public function testInitAddresses()
     {
         /** @var $objectManager \Magento\TestFramework\ObjectManager */
-        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
+        $objectManager = Bootstrap::getObjectManager();
 
         // get addressed from fixture
-        $customers = $objectManager->get(\Magento\Framework\Registry::class)->registry($this->_fixtureKey);
+        $customers = $objectManager->get('Magento\Framework\Registry')->registry($this->_fixtureKey);
         $correctAddresses = [];
         /** @var $customer \Magento\Customer\Model\Customer */
         foreach ($customers as $customer) {
@@ -217,8 +218,8 @@ class AddressTest extends \PHPUnit\Framework\TestCase
         list($customerId, $addressId) = $this->_addTestAddress($this->_entityAdapter);
 
         // check DB
-        $testAddress = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Customer\Model\Address::class
+        $testAddress = Bootstrap::getObjectManager()->create(
+            'Magento\Customer\Model\Address'
         );
         $testAddress->load($addressId);
         $this->assertEquals($addressId, $testAddress->getId(), 'Incorrect address ID.');
@@ -234,19 +235,19 @@ class AddressTest extends \PHPUnit\Framework\TestCase
     protected function _addTestAddress(Address $entityAdapter)
     {
         /** @var $objectManager \Magento\TestFramework\ObjectManager */
-        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
+        $objectManager = Bootstrap::getObjectManager();
 
-        $customers = $objectManager->get(\Magento\Framework\Registry::class)->registry($this->_fixtureKey);
+        $customers = $objectManager->get('Magento\Framework\Registry')->registry($this->_fixtureKey);
         /** @var $customer \Magento\Customer\Model\Customer */
         $customer = reset($customers);
         $customerId = $customer->getId();
 
         /** @var $addressModel \Magento\Customer\Model\Address */
-        $addressModel = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Customer\Model\Address::class
+        $addressModel = Bootstrap::getObjectManager()->create(
+            'Magento\Customer\Model\Address'
         );
         $tableName = $addressModel->getResource()->getEntityTable();
-        $addressId = $objectManager->get(\Magento\ImportExport\Model\ResourceModel\Helper::class)
+        $addressId = $objectManager->get('Magento\ImportExport\Model\ResourceModel\Helper')
             ->getNextAutoincrement($tableName);
 
         $newEntityData = [
@@ -301,8 +302,8 @@ class AddressTest extends \PHPUnit\Framework\TestCase
 
         // check DB
         /** @var $testAddress \Magento\Customer\Model\Address */
-        $testAddress = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Customer\Model\Address::class
+        $testAddress = Bootstrap::getObjectManager()->create(
+            'Magento\Customer\Model\Address'
         );
         $testAddress->load($addressId);
         $this->assertEquals($addressId, $testAddress->getId(), 'Incorrect address ID.');
@@ -317,10 +318,10 @@ class AddressTest extends \PHPUnit\Framework\TestCase
     public function testSaveCustomerDefaults()
     {
         /** @var $objectManager \Magento\TestFramework\ObjectManager */
-        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
+        $objectManager = Bootstrap::getObjectManager();
 
         // get not default address
-        $customers = $objectManager->get(\Magento\Framework\Registry::class)->registry($this->_fixtureKey);
+        $customers = $objectManager->get('Magento\Framework\Registry')->registry($this->_fixtureKey);
         /** @var $notDefaultAddress \Magento\Customer\Model\Address */
         $notDefaultAddress = null;
         /** @var $addressCustomer \Magento\Customer\Model\Customer */
@@ -359,8 +360,8 @@ class AddressTest extends \PHPUnit\Framework\TestCase
 
         // check DB
         /** @var $testCustomer \Magento\Customer\Model\Customer */
-        $testCustomer = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Customer\Model\Customer::class
+        $testCustomer = Bootstrap::getObjectManager()->create(
+            'Magento\Customer\Model\Customer'
         );
         $testCustomer->load($customerId);
         $this->assertEquals($customerId, $testCustomer->getId(), 'Customer must exists.');
@@ -387,20 +388,20 @@ class AddressTest extends \PHPUnit\Framework\TestCase
     {
         // set behaviour
         $this->_entityAdapter->setParameters(
-            ['behavior' => \Magento\ImportExport\Model\Import::BEHAVIOR_ADD_UPDATE]
+            ['behavior' => ImportModel::BEHAVIOR_ADD_UPDATE]
         );
 
         // set fixture CSV file
         $sourceFile = __DIR__ . '/_files/address_import_update.csv';
 
         /** @var $objectManager \Magento\TestFramework\ObjectManager */
-        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
-        $filesystem = $objectManager->create(\Magento\Framework\Filesystem::class);
+        $objectManager = Bootstrap::getObjectManager();
+        $filesystem = $objectManager->create('Magento\Framework\Filesystem');
 
         $directoryWrite = $filesystem->getDirectoryWrite(DirectoryList::ROOT);
 
         $result = $this->_entityAdapter->setSource(
-            \Magento\ImportExport\Model\Import\Adapter::findAdapterFor($sourceFile, $directoryWrite)
+            ImportAdapter::findAdapterFor($sourceFile, $directoryWrite)
         )
             ->validateData()
             ->hasToBeTerminated();
@@ -419,8 +420,8 @@ class AddressTest extends \PHPUnit\Framework\TestCase
         }
 
         // get addresses
-        $addressCollection = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Customer\Model\ResourceModel\Address\Collection::class
+        $addressCollection = Bootstrap::getObjectManager()->create(
+            'Magento\Customer\Model\ResourceModel\Address\Collection'
         );
         $addressCollection->addAttributeToSelect($requiredAttributes);
         $addresses = [];
@@ -460,8 +461,8 @@ class AddressTest extends \PHPUnit\Framework\TestCase
 
         // are default billing/shipping addresses have new value
         /** @var $customer \Magento\Customer\Model\Customer */
-        $customer = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Customer\Model\Customer::class
+        $customer = Bootstrap::getObjectManager()->create(
+            'Magento\Customer\Model\Customer'
         );
         $customer->setWebsiteId(0);
         $customer->loadByEmail('BetsyParker@example.com');
@@ -486,17 +487,19 @@ class AddressTest extends \PHPUnit\Framework\TestCase
     public function testImportDataDelete()
     {
         // set behaviour
-        $this->_entityAdapter->setParameters(['behavior' => \Magento\ImportExport\Model\Import::BEHAVIOR_DELETE]);
+        $this->_entityAdapter->setParameters([
+            'behavior' => ImportModel::BEHAVIOR_DELETE
+        ]);
 
         // set fixture CSV file
         $sourceFile = __DIR__ . '/_files/address_import_delete.csv';
 
         /** @var $objectManager \Magento\TestFramework\ObjectManager */
-        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
-        $filesystem = $objectManager->create(\Magento\Framework\Filesystem::class);
+        $objectManager = Bootstrap::getObjectManager();
+        $filesystem = $objectManager->create('Magento\Framework\Filesystem');
         $directoryWrite = $filesystem->getDirectoryWrite(DirectoryList::ROOT);
         $result = $this->_entityAdapter->setSource(
-            \Magento\ImportExport\Model\Import\Adapter::findAdapterFor($sourceFile, $directoryWrite)
+            ImportAdapter::findAdapterFor($sourceFile, $directoryWrite)
         )->validateData()->hasToBeTerminated();
         $this->assertTrue(!$result, 'Validation result must be true.');
 
@@ -508,8 +511,8 @@ class AddressTest extends \PHPUnit\Framework\TestCase
 
         // get addresses
         /** @var $addressCollection \Magento\Customer\Model\ResourceModel\Address\Collection */
-        $addressCollection = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-            \Magento\Customer\Model\ResourceModel\Address\Collection::class
+        $addressCollection = Bootstrap::getObjectManager()->create(
+            'Magento\Customer\Model\ResourceModel\Address\Collection'
         );
         $addressCollection->addAttributeToSelect($keyAttribute);
         $addresses = [];
@@ -521,5 +524,38 @@ class AddressTest extends \PHPUnit\Framework\TestCase
         // is addresses exists
         $this->assertArrayNotHasKey($this->_deleteData['delete'], $addresses, 'Address must not exist.');
         $this->assertArrayHasKey($this->_deleteData['not_delete'], $addresses, 'Address must exist.');
+    }
+
+    /**
+     * Case when attribute settings for two websites are different.
+     *
+     * @magentoAppArea adminhtml
+     * @magentoAppIsolation enabled
+     * @magentoDbIsolation enabled
+     * @magentoDataFixture Magento/CustomerImportExport/_files/two_addresses.php
+     */
+    public function testDifferentOptions()
+    {
+        /** @var $objectManager \Magento\TestFramework\ObjectManager */
+        $objectManager = Bootstrap::getObjectManager();
+        /** @var Filesystem $filesystem */
+        $filesystem = $objectManager->create(Filesystem::class);
+
+        //Only add/update behaviour will have validation in place required to
+        //test this case
+        $this->_entityAdapter->setParameters(
+            ['behavior' => ImportModel::BEHAVIOR_ADD_UPDATE]
+        );
+        //Load from
+        $sourceFile = __DIR__ . '/_files/two_addresses_import_update.csv';
+        $directoryWrite = $filesystem->getDirectoryWrite(DirectoryList::ROOT);
+        //Validate
+        $adapter = ImportAdapter::findAdapterFor($sourceFile, $directoryWrite);
+        $errors = $this->_entityAdapter->setSource($adapter)
+            ->validateData();
+        $this->assertEmpty($errors->getErrorsCount(), 'CSV must be valid');
+        //Import
+        $imported = $this->_entityAdapter->importData();
+        $this->assertTrue($imported, 'Must be successfully imported');
     }
 }

@@ -1,8 +1,6 @@
 <?php
 /**
- * Creates a simple product to be used for test cases.
- *
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 

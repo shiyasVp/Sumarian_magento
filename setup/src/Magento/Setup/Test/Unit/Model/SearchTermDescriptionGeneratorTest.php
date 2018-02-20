@@ -1,11 +1,11 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Setup\Test\Unit\Model;
 
-class SearchTermDescriptionGeneratorTest extends \PHPUnit\Framework\TestCase
+class SearchTermDescriptionGeneratorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\Setup\Model\SearchTermDescriptionGenerator
@@ -24,9 +24,20 @@ class SearchTermDescriptionGeneratorTest extends \PHPUnit\Framework\TestCase
 
     public function setUp()
     {
-        $this->descriptionGeneratorMock =
-            $this->createMock(\Magento\Setup\Model\Description\DescriptionGenerator::class);
-        $this->searchTermManagerMock = $this->createMock(\Magento\Setup\Model\SearchTermManager::class);
+        $this->descriptionGeneratorMock = $this->getMock(
+            \Magento\Setup\Model\Description\DescriptionGenerator::class,
+            [],
+            [],
+            '',
+            false
+        );
+        $this->searchTermManagerMock = $this->getMock(
+            \Magento\Setup\Model\SearchTermManager::class,
+            [],
+            [],
+            '',
+            false
+        );
 
         $this->searchTermDescriptionGenerator = new \Magento\Setup\Model\SearchTermDescriptionGenerator(
             $this->descriptionGeneratorMock,

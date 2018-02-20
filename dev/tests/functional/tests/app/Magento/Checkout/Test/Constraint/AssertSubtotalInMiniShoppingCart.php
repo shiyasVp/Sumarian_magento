@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -35,9 +35,7 @@ class AssertSubtotalInMiniShoppingCart extends AbstractAssertForm
     }
 
     /**
-     * Returns a string representation of the object.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function toString()
     {

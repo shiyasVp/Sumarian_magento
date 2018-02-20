@@ -1,11 +1,11 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Setup\Test\Unit\Model;
 
-class SearchTermManagerTest extends \PHPUnit\Framework\TestCase
+class SearchTermManagerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\Setup\Model\SearchTermManager

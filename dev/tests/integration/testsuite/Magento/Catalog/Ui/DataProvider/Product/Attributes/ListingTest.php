@@ -1,11 +1,15 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Magento\Catalog\Ui\DataProvider\Product\Attributes;
 
-class ListingTest extends \PHPUnit\Framework\TestCase
+/**
+ * Test sorting in product attribute grid
+ */
+class ListingTest extends \PHPUnit_Framework_TestCase
 {
     /** @var \Magento\Catalog\Ui\DataProvider\Product\Attributes\Listing */
     private $dataProvider;
@@ -28,7 +32,7 @@ class ListingTest extends \PHPUnit\Framework\TestCase
                 'name' => 'product_attributes_grid_data_source',
                 'primaryFieldName' => 'attribute_id',
                 'requestFieldName' => 'id',
-                'request' => $this->request
+                'request' => $this->request,
             ]
         );
     }

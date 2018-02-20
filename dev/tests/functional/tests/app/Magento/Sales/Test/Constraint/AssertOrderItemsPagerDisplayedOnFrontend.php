@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -31,7 +31,6 @@ class AssertOrderItemsPagerDisplayedOnFrontend extends AbstractConstraint
      * @param OrderHistory $orderHistory
      * @param CustomerOrderView $customerOrderView
      * @param string $orderId
-     * @internal param OrderView $orderView
      */
     public function processAssert(
         OrderInjectable $order,
@@ -60,9 +59,7 @@ class AssertOrderItemsPagerDisplayedOnFrontend extends AbstractConstraint
     }
 
     /**
-     * Returns a string representation of the object.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function toString()
     {

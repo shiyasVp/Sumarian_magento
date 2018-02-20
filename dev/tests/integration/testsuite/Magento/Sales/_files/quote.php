@@ -1,10 +1,13 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-\Magento\TestFramework\Helper\Bootstrap::getInstance()->loadArea('frontend');
-$product = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(\Magento\Catalog\Model\Product::class);
+use Magento\TestFramework\Helper\Bootstrap;
+
+Bootstrap::getInstance()->loadArea(Magento\Framework\App\Area::AREA_FRONTEND);
+
+$product = Bootstrap::getObjectManager()->create(\Magento\Catalog\Model\Product::class);
 $product->setTypeId('simple')
     ->setId(1)
     ->setAttributeSetId(4)
@@ -22,14 +25,15 @@ $product->setTypeId('simple')
             'qty' => 100,
             'is_in_stock' => 1,
         ]
-    )->save();
+    );
 
-$productRepository = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
+/** @var Magento\Catalog\Api\ProductRepositoryInterface $productRepository */
+$productRepository = Bootstrap::getObjectManager()
     ->create(\Magento\Catalog\Api\ProductRepositoryInterface::class);
-$product = $productRepository->get('simple');
+$product = $productRepository->save($product);
 
 $addressData = include __DIR__ . '/address_data.php';
-$billingAddress = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
+$billingAddress = Bootstrap::getObjectManager()->create(
     \Magento\Quote\Model\Quote\Address::class,
     ['data' => $addressData]
 );
@@ -38,12 +42,13 @@ $billingAddress->setAddressType('billing');
 $shippingAddress = clone $billingAddress;
 $shippingAddress->setId(null)->setAddressType('shipping');
 
+/** @var \Magento\Store\Api\Data\StoreInterface $store */
 $store = Magento\TestFramework\Helper\Bootstrap::getObjectManager()
     ->get(\Magento\Store\Model\StoreManagerInterface::class)
     ->getStore();
 
 /** @var \Magento\Quote\Model\Quote $quote */
-$quote = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(\Magento\Quote\Model\Quote::class);
+$quote = Bootstrap::getObjectManager()->create(\Magento\Quote\Model\Quote::class);
 $quote->setCustomerIsGuest(true)
     ->setStoreId($store->getId())
     ->setReservedOrderId('test01')
@@ -56,7 +61,7 @@ $quote->collectTotals();
 $quote->save();
 
 /** @var \Magento\Quote\Model\QuoteIdMask $quoteIdMask */
-$quoteIdMask = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
+$quoteIdMask = Bootstrap::getObjectManager()
     ->create(\Magento\Quote\Model\QuoteIdMaskFactory::class)
     ->create();
 $quoteIdMask->setQuoteId($quote->getId());

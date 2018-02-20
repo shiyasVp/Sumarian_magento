@@ -1,12 +1,12 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Setup\Fixtures\AttributeSet;
 
-use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Swatches\Model\Swatch;
+use Magento\Framework\App\Filesystem\DirectoryList;
 
 /**
  * Generates data for creating Visual Swatch attributes of "image" and "color" types.

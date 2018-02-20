@@ -1,13 +1,13 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Framework\Session;
 
 use Zend\Stdlib\Parameters;
 
-class SidResolverTest extends \PHPUnit\Framework\TestCase
+class SidResolverTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Magento\Framework\Session\SidResolver
@@ -54,24 +54,24 @@ class SidResolverTest extends \PHPUnit\Framework\TestCase
         $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
 
         /** @var \Magento\Framework\Session\Generic _model */
-        $this->session = $objectManager->get(\Magento\Framework\Session\Generic::class);
+        $this->session = $objectManager->get('Magento\Framework\Session\Generic');
 
         $this->scopeConfig = $this->getMockBuilder(
-            \Magento\Framework\App\Config\ScopeConfigInterface::class
+            'Magento\Framework\App\Config\ScopeConfigInterface'
         )->setMethods(
             ['getValue']
         )->disableOriginalConstructor()->getMockForAbstractClass();
 
         $this->urlBuilder = $this->getMockBuilder(
-            \Magento\Framework\Url::class
+            'Magento\Framework\Url'
         )->setMethods(
             ['isOwnOriginUrl']
         )->disableOriginalConstructor()->getMockForAbstractClass();
 
-        $this->request = $objectManager->get(\Magento\Framework\App\RequestInterface::class);
+        $this->request = $objectManager->get('Magento\Framework\App\RequestInterface');
 
         $this->model = $objectManager->create(
-            \Magento\Framework\Session\SidResolver::class,
+            'Magento\Framework\Session\SidResolver',
             [
                 'scopeConfig' => $this->scopeConfig,
                 'urlBuilder' => $this->urlBuilder,
@@ -112,6 +112,7 @@ class SidResolverTest extends \PHPUnit\Framework\TestCase
             $this->request->getQuery()->set($this->model->getSessionIdQueryParam($this->session), $testSid);
         }
         $this->assertEquals($sid, $this->model->getSid($this->session));
+        $this->assertEquals($useFrontedSid, $this->model->getUseSessionInUrl());
     }
 
     /**
@@ -150,10 +151,42 @@ class SidResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($this->model->getUseSessionVar());
     }
 
-    public function testSetGetUseSessionInUrl()
+    /**
+     * Variations of Use SID on frontend value.
+     *
+     * @return array
+     */
+    public function dataProviderSessionInUrl()
     {
-        $this->assertTrue($this->model->getUseSessionInUrl());
-        $this->model->setUseSessionInUrl(false);
-        $this->assertFalse($this->model->getUseSessionInUrl());
+        return [
+            [true],
+            [false],
+        ];
+    }
+
+    /**
+     * Testing "Use SID in URLs" flag.
+     * Checking that the method returns config value if not explicitly
+     * overridden.
+     *
+     * @param bool $configValue Use SID on frontend config value.
+     * @dataProvider dataProviderSessionInUrl
+     */
+    public function testSetGetUseSessionInUrl($configValue)
+    {
+        $this->scopeConfig->expects(
+            $this->any()
+        )->method(
+            'getValue'
+        )->with(
+            \Magento\Framework\Session\SidResolver::XML_PATH_USE_FRONTEND_SID,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        )->will(
+            $this->returnValue($configValue)
+        );
+
+        $this->assertEquals($configValue, $this->model->getUseSessionInUrl());
+        $this->model->setUseSessionInUrl(!$configValue);
+        $this->assertEquals(!$configValue, $this->model->getUseSessionInUrl());
     }
 }
