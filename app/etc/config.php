@@ -111,6 +111,7 @@ return array (
     'Magento_Wishlist' => 1,
     'Mageplaza_Core' => 1,
     'Mageplaza_LayeredNavigation' => 1,
+    'Mageplaza_Smtp' => 1,
     'Nwdthemes_Base' => 1,
     'Nwdthemes_Revslider' => 1,
     'Razorpay_Magento' => 1,
