@@ -116,6 +116,7 @@ return array (
     'Nwdthemes_Base' => 1,
     'Nwdthemes_Revslider' => 1,
     'Razorpay_Magento' => 1,
+    'Tigren_ProgressiveWebApp' => 1,
     'WeltPixel_Backend' => 1,
     'WeltPixel_Quickview' => 1,
   ),

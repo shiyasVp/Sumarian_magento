@@ -1,0 +1,23 @@
+{
+  "name": "Sumarian",
+  "short_name": "Sumarian",
+  "description": "Sumarian Clothings",
+  "start_url": "http:\/\/127.0.0.1:8888\/magento2191\/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#e6971e",
+  "background_color": "#000000",
+  "gcm_sender_id": "103953800507",
+  "icons": [
+    {
+      "src": "images/icoo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/chrome_ico_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
