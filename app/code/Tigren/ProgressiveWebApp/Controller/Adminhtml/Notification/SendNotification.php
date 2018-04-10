@@ -47,6 +47,7 @@ class SendNotification extends \Magento\Backend\App\Action
             $server_key = $this->_pwaHelper->getServerKey();
             $topicName = $this->_pwaHelper->getTopicName();
             $this->_client->setApiKey($server_key);
+            $this->_client->injectGuzzleHttpClient(new \GuzzleHttp\Client());
             $this->_notification = new Notification($notificationData['title'], $notificationData['body']);
             $this->_message->addRecipient(new Topic($topicName));
             $this->_message->setNotification($this->_notification);
@@ -57,7 +58,7 @@ class SendNotification extends \Magento\Backend\App\Action
                 $reponse = $send->getStatusCode();
                 if ($reponse == 200) {
                     $this->messageManager->addSuccess(__('Send notification successfully.'));
-                    return $resultRedirect->setPath('*/*/');
+					return $resultRedirect->setPath('*/*/');
                 } else {
                     $this->messageManager->addError(__('Send notification failed. Please try again.'));
                     return $resultRedirect->setPath('*/*/');

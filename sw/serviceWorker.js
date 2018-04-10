@@ -10,7 +10,7 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 var CACHE_NAME = 'pwa-tigren-cache-v1';
-var SWversion = '63';
+var SWversion = '23';
 
 self.addEventListener('install', function (event) {
     // Perform install steps

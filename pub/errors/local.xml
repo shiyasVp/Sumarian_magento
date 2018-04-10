@@ -20,7 +20,7 @@
         <!--
             "email_address" admin email address
         -->
-        <email_address></email_address>
+        <email_address>admin@sumarian.com</email_address>
         <!--
             "trash" is handle about trace info
             value "leave" is for store on disk
